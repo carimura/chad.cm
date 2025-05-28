@@ -5,8 +5,9 @@ template: post.html
 active_nav: writing
 ---
 
-I wanted to write a blog post about some OpenCV stuff I did in Java using the Foreign Function & Memory API, but then I realized I didn't have a blog. Since I work on the team that makes the Java Platform, I couldn't bear using some JavaScript blog engine. So I did what any reasonable developer would do: I used Cursor to build a static blog site generator in Java.
+I wanted to write a blog post about some OpenCV stuff I did in Java using the [Foreign Function & Memory API](https://dev.java/learn/ffm/), but then realized, I didn't have a blog. 
 
+Since I work on the team that makes the Java Platform, I couldn't bare using some Javascript blog engine, so I [built my own in Java](https://github.com/carimura/arc). The code is like Stackoverflow and Baeldung got put in a blender then blown up with dynamite, but it works, and I got to play around with Cursor and Claude 4.
 
 Arc is a static site generator written in Java. It converts Markdown files to HTML, supports templates, and even has hot reloading. Here's what it does:
 

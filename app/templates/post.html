@@ -13,8 +13,8 @@
     <main class="container" id="post">
         <article class="post">
             <div id="post-header">
-                {% if date %}<p id="date">{{ date }}</p>{% endif %}
                 <h1 class="post-title">{{ title }}</h1>
+                {% if date %}<p id="date">{{ formatted_date }}</p>{% endif %}
             </div>
             
             <div id="post-content">
