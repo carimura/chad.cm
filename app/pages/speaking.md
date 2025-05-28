@@ -1,5 +1,6 @@
 ---
 title: Speaking
+type: page
 template: page.html
 description: My speaking engagements and conference talks
 active_nav: speaking

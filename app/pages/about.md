@@ -1,5 +1,6 @@
 ---
-title: About Me
+title: About
+type: page
 template: page.html
 active_nav: about
 ---

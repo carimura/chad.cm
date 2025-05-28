@@ -1,8 +1,10 @@
 ---
 title: "Building Arc (in a few hours)"
 date: 2025-05-28
+type: post
 template: post.html
 active_nav: writing
+excerpt: Arc is a minimal static site generator I built to power my personal website. Here's how it works and why I built it.
 ---
 
 I wanted to write a blog post about some OpenCV stuff I did in Java using the [Foreign Function & Memory API](https://dev.java/learn/ffm/), but then realized, I didn't have a blog. 
