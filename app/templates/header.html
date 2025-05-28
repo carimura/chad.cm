@@ -1,6 +1,12 @@
+<div id="site-title">
+    <a href="/">Chad Arimura</a>
+</div>
+
 <nav id="site-nav">
-    <a href="/" class="nav-link active">Home</a>
-    <a href="/about.html" class="nav-link">About Me</a>
-    <a href="/writing.html" class="nav-link">Writing</a>
-    <a href="/speaking.html" class="nav-link">Speaking</a>
+    <ul>
+        <li title="Home"><a href="/" class="nav-link {% if active_nav == 'home' %}active{% endif %}">Home</a></li>
+        <li title="About Me"><a href="/about.html" class="nav-link {% if active_nav == 'about' %}active{% endif %}">About Me</a></li>
+        <li title="Writing"><a href="/writing.html" class="nav-link {% if active_nav == 'writing' %}active{% endif %}">Writing</a></li>
+        <li title="Speaking"><a href="/speaking.html" class="nav-link {% if active_nav == 'speaking' %}active{% endif %}">Speaking</a></li>
+    </ul>
 </nav>

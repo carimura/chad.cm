@@ -1,6 +1,7 @@
 ---
 title: Home
 template: home.html
+active_nav: home
 ---
 
 Hi my name is Chad Arimura.

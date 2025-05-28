@@ -2,9 +2,8 @@
 title: Speaking
 template: page.html
 description: My speaking engagements and conference talks
+active_nav: speaking
 ---
-
-## Speaking
 
 I used to speak quite often about Java, serverless computing, entrepreneurship, building teams, culture, and other topics. I've slowed down to travel less and spend more time with our growing family. 
 
