@@ -2,6 +2,7 @@
 title: "Welcome to My New Personal Site"
 date: 2025-05-26
 template: post.html
+active_nav: writing
 excerpt: "After many iterations, I'm excited to launch my new personal website built with Arc, a simple static site generator I've been working on."
 ---
 

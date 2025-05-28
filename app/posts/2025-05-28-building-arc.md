@@ -1,7 +1,8 @@
 ---
 title: "Building Arc (in a few hours)"
-date: 2025-05-25
+date: 2025-05-28
 template: post.html
+active_nav: writing
 ---
 
 I wanted to write a blog post about some OpenCV stuff I did in Java using the Foreign Function & Memory API, but then I realized I didn't have a blog. Since I work on the team that makes the Java Platform, I couldn't bear using some JavaScript blog engine. So I did what any reasonable developer would do: I used Cursor to build a static blog site generator in Java.

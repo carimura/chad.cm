@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Personal website of Chad Arimura - Home">
-<title>Chad Arimura | Home</title>
+<meta name="description" content="Personal website of Chad Arimura - Building Arc (in a few hours)">
+<title>Chad Arimura | Building Arc (in a few hours)</title>
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -16,22 +16,16 @@
 
 <nav id="site-nav">
     <ul>
-        <li title="Home"><a href="/" class="nav-link active">Home</a></li>
+        <li title="Home"><a href="/" class="nav-link ">Home</a></li>
         <li title="About Me"><a href="/about.html" class="nav-link ">About Me</a></li>
-        <li title="Writing"><a href="/writing.html" class="nav-link ">Writing</a></li>
+        <li title="Writing"><a href="/writing.html" class="nav-link active">Writing</a></li>
         <li title="Speaking"><a href="/speaking.html" class="nav-link ">Speaking</a></li>
     </ul>
 </nav>
         </div>
     </header>
 
-    <main class="container" id="home">
-
-        <p>Hi my name is Chad Arimura.</p>
-<p>I wanted to write a blog post about some OpenCV stuff I did in Java using the <a href="https://dev.java/learn/ffm/">Foreign Function &amp; Memory API</a>, but then realized, I didn't have a blog.</p>
-<p>Since I work on the team that makes the Java Platform, I couldn't bare using some Javascript blog engine, so I <a href="https://github.com/carimura/arc">built my own in Java</a>. The code is like Stackoverflow and Baeldung got put in a blender then blown up with dynamite, but it works, and I got to play around with Cursor and Claude 4.</p>
-
-
+    <main class="container" id="post">
         <article class="post">
             <div id="post-header">
                 <p id="date">2025-05-28</p>
@@ -53,7 +47,7 @@
 <h3>Template System</h3>
 <p>The template engine supports:</p>
 <ul>
-<li>Variable substitution: <code>Home</code></li>
+<li>Variable substitution: <code>{{ title }}</code></li>
 <li>Loops: <code>{% for post in posts %}...{% endfor %}</code></li>
 <li>Conditionals: <code>{% if variable %}...{% endif %}</code></li>
 <li>Includes: <code>{% include &quot;header.html&quot; %}</code></li>
@@ -117,7 +111,7 @@ site/              # Generated output
 
     <footer>
         <div class="container">
-            <p><div class="footer-content">
+            <div class="footer-content">
     <p class="made-with">Made with <a href="https://github.com/chadarimura/arc" target="_blank" rel="noopener">Arc</a></p>
 
     <div class="social-links">
@@ -137,7 +131,7 @@ site/              # Generated output
             </svg>
         </a>
     </div>
-</div></p>
+</div>
         </div>
     </footer>
 </body>
