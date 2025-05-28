@@ -4,7 +4,7 @@ template: page.html
 active_nav: about
 ---
 
-<a href="https://chadarimura.com/chad.jpg"><img src="https://chadarimura.com/chad.jpg" id="headshot" /></a>
+<a href="/assets/chad_cartoon.png"><img src="/assets/chad_cartoon.png" id="headshot" /></a>
 
 Hi my name is Chad Arimura.
 
