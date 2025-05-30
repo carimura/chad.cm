@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const img = document.getElementById('profile-img');
-    if (!img) return; // Exit if image not found
-    
     const link = img.parentElement;
     const cartoonSrc = img.getAttribute('data-cartoon');
     const realSrc = img.getAttribute('data-real');
+    
+    // Preload the real image
+    const preloadImage = new Image();
+    preloadImage.src = realSrc;
     
     // Desktop hover effects
     img.addEventListener('mouseenter', function() {
