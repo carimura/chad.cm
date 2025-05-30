@@ -37,26 +37,39 @@
             
             <div id="post-content">
                 <p>I wanted to write a blog post about some OpenCV stuff I did in Java using the <a href="https://dev.java/learn/ffm/">Foreign Function &amp; Memory API</a>, but then realized, I didn't have a blog.</p>
-<p>Since I work on the team that makes the Java Platform, I couldn't bare using some Javascript blog engine, so I <a href="https://github.com/carimura/arc">built my own in Java</a>. The code is like Stackoverflow and Baeldung got put in a blender then blown up with dynamite, but it works, and I got to play around with Cursor and Claude 4.</p>
-<p>Arc is a static site generator written in Java. It converts Markdown files to HTML, supports templates, and even has hot reloading. Here's what it does:</p>
+<p>Since I work on the team that makes the Java Platform, I couldn't bare using some Javascript blog engine, so I built my own using Cursor and Claude-4-Opus. Enter, <a href="https://github.com/carimura/arc">Arc</a>.</p>
+<p>It's not great. The code is like someone stuffed Stackoverflow and Baeldung into a blender and then blew it up with dynamite, but it took me about 5 hours (half of which was learning the tools), and I'm really curious if I can refactor my way into something broadly useful for others. All that said, it's really super fast, at least.</p>
+<p>Arc is a static-site generator written in Java. It's basic function is to take Markdown files, mash them into some templates, and turn that all into plain-ole' HTML. I'm old school, and I have a core belief that HTML should be largely maintained as HTML, with some variables and control-flow built in, not littered throughout controller logic. Remember MVC? I liked that. Is it still a thing? Modern day JS frameworks hurt my brain.</p>
+<p><strong>Features:</strong></p>
 <ul>
 <li>Converts Markdown files to HTML using CommonMark</li>
 <li>Supports YAML frontmatter for metadata</li>
-<li>Uses a simple template system with <code>{{ variable }}</code> syntax</li>
-<li>Includes template features like loops (<code>{% for %}</code>) and conditionals (<code>{% if %}</code>)</li>
-<li>Has a built-in hot reload mode for development</li>
-<li>Generates a clean output structure in a <code>site</code> directory</li>
-</ul>
-<h2>Technical Implementation</h2>
-<h3>Template System</h3>
-<p>The template engine supports:</p>
-<ul>
-<li>Variable substitution: <code>Home</code></li>
-<li>Loops: <code>{% for post in posts %}...{% endfor %}</code></li>
+<li>Simple template system</li>
+<li>Variables: <code>{{ variable }}</code></li>
+<li>Loops: <code>{for post in posts}...{% endfor %}</code></li>
 <li>Conditionals: <code>{% if variable %}...{% endif %}</code></li>
 <li>Includes: <code>{% include &quot;header.html&quot; %}</code></li>
+<li>Has a built-in hot reload mode for development</li>
+<li>Uses <code>jpackage</code> to build a native executable</li>
 </ul>
-<h3>Directory Structure</h3>
+<p>Also it's pretty fast. Here it is building this site:</p>
+<pre><code>❯ time arc
+-------- STARTING ARC GENERATE() --------
+Copied assets to: site/assets
+Found 2 markdown posts to process
+Found 4 markdown pages to process
+Generated: posts/2025-05-28-building-arc.html
+Generated: posts/2025-05-26-welcome-to-my-new-site.html
+Generated: speaking.html
+Generated: writing.html
+Generated: index.html
+Generated: about.html
+-------- SITE GENERATION COMPLETE --------
+arc 0.21s user 0.03s system 149% cpu 0.160 total
+</code></pre>
+<h2>Using (if you already have the arc binary)</h2>
+<p>Using it to build your own site is super easy, you just run the <code>arc</code> command (or <code>arc --watch</code> for hot reloads) inside the directory where your app lives. That said, getting <code>arc</code> at this time requires building it.</p>
+<p><strong>The directory structure <code>arc</code> expects is as follows:</strong></p>
 <pre><code>app/
 ├── posts/         # Blog posts in Markdown
 ├── pages/         # Static pages in Markdown  
@@ -64,8 +77,33 @@
 └── assets/        # CSS, JS, images
 site/              # Generated output
 </code></pre>
-<h3>Making a native executable</h3>
-<pre><code>jpackage options:
+<p>You can find a sample template <a href="https://github.com/carimura/arc/tree/main/src/main/resources/examples/arc-site">here</a>.</p>
+<h2>Building the Arc Binary (and using it)</h2>
+<ol>
+<li><code>git clone https://github.com/carimura/arc</code></li>
+<li><code>mvn clean package</code> (this will compile and build the executable with jpackage)</li>
+<li>Create a script in your path that points to the executable like so</li>
+</ol>
+<pre><code>#!/bin/bash
+/path/to/arc/target/jpackage/arc.app/Contents/MacOS/arc &quot;$@&quot;
+</code></pre>
+<ol start="4">
+<li>
+<p>Go to your app directory (<a href="https://github.com/carimura/arc/tree/main/src/main/resources/examples/arc-site">sample here</a>) and just type <code>arc</code> or <code>arc --watch</code> for hot reloads.</p>
+</li>
+<li>
+<p><code>cd site</code></p>
+</li>
+<li>
+<p><code>jwebserver</code></p>
+</li>
+<li>
+<p>go to `http://localhost:8000' and gasp at the simplicity. or the horror.</p>
+</li>
+</ol>
+<p>That's it!</p>
+<p><strong>The jpackage command that is happening inside Maven</strong></p>
+<pre><code>jpackage
   --name arc
   --dest /path/to/arc/target/jpackage
   --type app-image
@@ -75,22 +113,15 @@ site/              # Generated output
   --main-jar arc-1.0-SNAPSHOT-jar-with-dependencies.jar
   --java-options --enable-preview
 </code></pre>
-<p>and then creating a script in your path like so:</p>
-<pre><code>#!/bin/bash
-/path/to/arc/target/jpackage/arc.app/Contents/MacOS/arc &quot;$@&quot;
-</code></pre>
-<h3>Hot Reloads</h3>
-<p>The hot reload feature uses Java's <code>WatchService</code> to monitor the <code>app</code> directory for changes to <code>.md</code>, <code>.html</code>, <code>.css</code>, and <code>.js</code> files. When changes are detected, it automatically triggers a rebuild.</p>
 <h2>TODO</h2>
 <ul>
+<li>Maybe distribute native binaries for multiple platforms</li>
 <li>RSS feed</li>
-<li>maybe some code formatting</li>
 <li>template inheritance</li>
-<li>more refactoring and cleaning</li>
-<li>Use String templates someday</li>
+<li>actually review the code in more detail, refactoring, cleanup</li>
 </ul>
 <h2>Conclusion</h2>
-<p>I dunno. AI wrote most of the code, so it pains me, but we refactored a little together so it pains me a little less. Then AI wrote this blog post, but the writing style made me cringe, so I rewrote it, feeling bad that my agent might find out and get hurt.</p>
+<p>I dunno. AI wrote most of the code, so it pains me, but we refactored a little together so it pains me a little less. Then AI wrote this blog post, but the writing style made me cringe, so I completely rewrote it, feeling bad that my agent might find out and get hurt.</p>
 <p>Anyways, it was fun. I have lots of thoughts on AI but I'll save those for another post on this fresh new blog.</p>
 <p>To end, here's some ascii art from my AI friend about me and it (him?) coding together:</p>
 <pre><code>     👦                    🤖

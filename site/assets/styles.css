@@ -6,14 +6,66 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.5em;
-    font-size: 1.1em;
+    font-size: 1.15em;
     margin: 0;
     min-height: 100%;
 }
 
+h1, h2, h3 {
+    font-weight: 550;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    background: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre code {
+    padding: 0;
+}
+
+a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #0070f3;
+}
+
+.social-links a:hover {
+    text-decoration: none;
+}
+
+
 main {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 header {
@@ -78,72 +130,39 @@ footer {
     margin-top: 50px;
     border-top: 1px solid #aaa;
     background-color: #EEE;
+    padding: 25px;
+
+    p {
+        margin: 0 0 20px 0;
+    }
 
     svg {
         padding: 0 5px;
     }
 }
 
-/*--- HEADINGS ---*/
-
-h1 {
-    font-size: 1.8em;
-}
-
-h2 {
-    font-size: 1.4em;
-}
-
-h3 {
-    color: #555;
-}
-
-/*--- CODE ---*/
-
-pre {
-    background: #f4f4f4;
-    padding: 1em;
-    border-radius: 5px;
-    overflow-x: auto;
-}
-
-code {
-    background: #f4f4f4;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-}
-
-pre code {
-    padding: 0;
-}
-
-/*--- LINKS ---*/
-
-a {
-    color: #0070f3;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:visited {
-    color: #0070f3;
-}
-
-.social-links a:hover {
-    text-decoration: none;
-}
 
 /*--- ABOUT ---*/
 
 #headshot {
-    width: 150px;
+    padding: 10px 0 0 20px;
+    width: 160px;
+    font-size: 0.7em;
+    line-height: normal;
+    color: #555;
     float: right;
-    padding: 10px;
-    border-radius: 25px;
+
+    img {
+        border-radius: 25px;
+        width: 150px;
+    }
+
+    p {
+        margin: 0;
+        text-align: center;
+    }
 }
+
 
 
 /*--- POST ---*/
@@ -154,6 +173,13 @@ main#post {
 
 #post-header {
     margin: 40px 0 30px 0;
+
+    a {
+        color: #000;
+    }
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 h1.post-title {
@@ -161,9 +187,21 @@ h1.post-title {
 }
 
 p#date {
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     padding: 0;
-    font-weight: bold;
-    color: #555;
-    font-size: 1.1em;
+    font-weight: 500;
+    color: #777;
+    font-size: 1em;
+}
+
+#writing {
+    article {
+        margin-bottom: 70px;
+    }
+
+    #post-footer {
+        margin: 5px 0 0 0;
+        font-size: 0.9em;
+        font-style: italic;
+    }
 }
