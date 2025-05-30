@@ -7,10 +7,16 @@ active_nav: about
 
 <div id="headshot">
     <a href="/assets/chad_cartoon.png">
-        <img src="/assets/chad_cartoon.png" />
+        <img id="profile-img" 
+             src="/assets/chad_cartoon.png" 
+             data-cartoon="/assets/chad_cartoon.png" 
+             data-real="/assets/chad.jpg" 
+             alt="Chad Arimura" />
     </a>
     <p>(AI struggles with half asians apparently)</p>
 </div>
+
+<script src="/assets/javascript/about.js"></script>
 
 Hi my name is Chad Arimura.
 
