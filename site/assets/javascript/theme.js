@@ -7,24 +7,17 @@
         const themeToggle = document.getElementById('theme-toggle');
         if (!themeToggle) return;
         
-        // Update button on load
         updateToggleButton(defaultTheme);
         
         themeToggle.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent any default button behavior
+            e.preventDefault();
             
             const currentTheme = document.documentElement.style.colorScheme;
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            // Apply new theme
             document.documentElement.style.colorScheme = newTheme;
             localStorage.setItem('theme', newTheme);
             updateToggleButton(newTheme);
-            
-            // Force style recalculation on mobile
-            document.documentElement.style.display = 'none';
-            document.documentElement.offsetHeight; // Trigger reflow
-            document.documentElement.style.display = '';
         });
         
         function updateToggleButton(theme) {
