@@ -53,6 +53,13 @@ pre code {
     color: inherit;
 }
 
+blockquote {
+    background: light-dark(#EEE, #444);
+    padding: 0.8em;
+    margin: 1em 0;
+    font-weight: 350;
+}
+
 a {
     color: light-dark(#0070f3, #4db8ff);
     text-decoration: none;
