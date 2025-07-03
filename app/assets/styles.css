@@ -9,7 +9,7 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.5em;
+    line-height: 1.55em;
     font-size: 1.15em;
     margin: 0;
     min-height: 100%;
@@ -58,6 +58,10 @@ blockquote {
     padding: 0.8em;
     margin: 1em 0;
     font-weight: 350;
+}
+
+hr {
+    border: none; border-bottom: dashed 1px light-dark(#222, #eee); margin: 30px 0 0 0;
 }
 
 a {
@@ -211,6 +215,7 @@ main#post {
 
 h1.post-title {
     margin: 0 0 10px 0;
+    color: light-dark(#000, #FFF);
 }
 
 p#date {
