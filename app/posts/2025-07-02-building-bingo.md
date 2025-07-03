@@ -11,7 +11,7 @@ Like almost every curious engineer, I've been playing around with various AI too
 
 ## Project 1: Building Speedcam
 
-My first ongoing project involves porting OpenCV code to Java's new [FFM API](https://openjdk.org/jeps/454) for faster object detection. So far so good, but since the API is quite new, and dealing with all the OS-native nuances is complex, you reach the limits of how much even the best frontier models can handle. They mostly just keep regurgitating the same "fixes" probably buried in Stack Overflow, and I watched it get increasingly frustrated and give up.
+My first project, which is still ongoing, involves porting OpenCV code to Java's new [FFM API](https://openjdk.org/jeps/454) for faster object detection. Specifically I have a camera at the front of our property on the road logging speeding offenders. It works, but it's pretty slow, and I'd like to keep the processing both batch oriented, and local. So far so good, but since the API is quite new and OS-specific compiling, linking, etc is complex, you reach the limits of how much even the best frontier models can handle. They mostly just keep regurgitating the same "fixes" probably buried in Stack Overflow and then get increasingly frustrated before giving up.
 
 <img src="/assets/bingo.png" style="width: 70%; float: right; margin-left: 20px;" />
 
