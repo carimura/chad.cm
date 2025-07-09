@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Chad Arimura&apos;s Personal Site</title>
+    <link>https://chad.cm</link>
+    <description>Thoughts on software engineering, Java, and the future of technology</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Jul 2025 21:27:38 -0700</lastBuildDate>
+    <generator>Arc Static Site Generator</generator>
+
+    <item>
+      <title>The Individualized Creator Economy</title>
+      <link>https://chad.cm/posts/2025-07-02-building-bingo.html</link>
+      <description>What I find interesting in this example is this trend towards, what I&apos;m calling to myself the Individualized Creator Economy, or ICE for sure.</description>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-07-02-building-bingo.html</guid>
+      <content:encoded><![CDATA[<p>Like almost every curious engineer, I've been playing around with various AI tools to see what they can do. I've basically hacked on three projects, formed a hypothesis of where the world might be going, and also found some interesting parallels to serverless computing (that my last company focused on).</p>
+<h2>Project 1: Building Speedcam</h2>
+<p>My first project, which is still ongoing, involves porting OpenCV code to Java's new <a href="https://openjdk.org/jeps/454">FFM API</a> for faster object detection. Specifically I have a camera at the front of our property on the road logging speeding offenders. It works, but it's pretty slow, and I'd like to keep the processing both batch oriented, and local. So far so good, but since the API is quite new and OS-specific compiling, linking, etc is complex, you reach the limits of how much even the best frontier models can handle. They mostly just keep regurgitating the same &quot;fixes&quot; probably buried in Stack Overflow and then get increasingly frustrated before giving up.</p>
+<img src="/assets/bingo.png" style="width: 70%; float: right; margin-left: 20px;" />
+<h2>Project 2: Building Arc</h2>
+<p>Then I wanted to write about that experience, but I didn't have a blog, so I built a <a href="/posts/2025-05-28-building-arc">static site generator</a> in Java that puts the HTML/CSS layout at the center, and uses tags and such to embed data. The Java code handles the magic but sort of hides behind the scenes. Many people believe the logic should be at the center of everything, and have the Java code spit out some HTML. This hurts my head, but I think philosophically it's the difference between someone that comes from a classic MVC background (like me), vs someone that comes from a more backend-centric world view.</p>
+<h2>Project 3: Building Bingo</h2>
+<p>Anyways, my third project, if you can even call it that, is ridiculously simple, even stupid (although we coach the kids not to call things stupid). My group is spread across the globe and we meet a few times a year on Zoom to just hang out and chat with no work agenda. But I try not to come empty handed and risk virtual-meeting crickets so I usually bring an ice-breaking game. At 6am, before our 9am meeting, I decided to give Claude Code a whirl to create an <a href="https://github.com/carimura/bingo">interactive Bingo game</a>, and in about an hour, I had a board live that supports multiple rounds of questions, hot keys, a nice little ding when someone gets bingo, and with a bit of prompting I was able to narrow in on questions I thought were decent. And it turned out fun! At least it seemed fun. My team is obligated to tell me it was fun.</p>
+<h2>ICE</h2>
+<p>So why did I re-build a game that surely 100 sites offer, and then write yet-another-post on how AI wrote some HTML and JS that my dog could probably write after a few hours at dog code bootcamp? I guess what I find interesting is this trend towards, what I've decided to call the Individualized Creator Economy (maybe ICE isn't the most popular acronym right now but it felt better than Custom Creator Platform).</p>
+<p><strong>ICE is a return to custom software vs off-the-shelf or as-a-service models.</strong> It's the ability to vibe code (with human in the loop) exactly what you want in the amount of time it would take to search the Internet, give someone your email address, try out their thing, only to find out it wasn't what you thought, etc.</p>
+<p><strong>ICE is software limited only by one's creativity vs one's skillsets.</strong> This I think is the main point. Engineering is not just about writing code or soldering wires, it's about making something come alive. As a kid I used HyperCard to build choose-your-own-adventure games, and Telegard and Wildcat BBS to build BBS sites. As I got older I created companies and used code to make those come alive. Software has become increasingly powerful but also increasingly complicated. Part of what I loved about &quot;serverless&quot; was the notion of abstracting out the infra layer, and AI tools seem to be trending towards a world in which you can abstract out a lot of the heavy lift of code also -- limited by creativity.</p>
+<p><strong>ICE is moving faster while still following the rules of a larger organization.</strong> In my Bingo example, technically, I'm supposed to put all new software through a security review before using it for work. But this could take months, so having it ready by my 9am meeting is obviously untenable. Enter ICE -- where I can build it, and no sensitive data were harmed in the process. Maybe this is the biggest point here, IDK.</p>
+<p>What do you think? Is this <span style="text-decoration: line-through;">stupid</span> your experience?</p>
+]]></content:encoded>
+    </item>
+
+    <item>
+      <title>Building Arc (in a few hours)</title>
+      <link>https://chad.cm/posts/2025-05-28-building-arc.html</link>
+      <description>I wanted to write a blog post about some OpenCV stuff I did in Java using the Foreign Function &amp; Memory API, but then realized, I didn&apos;t have a blog. I couldn&apos;t bare using some Javascript engine, so I built my own in Cursor. It&apos;s called Arc. This post is both about Arc, and the experience of building it in a few hours.</description>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-05-28-building-arc.html</guid>
+      <content:encoded><![CDATA[<p>I wanted to write a blog post about some OpenCV stuff I did in Java using the <a href="https://dev.java/learn/ffm/">Foreign Function &amp; Memory API</a>, but then realized, I didn't have a blog.</p>
+<p>Since I work on the team that makes the Java Platform, I couldn't bare using some Javascript blog engine, so I built my own using Cursor and Claude-4-Opus. Enter, <a href="https://github.com/carimura/arc">Arc</a>.</p>
+<p>It's not great. The code is like someone stuffed Stackoverflow and Baeldung into a blender and then blew it up with dynamite, but it took me about 5 hours (half of which was learning the tools), and I'm really curious if I can refactor my way into something broadly useful for others. All that said, it's really super fast, at least.</p>
+<p>Arc is a static-site generator written in Java. It's basic function is to take Markdown files, mash them into some templates, and turn that all into plain-ole' HTML. I'm old school, and I have a core belief that HTML should be largely maintained as HTML, with some variables and control-flow built in, not littered throughout controller logic. Remember MVC? I liked that. Is it still a thing? Modern day JS frameworks hurt my brain.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Converts Markdown files to HTML using CommonMark</li>
+<li>Supports YAML frontmatter for metadata</li>
+<li>Simple template system</li>
+<li>Variables: <code>{{ variable }}</code></li>
+<li>Loops: <code>{for post in posts}...{% endfor %}</code></li>
+<li>Conditionals: <code>{% if variable %}...{% endif %}</code></li>
+<li>Includes: <code>{% include &quot;header.html&quot; %}</code></li>
+<li>Has a built-in hot reload mode for development</li>
+<li>Uses <code>jpackage</code> to build a native executable</li>
+</ul>
+<p>Also it's pretty fast. Here it is building this site:</p>
+<pre><code>❯ time arc
+-------- STARTING ARC GENERATE() --------
+Copied assets to: site/assets
+Found 2 markdown posts to process
+Found 4 markdown pages to process
+Generated: posts/2025-05-28-building-arc.html
+Generated: posts/2025-05-26-welcome-to-my-new-site.html
+Generated: speaking.html
+Generated: writing.html
+Generated: index.html
+Generated: about.html
+-------- SITE GENERATION COMPLETE --------
+arc 0.21s user 0.03s system 149% cpu 0.160 total
+</code></pre>
+<h2>Using (if you already have the arc binary)</h2>
+<p>Using it to build your own site is super easy, you just run the <code>arc</code> command (or <code>arc --watch</code> for hot reloads) inside the directory where your app lives. That said, getting <code>arc</code> at this time requires building it.</p>
+<p><strong>The directory structure <code>arc</code> expects is as follows:</strong></p>
+<pre><code>app/
+├── posts/         # Blog posts in Markdown
+├── pages/         # Static pages in Markdown  
+├── templates/     # HTML templates
+└── assets/        # CSS, JS, images
+site/              # Generated output
+</code></pre>
+<p>You can find a sample template <a href="https://github.com/carimura/arc/tree/main/src/main/resources/examples/arc-site">here</a>.</p>
+<h2>Building the Arc Binary (and using it)</h2>
+<ol>
+<li><code>git clone https://github.com/carimura/arc</code></li>
+<li><code>mvn clean package</code> (this will compile and build the executable with jpackage)</li>
+<li>Create a script in your path that points to the executable like so</li>
+</ol>
+<pre><code>#!/bin/bash
+/path/to/arc/target/jpackage/arc.app/Contents/MacOS/arc &quot;$@&quot;
+</code></pre>
+<ol start="4">
+<li>
+<p>Go to your app directory (<a href="https://github.com/carimura/arc/tree/main/src/main/resources/examples/arc-site">sample here</a>) and just type <code>arc</code> or <code>arc --watch</code> for hot reloads.</p>
+</li>
+<li>
+<p><code>cd site</code></p>
+</li>
+<li>
+<p><code>jwebserver</code></p>
+</li>
+<li>
+<p>go to `http://localhost:8000' and gasp at the simplicity. or the horror.</p>
+</li>
+</ol>
+<p>That's it!</p>
+<p><strong>The jpackage command that is happening inside Maven</strong></p>
+<pre><code>jpackage
+  --name arc
+  --dest /path/to/arc/target/jpackage
+  --type app-image
+  --app-version 1.0
+  --input /path/to/arc/target
+  --main-class com.pinealpha.arc.Process
+  --main-jar arc-1.0-SNAPSHOT-jar-with-dependencies.jar
+  --java-options --enable-preview
+</code></pre>
+<h2>TODO</h2>
+<ul>
+<li>Maybe distribute native binaries for multiple platforms</li>
+<li>RSS feed</li>
+<li>template inheritance</li>
+<li>actually review the code in more detail, refactoring, cleanup</li>
+</ul>
+<h2>Conclusion</h2>
+<p>I dunno. AI wrote most of the code, so it pains me, but we refactored a little together so it pains me a little less. Then AI wrote this blog post, but the writing style made me cringe, so I completely rewrote it, feeling bad that my agent might find out and get hurt.</p>
+<p>Anyways, it was fun. I have lots of thoughts on AI but I'll save those for another post on this fresh new blog.</p>
+<p>To end, here's some ascii art from my AI friend about me and it (him?) coding together:</p>
+<pre><code>     👦                    🤖
+    /|\                   /|\
+    / \                   / \
+   -----                 -----
+  |     |               |     |
+  |  💻 |               |  💻 |
+  |_____|               |_____|
+  
+  &quot;Let's build         &quot;Affirmative.
+   something cool!&quot;     Initiating
+                        collaboration
+                        protocol.&quot;
+                        
+        ✨ Building Arc Together ✨
+</code></pre>
+]]></content:encoded>
+    </item>
+
+    <item>
+      <title>My New Personal Site</title>
+      <link>https://chad.cm/posts/2025-05-26-welcome-to-my-new-site.html</link>
+      <description>I needed another blog post to show that Arc works, so here it is.</description>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-05-26-welcome-to-my-new-site.html</guid>
+      <content:encoded><![CDATA[<p>Just a placeholder to show you that Arc works. Go read the <a href="/posts/2025-05-28-building-arc.html">Building Arc</a> post.</p>
+]]></content:encoded>
+    </item>
+
+    <item>
+      <title>Creating the Boom 💥 Emoji</title>
+      <link>https://chad.cm/posts/2019-01-11-creating-the-boom-emoji.html</link>
+      <description>The story of how we created the original boom emoji in 2012 for HipChat that eventually became global across Slack and other platforms.</description>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2019-01-11-creating-the-boom-emoji.html</guid>
+      <content:encoded><![CDATA[<p>[This is a re-post from my old <a href="https://medium.com/@carimura/creating-the-boom-emoji-671f5944c60">Medium post</a>]</p>
+<p>From shipping a feature to winning a new customer to finding out you're having a girl, the boom 💥 emoji has become lingua franca to concisely express one's emotions. A few weeks ago I received an email from a former investor:</p>
+<blockquote>
+<p>&quot;Did I make the BOOM icon in Slack? (Indirectly through you?)</p>
+<p>Would you blog that shit so I can tell the story over pints and not be called a lying a-hole.&quot;</p>
+</blockquote>
+<p>The answer to his question is yes. At least I think. So. Here's his blog post.</p>
+<h1><strong>We created the original boom 💥 emoji in 2012</strong></h1>
+<p>The investor who sent the email above happened to be our first Iron.io investor in 2010, and following our progress whenever something exciting would happen he'd respond with &quot;boom!&quot;. This became common speak in our company, even across multiple countries and languages.</p>
+<p>When we started using Hipchat in 2011, we had to settle for simply using the English word, but then I found they'd make a custom emoji for your company when referring a customer. This might seem very uneventful now, but in 2011, a custom emoji was a big deal.</p>
+<p>So on January 3rd, a buddy of mine sent the following email to Pete Curley's (founder of Hipchat) automated feedback request email:</p>
+<blockquote>
+<p>Date: January 3, 2012<br />
+From: Brian Glynn<br />
+To: Pete Curley</p>
+<p>&quot;Great! Nice service. Unless something changes we'll definitely be continuing with the service.</p>
+<p>On a related note, I'm hanging out with my buddy Chad Arimura cofounder of Iron.io. I didn't give him proper referral credit when signing up, and he's eager for his custom emoticon. Can you retroactively hook him up?&quot;</p>
+</blockquote>
+<p>And after a few iterations with our longtime designer, Andy Burkovetsky, we came up with a pretty sweet animation sequence:</p>
+<div style="text-align: center;">
+<img src="/assets/boom-emoji-animation.png" alt="Boom emoji animation sequence">
+</div>
+<p>(Thanks to Luke Stephen Rehmann for the explosion of our explosion in comments)</p>
+<p>and sent the following email:</p>
+<blockquote>
+<p>Date: February 10, 2012<br />
+From: Chad Arimura<br />
+To: Pete Curley</p>
+<p>Pete!</p>
+<p>Here's the first generation of our new HipChat icon. We'd love to rev it down the road when we have more time. Feel free to snake it for your own uses if you like it. We think it's sorely needed to express our emotions when someone does something awesome.</p>
+<p>(boom)</p>
+<p>Chad</p>
+</blockquote>
+<p>And his response:</p>
+<blockquote>
+<p>Date: February 11, 2012<br />
+From: Pete Curley<br />
+To: Chad Arimura</p>
+<p>Just put it in. It'll take a few hours for it to show up for everyone on your team. Boom.</p>
+<p>--</p>
+<p>Pete Curley<br />
+Co-Founder, HipChat.com</p>
+</blockquote>
+<p>And lo and behold, the fruits of our labor:</p>
+<div style="text-align: center;">
+<img src="/assets/boom-emoji-hipchat.gif" alt="Boom emoji in HipChat">
+</div>
+<h1>Going Global</h1>
+<p>A month later, I was hanging out in the Atlassian office (they were partners of ours at Iron.io) and I think it was Garret (or maybe Pete) walked in and I was excited to show them the sweet sweet emoji and recommended they make it global. Again, this was a big deal back then.</p>
+<p><strong>Shortly after that,</strong> we noticed that they agreed and made the emoji global. I was bummed they didn't let me know, but they had just gotten acquired so they were busy doing acquiree things.</p>
+<p><strong>And shortly after that,</strong> Slack dominated the scene, and :boom: 💥 (animation and all at the time) became a global option, obviously inspired by Hipchat's global emoji set.</p>
+<p>So that's the story.</p>
+<p>We probably can't take full credit. In doing 3 minutes of research for this blog post, I realize now that :collision: was part of Unicode 6.0 in 2010, but this certainly was nowhere on our radar, and certainly no option in Hipchat. Standard Unicode Emoji 1.0 didn't arrive until 2015. &quot;Boom&quot; isn't on the list, but it's global in Slack and predictive in iOS as well.</p>
+<p>Jonathan, you owe me a pint for writing this.</p>
+<p>Boom.</p>
+<p>Chad</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
