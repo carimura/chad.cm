@@ -27,4 +27,4 @@ I grew up running BBS's somewhere around the 14.4 era, and 30 years later I stil
 
 You can find me on [X](https://x.com/chadarimura) but I'm not big on socials. I used to write on [Medium](https://medium.com/@carimura), now I'll write more here.
 
-But most importantly I am married to the amazing [Sarah Arimura](http://www.sarahswangler.com/), dad to 3 awesome kiddos, boss of a few dogs, and commander and chief to give or take 18 chickens.
+But most importantly I am a husband, father of 3, follower of Jesus, boss of a few dogs, and commander and chief to give or take 18 chickens.
