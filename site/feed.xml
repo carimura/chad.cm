@@ -5,15 +5,31 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jul 2025 21:02:05 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 20 Sep 2025 14:56:09 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
+      <title>Losing Touch with the Inner Workings</title>
+      <link>https://chad.cm/posts/2025-09-20-ai-tools-understanding.html</link>
+      <description>As I use AI tools to solve time-consuming things, I find myself becoming less and less aware of how those things work under the hood.</description>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-09-20-ai-tools-understanding.html</guid>
+      <content:encoded><![CDATA[<p>As I use AI tools to solve time-consuming things, I find myself becoming less and less aware of how those things work under the hood. A simple example would be for maintaining our Inside.java site. I am an infrequent editor, so when I make changes, I forget the project details: required markdown fields, folder structure, special static site tags, etc. Now I never need to relearn, our AI tools can add posts faster than I can type <code>bundle exec jekyll serve</code> [1].</p>
+<img src="/assets/chatgpt-ai-tools.png" alt="ChatGPT conversation about AI tools" style="float: right; margin: 10px 0 20px 20px; max-width: 350px;">
+<p>I suppose this is a good thing as I then can spend more time on higher leverage things, but it does raise a yellow flag given most of my career in tech has been in understanding the inner workings of things. But, I guess I haven't look at the kernal code, or my keyboard drivers, or the OS code, or Excel's code (nor do I have that), or anything else that has added layers of abstraction over the years.</p>
+<p>Even this post itself, although 100% written by me [2] (I just can't use AI tools to write for me, the style bothers me beyond belief), I asked an agent to go and find my blog in my projects tree and add the post. It's even using the static site generator I created myself. What a world.</p>
+<p>What's next?</p>
+<p>[1] Yes, we used Ruby to launch the site quickly back in 2020, but we have since created two new Java static site generators and ported the site over to one of them, to be deployed soon alongside some new other new stuff we're building.</p>
+<p>[2] Ok I used it to create the image, obviously</p>
+]]></content:encoded>
+    </item>
+
+    <item>
       <title>The Individualized Creator Economy</title>
-      <link>https://chad.cm/posts/2025-07-02-building-bingo.html</link>
+      <link>https://chad.cm/posts/2025-07-02-ice.html</link>
       <description>What I find interesting in this example is this trend towards, what I&apos;m calling to myself the Individualized Creator Economy, or ICE for sure.</description>
       <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://chad.cm/posts/2025-07-02-building-bingo.html</guid>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-07-02-ice.html</guid>
       <content:encoded><![CDATA[<p>Like almost every curious engineer, I've been playing around with various AI tools to see what they can do. I've basically hacked on three projects, formed a hypothesis of where the world might be going, and also found some interesting parallels to serverless computing (that my last company focused on).</p>
 <h2>Project 1: Building Speedcam</h2>
 <p>My first project, which is still ongoing, involves porting OpenCV code to Java's new <a href="https://openjdk.org/jeps/454">FFM API</a> for faster object detection. Specifically I have a camera at the front of our property on the road logging speeding offenders. It works, but it's pretty slow, and I'd like to keep the processing both batch oriented, and local. So far so good, but since the API is quite new and OS-specific compiling, linking, etc is complex, you reach the limits of how much even the best frontier models can handle. They mostly just keep regurgitating the same &quot;fixes&quot; probably buried in Stack Overflow and then get increasingly frustrated before giving up.</p>
