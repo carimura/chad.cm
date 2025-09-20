@@ -19,4 +19,4 @@ What's next?
 
 [1] Yes, we used Ruby to launch the site quickly back in 2020, but we have since created two new Java static site generators and ported the site over to one of them, to be deployed soon alongside some new other new stuff we're building.
 
-[2] Ok I used it to create the image, obviously
+[2] Ok I used AI to create the image, obviously

@@ -5,7 +5,7 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Sep 2025 14:56:09 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 20 Sep 2025 15:01:31 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
@@ -20,7 +20,7 @@
 <p>Even this post itself, although 100% written by me [2] (I just can't use AI tools to write for me, the style bothers me beyond belief), I asked an agent to go and find my blog in my projects tree and add the post. It's even using the static site generator I created myself. What a world.</p>
 <p>What's next?</p>
 <p>[1] Yes, we used Ruby to launch the site quickly back in 2020, but we have since created two new Java static site generators and ported the site over to one of them, to be deployed soon alongside some new other new stuff we're building.</p>
-<p>[2] Ok I used it to create the image, obviously</p>
+<p>[2] Ok I used AI to create the image, obviously</p>
 ]]></content:encoded>
     </item>
 
