@@ -49,7 +49,7 @@ Below is my list, and if you have others, I'm looking for a few more.
 
 <img src="/assets/posts/stardew-valley.jpg" alt="Stardew Valley gameplay" class="game-image">
 
-[Stardew Valley](https://www.stardewvalley.net/) is slightly different as at its core it's a farming simulator, so it's open world and not linear, but it's super fun and quite kid-friendly as you can farm, fish, ride horses, chop down trees, buy chickens, goats, pigs, and build houses and rooms and stuff. There are a few things that are a bit more mature like love stories and dark caves with scary skulls that scared the kids a bit, but all of that stuff is mostly avoidable.
+[Stardew Valley](https://www.stardewvalley.net/) is slightly different as it is a non-linear open-world farming simulator, but it's super fun and quite kid-friendly as you can farm, fish, ride horses, chop down trees, buy chickens, goats, pigs, and build houses and rooms and stuff. There are a few things that are a bit more mature like love stories and dark caves with scary skulls that scared the kids a bit, but all of that stuff is mostly avoidable.
 
 <div class="standout-quote">
 "Games that are slow, thoughtful, creative, without mature undertones or messaging, and void of most dark patterns."
