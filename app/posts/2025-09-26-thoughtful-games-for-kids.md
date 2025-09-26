@@ -43,7 +43,7 @@ Below is my list, and if you have others, I'm looking for a few more.
 
 <img src="/assets/posts/machinarium-game.jpg" alt="Machinarium gameplay" class="game-image">
 
-[Machinarium](https://amanita-design.net/games/machinarium.html) is a cute robot game where you start outside the city putting the robot back together, and then finding out why he was cast out of the city. It does present a cute robot love story where my daughter called them "mommy and daddy robots," and the game is slightly darker than the others because the world seems like a kid version of a post-apocalypse, but it still meets most of my criteria and we enjoyed playing it.
+[Machinarium](https://amanita-design.net/games/machinarium.html) is a cute'ish robot game where you start outside the city putting the robot back together, and then proceed to solve puzzles going back through the city to find out what happened. It does present a robot love story where my daughter called them "mommy and daddy robots", and the game is slightly darker than the others because the world seems sort of "fun post-apocalypse", but it still meets most of my criteria and we enjoyed playing it.
 
 ## Stardew Valley
 
