@@ -26,7 +26,9 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
+    margin-top: 1.4em;
+    
 }
 
 h3 {
@@ -326,5 +328,70 @@ p#date {
 @keyframes scaleIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+
+/*--- BLOG POST COMPONENTS ---*/
+
+/* Spoiler text that can be clicked to reveal */
+.spoiler {
+    background-color: light-dark(#333, #555);
+    color: light-dark(#333, #555);
+    cursor: pointer;
+    border-radius: 3px;
+    display: inline;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.spoiler:hover {
+    background-color: light-dark(#444, #666);
+}
+
+.spoiler.revealed {
+    background-color: transparent;
+    color: inherit;
+    cursor: auto;
+    user-select: text;
+}
+
+/* Standout quotes with better dark mode support */
+.standout-quote {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: light-dark(#2c3e50, #a8c7e8);
+    border-left: 4px solid light-dark(#3498db, #4db8ff);
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    background: light-dark(rgba(52, 152, 219, 0.05), rgba(77, 184, 255, 0.05));
+    padding: 15px 15px 15px 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Game images in blog posts */
+.game-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+/* Main/hero image floated to the right */
+.main-image {
+    float: right;
+    margin: 0 0 20px 20px;
+    max-width: 400px;
+}
+
+@media (max-width: 600px) {
+    .main-image {
+        float: none;
+        margin: 20px auto;
+        display: block;
+        max-width: 100%;
+    }
+
 }
 

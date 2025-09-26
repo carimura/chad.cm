@@ -1,6 +1,7 @@
-// Image modal functionality
+// Image modal functionality and blog components
 document.addEventListener('DOMContentLoaded', function() {
     initImageModal();
+    initSpoilerText();
 });
 
 function initImageModal() {
@@ -46,5 +47,15 @@ function openImageModal(src, alt) {
                 document.body.removeChild(existingModal);
             }
         }
+    });
+}
+
+// Spoiler text functionality
+function initSpoilerText() {
+    const spoilers = document.querySelectorAll('.spoiler');
+    spoilers.forEach(spoiler => {
+        spoiler.addEventListener('click', function() {
+            this.classList.add('revealed');
+        });
     });
 }
