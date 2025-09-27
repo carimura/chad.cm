@@ -210,14 +210,15 @@ main#post {
     a {
         color: light-dark(#000, #FFF);
     }
-    a:hover {
-        text-decoration: none;
-    }
 }
 
 h1.post-title {
     margin: 0 0 10px 0;
     color: light-dark(#000, #FFF);
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 p#date {
