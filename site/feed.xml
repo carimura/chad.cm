@@ -5,15 +5,102 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Sep 2025 20:46:44 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 10 Oct 2025 08:50:44 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
-      <title>Thoughtful Games for Kids</title>
-      <link>https://chad.cm/posts/2025-09-26-thoughtful-games-for-kids.html</link>
+      <title>Getting jpackage to Work with CrowdStrike</title>
+      <link>https://chad.cm/posts/2025-10-10-jpackage-crowdstrike-code-signing.html</link>
+      <description>How to properly code sign jpackage applications to avoid CrowdStrike quarantine on macOS.</description>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-10-10-jpackage-crowdstrike-code-signing.html</guid>
+      <content:encoded><![CDATA[<p>I wrote a <a href="https://github.com/carimura/gus">small terminal agent called Gus</a> in Java named after one of my dogs (the big one) to play around with building agents and using tools and stuff. I might rename it to arc but that's my <a href="https://chad.cm/posts/2025-05-28-building-arc">static site generator</a>. I think the name arc is cooler, whereas Gus is more for loafing around with the chickens and looking homeless. I digress.</p>
+<p>I discovered the hard way that because CrowdStrike is installed on my machine, I couldn't run apps built with <code>jpackage</code>, which is Java's packaging tool to bundle a runtime with your app and produce a native package. I use this for command-line stuff in Java. Like Arc. And Gus. Everything was fine on my home machine. Until they met my work machine. CrowdStrike would kill my app and quarantine the executable file. I'm guessing our IT group will provide an exception for me, but I felt like learning more so I dove in.</p>
+<p>This blog post is for me, so I can repeat this.</p>
+<h2>The Problem</h2>
+<p>The problem is because running a jpackage-built app results in the process being killed immediately:</p>
+<pre><code class="language-bash">./output/Hello.app/Contents/MacOS/Hello
+[1]    30464 killed     ./output/Hello.app/Contents/MacOS/Hello
+</code></pre>
+<p>CrowdStrike Falcon quarantines the executable because of a file called <code>libjli.dylib</code>, which by default with jpackage is an &quot;ad-hoc&quot; signed binary (<code>codesign -s -</code>). Apparently this isn't very trustworthy. Like Gus himself. The real Gus has been licking his lips around the baby chickens. The protector becomes the aggressor.</p>
+<h2>The Solution</h2>
+<h3>1. Get an Apple Developer Certificate</h3>
+<p>Once enrolled in the Apple Developer Program, you need to create a <strong>Developer ID Application</strong> certificate (not &quot;Apple Development&quot; or &quot;Mac App Distribution&quot;). This is specifically for signing apps distributed outside the Mac App Store.</p>
+<h3>2. Create a Certificate Signing Request</h3>
+<pre><code class="language-bash">openssl req -new -newkey rsa:2048 -nodes \
+  -keyout DeveloperID.key \
+  -out CertificateSigningRequest.certSigningRequest \
+  -subj &quot;/emailAddress=you@example.com/CN=Your Name/C=US&quot;
+</code></pre>
+<p>Upload the <code>.certSigningRequest</code> file to Apple Developer portal, select G2 Sub-CA, and download the resulting <code>.cer</code> file.</p>
+<h3>3. Import the Certificate</h3>
+<pre><code class="language-bash"># Import the certificate
+security import developerID_application.cer -k ~/Library/Keychains/login.keychain-db
+
+# Import the private key
+security import DeveloperID.key -k ~/Library/Keychains/login.keychain-db
+
+# Download and import Apple's intermediate certificate
+curl -O https://www.apple.com/certificateauthority/DeveloperIDG2CA.cer
+security import DeveloperIDG2CA.cer -k ~/Library/Keychains/login.keychain-db
+
+# Verify it's available
+security find-identity -v -p codesigning
+</code></pre>
+<p>You should see your Developer ID Application identity listed.</p>
+<h3>4. Create an Entitlements File</h3>
+<p>The JVM requires specific entitlements to run with hardened runtime:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;com.apple.security.cs.allow-jit&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;com.apple.security.cs.allow-unsigned-executable-memory&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;com.apple.security.cs.disable-library-validation&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+<p>Save this as <code>entitlements.plist</code>.</p>
+<h3>5. Build and Sign with jpackage</h3>
+<pre><code class="language-bash">jpackage \
+  --name Hello \
+  --type app-image \
+  --input /path/to/input \
+  --main-jar Hello.jar \
+  --dest /path/to/output \
+  --runtime-image /path/to/runtime \
+  --mac-sign \
+  --mac-signing-key-user-name &quot;Developer ID Application: Your Name (TEAMID)&quot; \
+  --verbose
+</code></pre>
+<p>If jpackage doesn't apply entitlements correctly, manually re-sign:</p>
+<pre><code class="language-bash">codesign --force --sign &quot;Developer ID Application: Your Name (TEAMID)&quot; \
+  --entitlements entitlements.plist \
+  --deep --options runtime \
+  output/Hello.app
+</code></pre>
+<h3>6. Verify the Signature</h3>
+<pre><code class="language-bash">codesign -dv output/Hello.app/Contents/MacOS/Hello
+codesign -d --entitlements - --xml output/Hello.app/Contents/MacOS/Hello
+</code></pre>
+<p>You should see your Developer ID signature and the entitlements listed.</p>
+<h2>Boom</h2>
+<pre><code class="language-bash">❯ ./output/Hello.app/Contents/MacOS/Hello
+Hello, Chad
+</code></pre>
+<p>Boom.</p>
+]]></content:encoded>
+    </item>
+
+    <item>
+      <title>The Lost Art of Slow Gaming</title>
+      <link>https://chad.cm/posts/2025-09-26-the-lost-art-of-slow-gaming.html</link>
       <description>Finding games for kids that are slow, thoughtful, creative, and void of dark patterns in today&apos;s digital landscape.</description>
       <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://chad.cm/posts/2025-09-26-thoughtful-games-for-kids.html</guid>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-09-26-the-lost-art-of-slow-gaming.html</guid>
       <content:encoded><![CDATA[<img src="/assets/posts/lumino-city-lumi.jpg" alt="Lumi from Lumino City" class="main-image">
 <p>Like many technologists, I grew up glued to computers. Between my gaming addiction and my BBS operation (building and rebuilding systems in Telegard, Renegade, Wildcat, etc.), suffice it to say computers are a big part of who I am today. And now that I have 3 kids of my own (all under 6 years old), I want them to be able to explore computers the same way I did. Except, I don't. There is no way I'll give them the same freedom I had, as &quot;computers&quot; are now just black box portals into much darker and sinister things. Sadly.</p>
 <p>I know what you're thinking: &quot;get off my lawn, let the kids be kids, you had Leisure Suit Larry, Chad!&quot;. But remember, LSL was a text-based adventure that moved slowly from scene to scene, where you had to solve open-ended puzzles with text-based prompts and a few clues. No dark patterns, no in-game purchases (except for maybe a beer at Lefty's), no slot-machine sounds with flashing lights directly targeting dopamine receptors, no browsing to TikTok or YouTube for &quot;walkthroughs&quot; or even worse, to watch other people play the game. It was just me helping Larry look for love in all the wrong places.</p>

@@ -1,5 +1,5 @@
 ---
-title: "Thoughtful Games for Kids"
+title: "The Lost Art of Slow Gaming"
 date: 2025-09-26
 type: post
 template: post.html
