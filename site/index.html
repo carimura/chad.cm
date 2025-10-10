@@ -56,7 +56,7 @@
 <pre><code class="language-bash">./output/Hello.app/Contents/MacOS/Hello
 [1]    30464 killed     ./output/Hello.app/Contents/MacOS/Hello
 </code></pre>
-<p>CrowdStrike Falcon quarantines the executable because of a file called <code>libjli.dylib</code>, which by default with jpackage is an &quot;ad-hoc&quot; signed binary (<code>codesign -s -</code>). Apparently this isn't very trustworthy. Like Gus himself. The real Gus has been licking his lips around the baby chickens. The protector becomes the aggressor.</p>
+<p>CrowdStrike Falcon quarantines the executable because of a file called <code>libjli.dylib</code>, which is a core part of the JVM launcher, but also is unsigned (or ad-hoc signed or something). Apparently this isn't very trustworthy. Like Gus himself. The real Gus has been licking his lips around the baby chickens. The protector becomes the aggressor.</p>
 <h2>The Solution</h2>
 <h3>1. Get an Apple Developer Certificate</h3>
 <p>Once enrolled in the Apple Developer Program, you need to create a <strong>Developer ID Application</strong> certificate (not &quot;Apple Development&quot; or &quot;Mac App Distribution&quot;). This is specifically for signing apps distributed outside the Mac App Store.</p>

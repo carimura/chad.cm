@@ -22,7 +22,7 @@ The problem is because running a jpackage-built app results in the process being
 [1]    30464 killed     ./output/Hello.app/Contents/MacOS/Hello
 ```
 
-CrowdStrike Falcon quarantines the executable because of a file called `libjli.dylib`, which by default with jpackage is an "ad-hoc" signed binary (`codesign -s -`). Apparently this isn't very trustworthy. Like Gus himself. The real Gus has been licking his lips around the baby chickens. The protector becomes the aggressor.
+CrowdStrike Falcon quarantines the executable because of a file called `libjli.dylib`, which is a core part of the JVM launcher, but also is unsigned (or ad-hoc signed or something). Apparently this isn't very trustworthy. Like Gus himself. The real Gus has been licking his lips around the baby chickens. The protector becomes the aggressor.
 
 ## The Solution
 
