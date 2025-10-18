@@ -5,8 +5,132 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Oct 2025 08:54:59 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 18 Oct 2025 13:13:04 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
+
+    <item>
+      <title>Building Gus: A Lightweight Terminal Agent in Modern Java</title>
+      <link>https://chad.cm/posts/2025-10-17-building-gus.html</link>
+      <description>I built a terminal AI agent in Java 25 to explore LangChain4j and modern Java features like sealed classes, pattern matching, and text blocks. It&apos;s named after my dog who also needs better training.</description>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2025-10-17-building-gus.html</guid>
+      <content:encoded><![CDATA[<p>I built a terminal agent called <a href="https://github.com/carimura/gus">Gus</a> in Java. It's named after my Great Pyrenees dog who also responds to commands inconsistently. Think of it as v0.0.1-alpha of Claude Code, except written in Java. (Usually I have Claude Code create a bare post, using the README as the starting point, but Claude couldn't help itself and inserted this text at the end of the line above: &quot;and without all the features that make Claude Code actually useful.&quot; Incredible.)</p>
+<h2>New Language Features</h2>
+<h3>Improved Readability with Text Blocks</h3>
+<pre><code class="language-java">private static final String SYSTEM_PROMPT = &quot;&quot;&quot;
+    You are Gus, a friendly and helpful AI assistant.
+    You provide clear, concise, and accurate responses.
+    You're conversational but professional.
+&quot;&quot;&quot;;
+</code></pre>
+<p>Clean, readable, and with ASCII art:</p>
+<pre><code class="language-java">IO.println(&quot;&quot;&quot;
+    -------------------------------------------------------------------
+                ,
+                |`-.__
+                / ' _/
+               ----\s
+              /    }
+             /  \\ /
+         \\ /`   \\\\\\
+          `\\    /_\\\\
+           `~~~~~``~`
+
+    [Using provider %s with model %s]
+
+    (type /exit or Ctrl+D to quit, /help for help, /clear to clear memory)
+    -------------------------------------------------------------------
+
+    Hi, I'm Gus, your friendly neighborhood AI CLI! How can I help today?\s
+    &quot;&quot;&quot;.formatted(provider, model));
+</code></pre>
+<h3>Type Safety with Sealed Classes and Switch</h3>
+<p>Sealed classes let you define a closed hierarchy. Here's the tool system:</p>
+<pre><code class="language-java">public abstract sealed class Tools permits SecretTool,
+                                           SearchWebTool,
+                                           ScrapePageTool {
+    // ...
+}
+</code></pre>
+<p>This tells the compiler exactly which classes can extend <code>Tools</code>. No surprises at runtime, and the compiler can verify exhaustiveness.</p>
+<p>When you combine sealed classes with switch expressions, the compiler knows all possible cases:</p>
+<pre><code class="language-java">return switch (tool) {
+    case SecretTool t -&gt; t.secret();
+    case SearchWebTool t -&gt; t.searchWeb(args.get(&quot;arg0&quot;).getAsString());
+    case ScrapePageTool t -&gt; t.scrapePage(args.get(&quot;arg0&quot;).getAsString());
+};
+</code></pre>
+<p>No default case needed - the compiler knows these are the only three possibilities. If you add a new tool to the sealed hierarchy, this switch will fail to compile until you handle it. Type safety for the win.</p>
+<h3>The IO Class</h3>
+<p>Java 25 added <code>IO</code> to <code>java.base</code> as a cleaner alternative to <code>System.out</code>:</p>
+<pre><code class="language-java">IO.println(&quot;Goodbye!&quot;);
+IO.print(&quot;\r&quot; + animation[i % animation.length] + &quot; Thinking...&quot;);
+</code></pre>
+<h2>The Basic Flow</h2>
+<p>Basically Gus is an agent that runs in a loop and can call user-defined tools if needed</p>
+<ol>
+<li><a href="https://github.com/langchain4j/langchain4j">LangChain4j</a> for model abstraction.</li>
+<li><code>ChatService</code> sends it to the model with tool specifications</li>
+<li>Model decides whether to respond directly or call a tool</li>
+<li>If tools are called, Gus executes them and sends results back</li>
+<li>Model uses tool results to generate final response</li>
+<li>Response streams back to the user</li>
+</ol>
+<p>The streaming response handler shows a thinking animation until the first token arrives, then displays the response as it generates.</p>
+<h2>Tool System</h2>
+<p>Tools extend the sealed <code>Tools</code> class and use LangChain4j's <code>@Tool</code> annotation like so:</p>
+<pre><code class="language-java">public final class SearchWebTool extends Tools {
+    @Tool(&quot;Searches the web for current information and returns relevant results&quot;)
+    public String searchWeb(String query) {
+        preToolHook(&quot;searchWeb&quot;, &quot;query='&quot; + query + &quot;'&quot;);
+
+        WebSearchEngine engine = TavilyWebSearchEngine.builder()
+                .apiKey(apiKey)
+                .build();
+
+        WebSearchResults results = engine.search(query);
+    }
+}
+</code></pre>
+<p>The tool framework automatically generates the JSON schema that gets sent to the model. When the model wants to search the web, it returns a tool call request, and the ChatService executes the appropriate tool based on the sealed type.</p>
+<h2>Building and Running</h2>
+<p>Gus uses Maven and jpackage to create a native executable:</p>
+<pre><code class="language-bash">mvn -Pcomplete clean package
+</code></pre>
+<p>This produces a native app bundle at <code>target/jpackage/gus.app</code>. I wrote about <a href="https://chad.cm/posts/2025-10-10-jpackage-crowdstrike-code-signing">getting jpackage to work with CrowdStrike</a> in a previous post.</p>
+<p>Then you can run it:</p>
+<pre><code class="language-bash">gus --openai  # Uses OpenAI's models
+gus --ollama  # Uses local Ollama (default)
+</code></pre>
+<p>If you want to try it, <a href="https://github.com/carimura/gus">the code is on GitHub</a>.</p>
+<pre><code class="language-bash">❯ gus --ollama
+-------------------------------------------------------------------
+            ,
+            |`-.__
+            / ' _/
+           ----\s
+          /    }
+         /  \\ /
+     \\ /`   \\\\\\
+      `\\    /_\\\\
+       `~~~~~``~`
+
+[Using provider ollama with model llama3.2]
+
+Hi, I'm Gus, your friendly neighborhood AI CLI! How can I help today?
+
+&gt; What's the weather in San Francisco?
+
+● searchWeb(query='weather San Francisco')
+
+The current weather in San Francisco is partly cloudy with a temperature
+of 62°F. Expect mild conditions throughout the day with a high of 68°F.
+
+&gt;
+</code></pre>
+<p>Boom.</p>
+]]></content:encoded>
+    </item>
 
     <item>
       <title>Getting jpackage to Work with CrowdStrike</title>
