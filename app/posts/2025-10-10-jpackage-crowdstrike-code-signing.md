@@ -11,7 +11,8 @@ I wrote a [small terminal agent called Gus](https://github.com/carimura/gus) in 
 
 I discovered the hard way that because CrowdStrike is installed on my machine, I couldn't run apps built with `jpackage`, which is Java's packaging tool to bundle a runtime with your app and produce a native package. I use this for command-line stuff in Java. Like Arc. And Gus. Everything was fine on my home machine. Until they met my work machine. CrowdStrike would kill my app and quarantine the executable file. I'm guessing our IT group will provide an exception for me, but I felt like learning more so I dove in.
 
-This blog post is for me, so I can repeat this.
+[Update: As suspected, this was a CrowdStrike false positive because running jpackage locally on your own app shouldn't be a threat. Distributing it might be, of course, and thus it should be signed.]
+
 
 ## The Problem
 
@@ -96,7 +97,7 @@ jpackage \
   --verbose
 ```
 
-If jpackage doesn't apply entitlements correctly, manually re-sign:
+If jpackage doesn't apply entitlements correctly, you'll need to manually re-sign (update: this is a bug that has been fixed and should ship in JDK 26 making this step unnecessary):
 
 ```bash
 codesign --force --sign "Developer ID Application: Your Name (TEAMID)" \
@@ -122,3 +123,99 @@ Hello, Chad
 ```
 
 Boom.
+
+---
+
+## Update: Maven settings to make this all happen as an optional profile step
+
+I'm taking this code out of my demos now since I can run this all unsigned on my work laptop. But if anyone wants to distribute a jpackaged app to folks on machines running greedy AI security bots, the code below is for you.
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.panteleyev</groupId>
+            <artifactId>jpackage-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>create-installer</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>jpackage</goal>
+                    </goals>
+                    <configuration>
+                        <name>YourApp</name>
+                        <type>APP_IMAGE</type>
+                        <!-- ... other config ... -->
+                        <!-- NO macSign, macSigningKeyUserName, or macEntitlements here -->
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+<profiles>
+    <profile>
+        <id>signed</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.panteleyev</groupId>
+                    <artifactId>jpackage-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>create-installer</id>
+                            <configuration>
+                                <macSign>true</macSign>
+                                <macSigningKeyUserName>${env.MAC_SIGNING_KEY_NAME}</macSigningKeyUserName>
+                                <macEntitlements>${env.MAC_ENTITLEMENTS}</macEntitlements>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- temp fix until JDK 26 I hope -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <executions>
+                        <execution>
+                            <id>resign-with-entitlements</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>exec</goal>
+                            </goals>
+                            <configuration>
+                                <executable>codesign</executable>
+                                <arguments>
+                                    <argument>--force</argument>
+                                    <argument>--sign</argument>
+                                    <argument>${env.MAC_SIGNING_KEY_NAME}</argument>
+                                    <argument>--entitlements</argument>
+                                    <argument>${env.MAC_ENTITLEMENTS}</argument>
+                                    <argument>--options</argument>
+                                    <argument>runtime</argument>
+                                    <argument>--deep</argument>
+                                    <argument>${project.build.directory}/jpackage/YourApp.app</argument>
+                                </arguments>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
+```
+
+Set the environment variables before running the signed build:
+
+```bash
+export MAC_SIGNING_KEY_NAME="Developer ID Application: Your Name (TEAMID)"
+export MAC_ENTITLEMENTS="/path/to/entitlements.plist"
+mvn package -Psigned
+```
+
+This keeps your local development builds fast and only runs the signing steps when you actually need them for distribution.
