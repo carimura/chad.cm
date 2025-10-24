@@ -19,7 +19,7 @@ Hi, my name is Chad Arimura.
 
 Most importantly I am a husband, father of 3, Christian, boss of a few dogs, and commander and chief to 15-20 chickens.
 
-I am a 3x entrepreneur, most recently co-founder and CEO of [Iron.io](https://www.crunchbase.com/organization/iron-io) where we grew the business while pioneering serverless computing including some of the earliest usages of the term "serverless" in 2010. Thanks to Ken Fromm for coining and pushing it! We sold the company in 2017 and joined Oracle.
+I am also a 3x entrepreneur, most recently co-founder and CEO of [Iron.io](https://www.crunchbase.com/organization/iron-io) where we grew the business while pioneering serverless computing including some of the earliest usages of the term "serverless" in 2010. Thanks to Ken Fromm for coining and pushing it! We sold the company in 2017 and joined Oracle.
 
 On joining Oracle as Vice President of Serverless, I established the serverless organization, which produced [The Fn Project](http://fnproject.io) and later [Oracle Functions](https://www.forbes.com/sites/adrianbridgwater/2019/08/06/oracle-extends-serverless-strategy-to-combat-cloud-complexity), making Oracle one of the only major clouds to offer a functions-as-a-service platform largely built on upstream open source code. Once the serverless org was fully established, I [moved to the Java Platform Group](https://medium.com/@carimura/image-processing-in-java-1e468c92c216) to help build out the developer relations and Education groups.
 
