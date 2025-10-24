@@ -17,7 +17,7 @@ active_nav: about
 
 Hi, my name is Chad Arimura.
 
-Most importantly I am a husband, father of 3, Christian, boss of a few dogs, and commander and chief to 15-20 chickens.
+I am a husband, father of 3, Christian, boss of a few dogs, and commander and chief to 15-20 chickens.
 
 I am also a 3x entrepreneur, most recently co-founder and CEO of [Iron.io](https://www.crunchbase.com/organization/iron-io) where we grew the business while pioneering serverless computing including some of the earliest usages of the term "serverless" in 2010. Thanks to Ken Fromm for coining and pushing it! We sold the company in 2017 and joined Oracle.
 
