@@ -28,5 +28,3 @@ Since joining, we've launched [Dev.java](https://dev.java), [Inside.java](https:
 I grew up running BBS's somewhere around the 14.4 era, and 30 years later I still love [building stuff](https://github.com/carimura) when I get the chance, which I'll try and write about here.
 
 You can find me on [X](https://x.com/chadarimura) but I'm not big on socials. I used to write on [Medium](https://medium.com/@carimura), now I'll write more here.
-
-But 
