@@ -1,7 +1,11 @@
 
-built with [Arc](https://github.com/carimura/arc/)
+Built with [Arc](https://github.com/carimura/arc/)
 
+## To Build
 
-## TODO
+`arc`
 
-- RSS feed
+## To Run Locally
+
+`cd site; jwebserver;`
+
