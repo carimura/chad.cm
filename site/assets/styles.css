@@ -1,9 +1,47 @@
 :root {
-    color-scheme: light;
+    --bg: white;
+    --fg: #e0e0e0;
+    --text: black;
+    --text-secondary: #777;
+    --text-muted: #555;
+    --surface: #EEE;
+    --surface-alt: #f4f4f4;
+    --border: #aaa;
+    --link: #0070f3;
+    --nav-active: darkblue;
+    --hr: #222;
+    --heading-color: #000;
+    --toggle-bg: #AAA;
+    --toggle-border: #555;
+    --spoiler: #333;
+    --spoiler-hover: #444;
+    --quote-text: #2c3e50;
+    --quote-border: #3498db;
+    --quote-bg: rgba(52, 152, 219, 0.05);
+    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 :root.dark {
-    color-scheme: dark;
+    --bg: #1a1a1a;
+    --fg: #e0e0e0;
+    --text: #e0e0e0;
+    --text-secondary: #999;
+    --text-muted: #aaa;
+    --surface: #2a2a2a;
+    --surface-alt: #2a2a2a;
+    --border: #444;
+    --link: #4db8ff;
+    --nav-active: #9bd6f8;
+    --hr: #eee;
+    --heading-color: #FFF;
+    --toggle-bg: #333;
+    --toggle-border: #AAA;
+    --spoiler: #555;
+    --spoiler-hover: #666;
+    --quote-text: #a8c7e8;
+    --quote-border: #4db8ff;
+    --quote-bg: rgba(77, 184, 255, 0.05);
+    --shadow: rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -17,8 +55,8 @@ body {
     font-size: 1.15em;
     margin: 0;
     min-height: 100%;
-    background-color: light-dark(white, #1a1a1a);
-    color: light-dark(black, #e0e0e0);
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 h1, h2, h3 {
@@ -32,7 +70,7 @@ h1 {
 h2 {
     font-size: 1.4em;
     margin-top: 1.4em;
-    
+
 }
 
 h3 {
@@ -40,18 +78,18 @@ h3 {
 }
 
 pre {
-    background: light-dark(#f4f4f4, #2a2a2a);
+    background: var(--surface-alt);
     padding: 1em;
     border-radius: 5px;
     overflow-x: auto;
-    color: light-dark(black, #e0e0e0);
+    color: var(--text);
 }
 
 code {
-    background: light-dark(#f4f4f4, #2a2a2a);
+    background: var(--surface-alt);
     padding: 0.2em 0.4em;
     border-radius: 3px;
-    color: light-dark(black, #e0e0e0);
+    color: var(--text);
 }
 
 pre code {
@@ -60,18 +98,18 @@ pre code {
 }
 
 blockquote {
-    background: light-dark(#EEE, #2a2a2a);
+    background: var(--surface);
     padding: 0.8em;
     margin: 1em 0;
     font-weight: 350;
 }
 
 hr {
-    border: none; border-bottom: dashed 1px light-dark(#222, #eee); margin: 30px 0 0 0;
+    border: none; border-bottom: dashed 1px var(--hr); margin: 30px 0 0 0;
 }
 
 a {
-    color: light-dark(#0070f3, #4db8ff);
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -80,7 +118,7 @@ a:hover {
 }
 
 a:visited {
-    color: light-dark(#0070f3, #4db8ff);
+    color: var(--link);
 }
 
 .social-links a:hover {
@@ -95,15 +133,15 @@ main {
 
 header {
     margin-bottom: 50px;
-    border-bottom: 1px solid light-dark(#aaa, #444);
+    border-bottom: 1px solid var(--border);
     padding: 20px;
-    background-color: light-dark(#EEE, #2a2a2a);
+    background-color: var(--surface);
     text-align: center;
 
     #site-title {
         a {
             text-decoration: none;
-            color: light-dark(#000, #ddd);
+            color: var(--heading-color);
             font-weight: bold;
             font-size: 1.7em;
         }
@@ -142,7 +180,7 @@ header {
             color: coral;
         }
         a.active {
-            color: light-dark(darkblue, #9bd6f8);
+            color: var(--nav-active);
         }
 
         li::after {
@@ -155,14 +193,14 @@ header {
             visibility: hidden;
           }
     }
-    
+
 }
 
 footer {
     text-align: center;
     margin-top: 50px;
-    border-top: 1px solid light-dark(#aaa, #444);
-    background-color: light-dark(#EEE, #2a2a2a);
+    border-top: 1px solid var(--border);
+    background-color: var(--surface);
     padding: 25px;
 
     p {
@@ -182,7 +220,7 @@ footer {
     width: 160px;
     font-size: 0.7em;
     line-height: normal;
-    color: light-dark(#555, #aaa);
+    color: var(--text-muted);
     float: right;
 
     img {
@@ -210,7 +248,7 @@ footer {
 
 .home-post-date {
     display: block;
-    color: light-dark(#777, #999);
+    color: var(--text-secondary);
     font-size: 0.85em;
     margin-bottom: 0;
 }
@@ -230,13 +268,13 @@ main#post {
     margin: 40px 0 30px 0;
 
     a {
-        color: light-dark(#000, #FFF);
+        color: var(--heading-color);
     }
 }
 
 h1.post-title {
     margin: 0 0 10px 0;
-    color: light-dark(#000, #FFF);
+    color: var(--heading-color);
 
     a:hover {
         text-decoration: underline;
@@ -247,7 +285,7 @@ p#date {
     margin: 0 0 5px 0;
     padding: 0;
     font-weight: 500;
-    color: light-dark(#777, #999);
+    color: var(--text-secondary);
     font-size: 1em;
 }
 
@@ -271,8 +309,8 @@ p#date {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: light-dark(#AAA, #333);
-    border: 1px dashed light-dark(#555, #AAA);
+    background: var(--toggle-bg);
+    border: 1px dashed var(--toggle-border);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -358,8 +396,8 @@ p#date {
 
 /* Spoiler text that can be clicked to reveal */
 .spoiler {
-    background-color: light-dark(#333, #555);
-    color: light-dark(#333, #555);
+    background-color: var(--spoiler);
+    color: var(--spoiler);
     cursor: pointer;
     border-radius: 3px;
     display: inline;
@@ -368,7 +406,7 @@ p#date {
 }
 
 .spoiler:hover {
-    background-color: light-dark(#444, #666);
+    background-color: var(--spoiler-hover);
 }
 
 .spoiler.revealed {
@@ -382,12 +420,12 @@ p#date {
 .standout-quote {
     font-size: 1.3em;
     font-weight: 500;
-    color: light-dark(#2c3e50, #a8c7e8);
-    border-left: 4px solid light-dark(#3498db, #4db8ff);
+    color: var(--quote-text);
+    border-left: 4px solid var(--quote-border);
     padding-left: 20px;
     margin: 30px 0;
     font-style: italic;
-    background: light-dark(rgba(52, 152, 219, 0.05), rgba(77, 184, 255, 0.05));
+    background: var(--quote-bg);
     padding: 15px 15px 15px 20px;
     border-radius: 0 5px 5px 0;
 }
@@ -398,7 +436,7 @@ p#date {
     height: auto;
     margin: 10px 0;
     border-radius: 8px;
-    box-shadow: 0 4px 6px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 6px var(--shadow);
 }
 
 /* Main/hero image floated to the right */
@@ -487,7 +525,7 @@ p#date {
     margin-top: 6px;
     font-size: 0.85em;
     font-weight: bold;
-    color: light-dark(black, #e0e0e0);
+    color: var(--text);
 }
 
 @media (max-width: 600px) {
@@ -496,4 +534,3 @@ p#date {
         gap: 15px;
     }
 }
-
