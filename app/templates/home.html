@@ -14,17 +14,33 @@
 
         {{ content }}
 
-        <p><strong>Latest Post</strong></p>
-        <article class="post">
-            <div id="post-header">
-                <p id="date">{{ latest_post.formatted_date }}</p>
-                <h1 class="post-title"><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h1>
-            </div>
-            
-            <div id="post-content">
-                {{ latest_post.rendered_content }}
-            </div>
-        </article>
+        <h2>Speaking</h2>
+        <div class="video-thumbnails">
+            <a href="https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858" target="_blank" class="video-thumb">
+                <img src="https://img.youtube.com/vi/3fLCOqpIfI0/mqdefault.jpg" alt="JavaOne 2026 Opening Keynote">
+                <span>JavaOne 2026 Keynote</span>
+            </a>
+            <a href="https://www.youtube.com/watch?v=mk_2MIWxLI0" target="_blank" class="video-thumb">
+                <img src="https://img.youtube.com/vi/mk_2MIWxLI0/mqdefault.jpg" alt="JavaOne 2025 Opening Keynote">
+                <span>JavaOne 2025 Keynote</span>
+            </a>
+            <a href="https://vimeo.com/747697437" target="_blank" class="video-thumb">
+                <img src="/assets/openjdk-javazone-2022.png" alt="OpenJDK: Where the Magic Happens, JavaZone 2022">
+                <span>OpenJDK at JavaZone 2022</span>
+            </a>
+        </div>
+        <p><a href="/speaking.html">See more speaking →</a></p>
+
+        <hr />
+
+        <h2>Writing</h2>
+        {% for post in posts %}
+        <div class="home-post">
+            <span class="home-post-date">{{ post.formatted_date }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+        {% endfor %}
+        <p><a href="/writing.html">See more writing →</a></p>
     </main>
 
     <footer>

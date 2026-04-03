@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initImageModal() {
-    const images = document.querySelectorAll('img');
-    
+    const images = document.querySelectorAll('img:not(.video-thumb img)');
+
     images.forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function() {

@@ -10,6 +10,22 @@ I used to speak quite often about Java, serverless computing, entrepreneurship, 
 
 Here's an incomplete sort-of-ordered list of events I've spoken at:
 
+<div class="video-thumbnails">
+  <a href="https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858" target="_blank" class="video-thumb">
+    <img src="https://img.youtube.com/vi/3fLCOqpIfI0/mqdefault.jpg" alt="JavaOne 2026 Opening Keynote">
+    <span>JavaOne 2026 Keynote</span>
+  </a>
+  <a href="https://www.youtube.com/watch?v=mk_2MIWxLI0" target="_blank" class="video-thumb">
+    <img src="https://img.youtube.com/vi/mk_2MIWxLI0/mqdefault.jpg" alt="JavaOne 2025 Opening Keynote">
+    <span>JavaOne 2025 Keynote</span>
+  </a>
+  <a href="https://vimeo.com/747697437" target="_blank" class="video-thumb">
+    <img src="/assets/openjdk-javazone-2022.png" alt="OpenJDK: Where the Magic Happens, JavaZone 2022">
+    <span>OpenJDK at JavaZone 2022</span>
+  </a>
+</div>
+
+- JavaOne 2026 Opening Keynote, March 2026 ([video](https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858))
 - JavaOne 2025 Opening Keynote, March 2025 ([video](https://www.youtube.com/watch?v=mk_2MIWxLI0))
 - Elevate Your Emerging AI Solutions with Java, CloudWorld 2024
 - JavaOne 2022 Technical Keynote, October 2022 ([video](https://www.youtube.com/watch?v=NEVap2Wt5go))

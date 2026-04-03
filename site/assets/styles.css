@@ -1,5 +1,9 @@
 :root {
-    color-scheme: light dark;
+    color-scheme: light;
+}
+
+:root.dark {
+    color-scheme: dark;
 }
 
 html {
@@ -198,6 +202,24 @@ footer {
 
 
 
+/*--- HOME ---*/
+
+.home-post {
+    padding: 12px 0;
+}
+
+.home-post-date {
+    display: block;
+    color: light-dark(#777, #999);
+    font-size: 0.85em;
+    margin-bottom: 0;
+}
+
+.home-post a {
+    font-size: 1.1em;
+}
+
+
 /*--- POST ---*/
 
 main#post {
@@ -394,5 +416,84 @@ p#date {
         max-width: 100%;
     }
 
+}
+
+
+/*--- VIDEO THUMBNAILS ---*/
+
+.video-thumbnails {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0 30px 0;
+}
+
+.video-thumb {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    position: relative;
+}
+
+.video-thumb img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.video-thumb::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 12px));
+    width: 44px;
+    height: 32px;
+    background-color: rgba(255, 0, 0, 0.85);
+    border-radius: 10px;
+    z-index: 1;
+    pointer-events: none;
+    transition: background-color 0.2s ease;
+}
+
+.video-thumb::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 2px), calc(-50% - 12px));
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 11px;
+    border-color: transparent transparent transparent white;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.video-thumb:hover::before {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.video-thumb:hover img {
+    opacity: 0.85;
+}
+
+.video-thumb span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: light-dark(black, #e0e0e0);
+}
+
+@media (max-width: 600px) {
+    .video-thumbnails {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
