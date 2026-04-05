@@ -17,7 +17,7 @@ active_nav: about
 
 Hi, my name is Chad Arimura.
 
-I am a husband, father of 3, follower of Christ, boss of a few dogs, and commander and chief to 15-20 chickens.
+I am a husband, father of 3, follower of Christ, boss of a few dogs, and commander-in-chief to 15-20 chickens.
 
 I grew up running 3-5 node BBS's somewhere around the 14.4 era, and 30 years later I still love [building stuff](/playground.html) when I get the chance.
 

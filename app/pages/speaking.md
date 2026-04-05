@@ -25,12 +25,18 @@ Here's an incomplete sort-of-ordered list of events I've spoken at:
   </a>
 </div>
 
+## Oracle Java Platform Group
+
 - JavaOne 2026 Opening Keynote, March 2026 ([video](https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858))
 - JavaOne 2025 Opening Keynote, March 2025 ([video](https://www.youtube.com/watch?v=mk_2MIWxLI0))
+- Elevate Your Emerging AI Solutions with Java, AI World 2025
 - Elevate Your Emerging AI Solutions with Java, CloudWorld 2024
 - JavaOne 2022 Technical Keynote, October 2022 ([video](https://www.youtube.com/watch?v=NEVap2Wt5go))
 - OpenJDK: Where the Magic Happens, JavaZone 2022 ([video](https://vimeo.com/747697437))
 - Many episodes of the Inside Java Podcast ([list](https://inside.java/podcast))
+
+## Oracle Serverless Team
+
 - Java in a Serverless World, KubeCon Serverless Summit, November 2019
 - Thinking like a Founder, CodeMotion Madrid Keynote, September 2019 ([link](https://www.youtube.com/watch?v=_1VfSKCATqo))
 - Mono to Micro to Faas Panel, KubeCon 2018 ([link](https://www.youtube.com/watch?v=UPf8sCKNb4E&feature=youtu.be))
@@ -49,6 +55,9 @@ Here's an incomplete sort-of-ordered list of events I've spoken at:
 - Fn Launch, JavaOne Keynote ([video](https://www.youtube.com/watch?v=7bUnlTK_WTo))
 - Serverless Panel, DockerCon EU 2017 ([video](https://dockercon.docker.com/watch/5Ek8NH6M7Lbxsc4KZ9PNAg))
 - Intro to Fn, Moby Summit 2017
+
+## Iron.io
+
 - Harnessing Microservices for Agility in IoT Apps, StreamConf 2015 ([video](https://vimeo.com/127175217))
 - Data Stream Networks Panel, StreamConf 2015 ([video](https://vimeo.com/127449690))
 - Monoliths to Microservices, Sapphire Ventures Techstack 2016 ([video](https://www.youtube.com/watch?v=vgSHIIFIgsg))

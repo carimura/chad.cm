@@ -37,7 +37,7 @@ Another reason was the challenge surface area. Maybe you've heard me say "half t
 A few things we accomplished:
 
 * Hired and led a world-class devrel and education group with zero attrition
-* Turned [Java's YouTube](https://youtube.com/java) into a powerhouse of content with explosive growth
+* Turned [Java's YouTube](https://youtube.com/java) into a powerhouse of engaging content resulting in rapid compound growth across all metrics
 * Launched [Dev.java](https://dev.java), [Inside.java](https://inside.java), [Learn.java](https://learn.java), the [Java Playground](https://dev.java/playground), and grew [OpenJDK.org](https://openjdk.org)
 * Partnered with the College Board to [modernize the AP CS A exams](https://www.youtube.com/live/mk_2MIWxLI0?si=pmA3QO9cHGh2om9A&t=2161) and teaching infrastructure taken by nearly 100k students every year
 * [Shifted](https://thenewstack.io/java-25-oracle-makes-java-easier-to-learn-ready-for-ai-development/) [the](https://devops.com/oracle-delivers-java-25-edition-of-venerable-programming-language-for-the-ai-era/) [market perception](https://www.streetinsider.com/Corporate+News/Oracle+releases+Java+26+with+AI+and+cryptography+enhancements/26172243.html) through 17 new releases of Java and continual briefings with the media, press, analysts, customers, educators, publishers, and more.
