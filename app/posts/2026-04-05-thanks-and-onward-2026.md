@@ -1,6 +1,6 @@
 ---
 title: "Thanks and Onward, 2026"
-date: 2026-04-03
+date: 2026-04-05
 type: post
 template: post.html
 active_nav: writing
@@ -52,7 +52,7 @@ There are too many people to thank, but thank you to all in my group who trusted
 
 ## What's Next?
 
-After my first startup [AllDorm.com](https://alldorm.chad.cm/), I spent a few months (in the "Saratoga House pool") deciding what I wanted to do with my life. That was in 2005. Now for the first time since then, I'm in that pool again, but this time without beer and an amazing family by my side.
+After my first startup [AllDorm.com](https://alldorm.chad.cm/), I spent a few months (in the "Saratoga House pool") deciding what I wanted to do with my life. That was in 2005. Now for the first time since then, I'm in that pool again, but this time without the sun beer, and an amazing family by my side.
 
 There is so much going on at companies of all sizes especially with the explosion of AI platforms and tools. My plan is to start building again and just go have conversations. We'll see where that leads.
 
@@ -60,6 +60,6 @@ And then there are wild ideas like buying some land out of California and buildi
 
 ## Keep in Touch
 
-If you'd like to connect, hit me up on [LinkedIn](https://linkedin.com), [X](https://x.com/chadarimura), or [contact@chad.cm](mailto:contact@chad.cm).
+If you'd like to connect, hit me up on [LinkedIn](https://linkedin.com/in/chadarimura), [X](https://x.com/chadarimura), or [hello@chad.cm](mailto:hello@chad.cm).
 
 
