@@ -32,7 +32,7 @@ First, I had all 3 of my kids there, and we built our home up in Marin (north of
 
 But the enduring reason was the culture of the Java team. Humble, driven, long-term oriented, stewardship-minded. Part of this comes from the Sun Microsystems days, and part from the great leadership of my boss Georges Saab. The downstream effect was a set of amazing peers and the latitude to hire and build incredible teams.
 
-Another reason was the challenge surface area. Maybe you've heard me say "half the global GDP runs on Java". The size of the market available for sentiment shift is just gigantic. And we were really making progress.
+Another reason was the challenge and scope. Maybe you've heard me say "half the global GDP runs on Java". The size of the market is remarkable, and watching the sentiment shift across the industry and ecosystem as we made steady progress was a lot of fun.
 
 A few things we accomplished:
 
@@ -41,14 +41,14 @@ A few things we accomplished:
 * Launched [Dev.java](https://dev.java), [Inside.java](https://inside.java), [Learn.java](https://learn.java), the [Java Playground](https://dev.java/playground), and grew [OpenJDK.org](https://openjdk.org)
 * Partnered with the College Board to [modernize the AP CS A exams](https://www.youtube.com/live/mk_2MIWxLI0?si=pmA3QO9cHGh2om9A&t=2161) and teaching infrastructure taken by nearly 100k students every year
 * [Shifted](https://thenewstack.io/java-25-oracle-makes-java-easier-to-learn-ready-for-ai-development/) [the](https://devops.com/oracle-delivers-java-25-edition-of-venerable-programming-language-for-the-ai-era/) [market perception](https://www.streetinsider.com/Corporate+News/Oracle+releases+Java+26+with+AI+and+cryptography+enhancements/26172243.html) through 17 new releases of Java and continual briefings with the media, press, analysts, customers, educators, publishers, and more.
-* Brought [JavaOne](https://www.youtube.com/@java/playlists) back to California and held a parallel [educators summit](https://www.linkedin.com/pulse/javaone-conference-2026-crystal-sheldon-e5smc/)
+* Brought [JavaOne](https://www.youtube.com/@java/playlists) back to California with a parallel [educators summit](https://www.linkedin.com/pulse/javaone-conference-2026-crystal-sheldon-e5smc/)
 * Launched successful podcasts, one of which my daughter [starred in when she was 3](https://inside.java/2022/09/20/podcast-026/)
 * Assisted the sales and renewals of the business to grow to thousands of customers
 * Ramped up an AI program aligning Java, OpenJDK, Helidon, and the ecosystem, to prepare for Java's role in the future of software development
 
 Ultimately my work spanned developer relations, education, product, engineering, marketing, and the broader ecosystem, to "turn the ship around". This was challenging, rewarding, fulfilling, and fun!
 
-There are too many people to thank, but thank you to all in my group who trusted me on the journey.
+There are too many people to thank, but thank you to all in my group who trusted and joined me on the journey.
 
 ## What's Next?
 
