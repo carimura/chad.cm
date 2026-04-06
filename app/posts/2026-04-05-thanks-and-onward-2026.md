@@ -30,9 +30,11 @@ Big companies, by contrast, are intentionally designed to slow you down with rul
 
 First, I had all 3 of my kids there, and we built our home up in Marin (north of San Francisco). So the season was right. 
 
-But the enduring reason was the culture of the Java team. Humble, driven, long-term oriented, stewardship-minded. Part of this comes from the Sun Microsystems days, and part from the great leadership of my boss Georges Saab. The downstream effect was a set of amazing peers and the latitude to hire and build incredible teams.
+Also, getting stuff done in a corporate environment can be a satisfying accomplishment in and of itself. Startups may be unencumbered, but nobody is listening. With a big company machine behind you, everybody is listening.
 
 Another reason was the challenge and scope. Maybe you've heard me say "half the global GDP runs on Java". The size of the market is remarkable, and watching the sentiment shift across the industry and ecosystem as we made steady progress was a lot of fun.
+
+Finally, the enduring reason was the culture of the Java team. Humble, driven, long-term oriented, stewardship-minded. Part of this comes from the Sun Microsystems days, and part from the great leadership of my boss Georges Saab. The downstream effect was a set of amazing peers and the latitude to hire and build incredible teams.
 
 A few things we accomplished:
 
