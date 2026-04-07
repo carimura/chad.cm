@@ -6,9 +6,9 @@ description: random stuff
 active_nav: playground
 ---
 
-A few tinkering projects. The rest are at [github](https://github.com/carimura).
-
 ## Random Projects
+
+A few tinkering projects. The rest are at [github](https://github.com/carimura).
 
 - **[SpeedCam](https://github.com/carimura/speedcam)** — automated speed detection in Java, exploring OpenCV JNI bindings and the FFM API.
 - **[Gus](https://github.com/carimura/gus)** — agent harness in modern Java. ([post](/posts/2025-10-17-building-gus.html))
