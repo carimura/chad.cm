@@ -23,6 +23,4 @@ A few tinkering projects. The rest are at [github](https://github.com/carimura).
 
 Inspired by [Simon Willison's TIL](https://til.simonwillison.net/).
 
-### 2026-04-07
-
-Used CODEX alongside Cloudflare's MCP server to go through all my domains and their subdomains highlighting which ones return an HTTP response (200, 404, etc.). Cleaned up old subdomains pointing to dead stuff. Then I created a staging site for chad.cm just to test things and codex automatically wired up a new github branch to Cloudflare pages and added a dns entry to make it all work. One step closer to the dream of never thinking about infra.
+- [2026-04-07: Cloudflare MCP](/til/2026-4-7-cloudflare-mcp)
