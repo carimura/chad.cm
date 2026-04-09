@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            {% include "header.html" %}
+        </div>
+    </header>
+
+    <main class="container" id="page">
+        {{ content }}
+
+        <h2>Today I Learned</h2>
+        <p>Inspired by <a href="https://til.simonwillison.net/">Simon Willison's TIL</a>.</p>
+        <ul>
+        {% for til in tils %}
+            <li><a href="{{ til.url }}">{{ til.date }}: {{ til.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <div class="container">
+            {% include "footer.html" %}
+        </div>
+    </footer>
+</body>
+</html>

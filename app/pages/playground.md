@@ -1,7 +1,7 @@
 ---
 title: Playground
 type: page
-template: page.html
+template: playground.html
 description: random stuff
 active_nav: playground
 ---
@@ -18,9 +18,3 @@ A few tinkering projects. The rest are at [github](https://github.com/carimura).
 - **[Huddle](https://github.com/carimura/huddle)** — A multiplayer party game for remote teams. Players join from their browser and play together in real time over WebSockets.
 - **[Bingo](https://github.com/carimura/bingo)** — team bingo game played in the browser.
 - **unifi-ap-controller** - controls our local unifi network by disabling some APs at night. Runs on a pi.
-
-## Today I Learned
-
-Inspired by [Simon Willison's TIL](https://til.simonwillison.net/).
-
-- [2026-04-07: Cloudflare MCP](/til/2026-4-7-cloudflare-mcp)
