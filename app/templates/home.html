@@ -41,21 +41,6 @@
         </div>
         {% endfor %}
         <p><a href="/writing.html">See more writing →</a></p>
-
-        <hr />
-
-        <h2>From X</h2>
-        <div class="x-posts">
-        {% for post in x_posts %}
-            <a class="x-post" href="{{ post.url }}" target="_blank" rel="noopener noreferrer">
-                <p class="x-post-text">{{ post.text }}</p>
-                <p class="x-post-meta">
-                    <span class="x-post-handle">@{{ post.author_handle }}</span>
-                    <span class="x-post-date">{{ post.date_display }}</span>
-                </p>
-            </a>
-        {% endfor %}
-        </div>
     </main>
 
     <footer>
