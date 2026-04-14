@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Personal website of Chad Arimura - Home">
-<title>Chad Arimura | Home</title>
+<meta name="description" content="Personal website of Chad Arimura - Giving agents a brain, and a Mac menubar for Claude sessions">
+<title>Chad Arimura | Giving agents a brain, and a Mac menubar for Claude sessions</title>
 <link rel="stylesheet" href="/assets/styles.css">
 <link rel="alternate" type="application/rss+xml" title="The Site of Chad Arimura" href="/feed.xml">
 <script src="/assets/javascript/theme.js"></script>
@@ -20,9 +20,9 @@
 
 <nav id="site-nav">
     <ul>
-        <li title="Home"><a href="/" class="nav-link active">Home</a></li>
+        <li title="Home"><a href="/" class="nav-link ">Home</a></li>
         <li title="About Me"><a href="/about.html" class="nav-link ">About Me</a></li>
-        <li title="Writing"><a href="/writing.html" class="nav-link ">Writing</a></li>
+        <li title="Writing"><a href="/writing.html" class="nav-link active">Writing</a></li>
         <li title="Speaking"><a href="/speaking.html" class="nav-link ">Speaking</a></li>
         <li title="Playground"><a href="/playground.html" class="nav-link ">Playground</a></li>
     </ul>
@@ -34,69 +34,32 @@
         </div>
     </header>
 
-    <main class="container" id="home">
+    <main class="container" id="post">
+        <article class="post">
+            <div id="post-header">
+                <p id="date">April 14th, 2026</p>
+                <h1 class="post-title">Giving agents a brain, and a Mac menubar for Claude sessions</h1>
+            </div>
+            
+            <div id="post-content">
+                <p>I'm experimenting with giving my agents a brain using a hybrid model of <a href="https://x.com/karpathy/status/2039805659525644595">Karpathy's Obsidian post</a> that everyone is ~~freaking out~~ really excited about. I say hybrid because I don't really have the use case he does where I'm consuming and synthesizing lots of papers from arxiv, but I am really struggling with how to &quot;stay organized&quot; with projects, agents, etc., at a velocity that is beyond what I've ever seen before. In talking with folks it seems this is a pretty common feeling.</p>
+<p>In the &quot;slow old days&quot;, we would open up a project in a ticketing system, a github repo, and an IDE, and get to work over days and weeks. Then for a new project, repeat. All projects beyond the top few would wait until the brain lock was released, which was likely on the order of magnitude of weeks/months.</p>
+<p>Now, at least for me, there's very little IDE, and lots of terminals open just chugging away stuff. And then the next day, same thing. Like having a dozen programmers working for me that are expert level programmers and system adminstrators, but still junior architects where I have to watch over them.</p>
+<p>So back to the Obsidian brain.. I guess I'm looking for a way for agents to share knowledge over time, learn, and improve. Maybe those junior architects can become... not so junior. I could return to sessions with full context, or even context from different sessions if needed. Maybe none of of this is needed. I guess we'll see. The analogy of brains and short/long term memory seems to be a big area of exploration in the harness space. Probably for good reason. Reminds me of the serverless days where we would identify a problem (eg cold starts, queue times) and we'd see everyone working on that problem space at the same time (at much slower speeds!).</p>
+<p>Side note: I also added a <code>/checkpoint</code> command to claude code that summarizes the session and adds to the wiki in a special sessions folder.</p>
+<img src="/assets/posts/claude-menubar-3.png" alt="Obsidian vault structure" style="max-width: 60%; display: block; margin: 1em auto;">
+<p>Oh and to manage all these claude agents, I built a native Mac Swift app. I've always wanted ~~to see a blue duck~~ to build a native Mac app, and now I have one that my intern wrote. It's a toolbar item at the top that drops down to show all Claude Code running sessions and their status (waiting, running, etc.).</p>
+<img src="/assets/posts/claude-menubar-2.png" alt="Menubar icon in the Mac top bar" style="max-width: 100%;">
+<p>And you can open up a window to show all the sessions and the details of each.</p>
+<img src="/assets/posts/claude-menubar-1.png" alt="Menubar app showing running Claude Code sessions" style="max-width: 100%;">
 
-        <h2>whoami</h2>
-<p>Hi, my name is <a href="/about.html">Chad Arimura</a>.</p>
-<p>I am a husband, father of 3, follower of Christ, boss of a few dogs, and commander-in-chief to 15-20 chickens. I am also a 3x entrepreneur, most recently co-founder and CEO of <a href="https://www.crunchbase.com/organization/iron-io">Iron.io</a> where we grew a multi-million dollar business pioneering serverless computing. We sold the business in 2017 and joined Oracle.</p>
-<p>And now, as mentioned in my &quot;<a href="/posts/2026-04-05-thanks-and-onward-2026.html">thanks and onward</a>&quot; post, for the first time in 20 years, I'm a free agent without a destination! We live in a wild, exciting, and somewhat scary time with the rapid pace of change. I'll be building, exploring, and talking to folks at companies of all stages thinking about what's next.</p>
-<p>You can contact me on <a href="https://linkedin.com/in/chadarimura">LinkedIn</a>, <a href="https://x.com/chadarimura">X</a>, or <a href="mailto:hello@chad.cm">hello@chad.cm</a>.</p>
-<p><a href="/about.html">Read More →</a></p>
-<hr />
-
-
-        <h2>Speaking</h2>
-        <div class="video-thumbnails">
-            <a href="https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858" target="_blank" class="video-thumb">
-                <img src="https://img.youtube.com/vi/3fLCOqpIfI0/mqdefault.jpg" alt="JavaOne 2026 Opening Keynote">
-                <span>JavaOne 2026 Keynote</span>
-            </a>
-            <a href="https://www.youtube.com/watch?v=mk_2MIWxLI0" target="_blank" class="video-thumb">
-                <img src="https://img.youtube.com/vi/mk_2MIWxLI0/mqdefault.jpg" alt="JavaOne 2025 Opening Keynote">
-                <span>JavaOne 2025 Keynote</span>
-            </a>
-            <a href="https://vimeo.com/747697437" target="_blank" class="video-thumb">
-                <img src="/assets/openjdk-javazone-2022.png" alt="OpenJDK: Where the Magic Happens, JavaZone 2022">
-                <span>OpenJDK at JavaZone 2022</span>
-            </a>
-        </div>
-        <p><a href="/speaking.html">See more speaking →</a></p>
-
-        <hr />
-
-        <h2>Writing</h2>
-        
-        <div class="home-post">
-            <span class="home-post-date">April 14th, 2026</span>
-            <a href="/posts/2026-04-14-agent-brain-and-mac-menubar.html">Giving agents a brain, and a Mac menubar for Claude sessions</a>
-        </div>
-        
-        <div class="home-post">
-            <span class="home-post-date">April 5th, 2026</span>
-            <a href="/posts/2026-04-05-thanks-and-onward-2026.html">Thanks and Onward, 2026</a>
-        </div>
-        
-        <div class="home-post">
-            <span class="home-post-date">January 11th, 2026</span>
-            <a href="/posts/2026-01-11-claude-butler.html">Claude Butler</a>
-        </div>
-        
-        <div class="home-post">
-            <span class="home-post-date">October 17th, 2025</span>
-            <a href="/posts/2025-10-17-building-gus.html">Building Gus: A Lightweight Terminal Agent in Modern Java</a>
-        </div>
-        
-        <div class="home-post">
-            <span class="home-post-date">October 10th, 2025</span>
-            <a href="/posts/2025-10-10-jpackage-crowdstrike-code-signing.html">Getting jpackage to Work with CrowdStrike</a>
-        </div>
-        
-        <p><a href="/writing.html">See more writing →</a></p>
+            </div>
+        </article>
     </main>
 
     <footer>
         <div class="container">
-            <p><div class="footer-content">
+            <div class="footer-content">
     <p class="made-with">Made with <a href="https://github.com/carimura/arc" target="_blank" rel="noopener">Arc</a></p>
 
     <div class="social-links">
@@ -121,7 +84,7 @@
             </svg>
         </a>
     </div>
-</div></p>
+</div>
         </div>
     </footer>
 </body>

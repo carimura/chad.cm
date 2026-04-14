@@ -5,8 +5,27 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Apr 2026 09:32:37 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 09:34:17 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
+
+    <item>
+      <title>Giving agents a brain, and a Mac menubar for Claude sessions</title>
+      <link>https://chad.cm/posts/2026-04-14-agent-brain-and-mac-menubar.html</link>
+      <description>Experimenting with a hybrid Karpathy-style Obsidian vault for agent memory, and discovering how easy native Swift menubar apps are.</description>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2026-04-14-agent-brain-and-mac-menubar.html</guid>
+      <content:encoded><![CDATA[<p>I'm experimenting with giving my agents a brain using a hybrid model of <a href="https://x.com/karpathy/status/2039805659525644595">Karpathy's Obsidian post</a> that everyone is ~~freaking out~~ really excited about. I say hybrid because I don't really have the use case he does where I'm consuming and synthesizing lots of papers from arxiv, but I am really struggling with how to &quot;stay organized&quot; with projects, agents, etc., at a velocity that is beyond what I've ever seen before. In talking with folks it seems this is a pretty common feeling.</p>
+<p>In the &quot;slow old days&quot;, we would open up a project in a ticketing system, a github repo, and an IDE, and get to work over days and weeks. Then for a new project, repeat. All projects beyond the top few would wait until the brain lock was released, which was likely on the order of magnitude of weeks/months.</p>
+<p>Now, at least for me, there's very little IDE, and lots of terminals open just chugging away stuff. And then the next day, same thing. Like having a dozen programmers working for me that are expert level programmers and system adminstrators, but still junior architects where I have to watch over them.</p>
+<p>So back to the Obsidian brain.. I guess I'm looking for a way for agents to share knowledge over time, learn, and improve. Maybe those junior architects can become... not so junior. I could return to sessions with full context, or even context from different sessions if needed. Maybe none of of this is needed. I guess we'll see. The analogy of brains and short/long term memory seems to be a big area of exploration in the harness space. Probably for good reason. Reminds me of the serverless days where we would identify a problem (eg cold starts, queue times) and we'd see everyone working on that problem space at the same time (at much slower speeds!).</p>
+<p>Side note: I also added a <code>/checkpoint</code> command to claude code that summarizes the session and adds to the wiki in a special sessions folder.</p>
+<img src="/assets/posts/claude-menubar-3.png" alt="Obsidian vault structure" style="max-width: 60%; display: block; margin: 1em auto;">
+<p>Oh and to manage all these claude agents, I built a native Mac Swift app. I've always wanted ~~to see a blue duck~~ to build a native Mac app, and now I have one that my intern wrote. It's a toolbar item at the top that drops down to show all Claude Code running sessions and their status (waiting, running, etc.).</p>
+<img src="/assets/posts/claude-menubar-2.png" alt="Menubar icon in the Mac top bar" style="max-width: 100%;">
+<p>And you can open up a window to show all the sessions and the details of each.</p>
+<img src="/assets/posts/claude-menubar-1.png" alt="Menubar app showing running Claude Code sessions" style="max-width: 100%;">
+]]></content:encoded>
+    </item>
 
     <item>
       <title>Thanks and Onward, 2026</title>
