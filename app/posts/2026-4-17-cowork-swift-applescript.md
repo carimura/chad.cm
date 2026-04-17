@@ -11,6 +11,8 @@ Trying to use Claude Cowork for coding instead of Claude Code as it has a nice i
 
 ```
 tell application "System Events"
-            tell appearance preferences to set dark mode to not dark mode
-        end tell
+    tell appearance preferences to set dark mode to not dark mode
+end tell
 ```
+
+Oh and I've abandoned OpenClaw for now. Way too much configuration and pain just to have a worse interface for building stuff. I think the sweet spot there is calendar management, trello cards, web search, etc.
