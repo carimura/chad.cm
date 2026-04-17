@@ -459,13 +459,22 @@ p#date {
 
 /*--- THOUGHTS FEED ---*/
 
+.inline-icon {
+    vertical-align: text-bottom;
+    margin: 0 1px;
+}
+
 .thought-feed {
     margin-top: 10px;
 }
 
 .thought {
     padding: 18px 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px dashed #ddd;
+}
+
+:root.dark .thought {
+    border-bottom-color: #333;
 }
 
 .thought:last-child {
@@ -474,7 +483,6 @@ p#date {
 
 .thought-date {
     display: block;
-    color: var(--text-secondary);
     font-size: 0.85em;
     margin-bottom: 4px;
     text-decoration: none;
