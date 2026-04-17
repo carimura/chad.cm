@@ -19,6 +19,7 @@
         {% for thought in thoughts %}
             <article class="thought">
                 <a href="{{ thought.url }}" class="thought-date">{{ thought.formatted_date }}</a>
+                <div class="thought-title">{{ thought.title }}</div>
                 {{ thought.rendered_content }}
             </article>
         {% endfor %}

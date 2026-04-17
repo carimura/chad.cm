@@ -42,6 +42,7 @@
 <li><strong><a href="https://github.com/carimura/gus">Gus</a></strong> — agent harness in modern Java. (<a href="/posts/2025-10-17-building-gus.html">post</a>)</li>
 <li><strong><a href="https://github.com/carimura/arc">Arc</a></strong> — lightning-fast static site gen in Java. (<a href="/posts/2025-05-28-building-arc.html">post</a>)</li>
 <li><strong><a href="https://github.com/carimura/claude-butler">Claude Butler</a></strong> — automated task runner for Claude Code on a Raspberry Pi, driven by a YAML config and a systemd timer. (<a href="/posts/2026-01-11-claude-butler.html">post</a>)</li>
+<li><strong><a href="https://github.com/carimura/theme-switcher">Theme Switcher</a></strong> — macOS menu bar button that toggles between light and dark mode via AppleScript.</li>
 <li><strong>web2pod</strong> — turn any webpage into a podcast episode.</li>
 <li><strong><a href="https://github.com/carimura/huddle">Huddle</a></strong> — A multiplayer party game for remote teams. Players join from their browser and play together in real time over WebSockets.</li>
 <li><strong><a href="https://github.com/carimura/bingo">Bingo</a></strong> — team bingo game played in the browser.</li>
@@ -54,13 +55,26 @@
         <div class="thought-feed">
         
             <article class="thought">
+                <a href="/thought/2026-4-17-cowork-swift-applescript.html" class="thought-date">April 17th, 2026</a>
+                <div class="thought-title">Cowork, Swift, and AppleScript</div>
+                <p>Trying to use Claude Cowork for coding instead of Claude Code as it has a nice interface to handle parallel sessions at once. I really like the feel of the terminal though. Also, Swift apps are fun. I built a <a href="https://github.com/carimura/theme-switcher">toolbar button</a> that easily toggles between light/dark mode themes. Today I discovered AppleScript, that was recently announced in... 1993. It's hilarious.</p>
+<pre><code>tell application &quot;System Events&quot;
+            tell appearance preferences to set dark mode to not dark mode
+        end tell
+</code></pre>
+
+            </article>
+        
+            <article class="thought">
                 <a href="/thought/2026-4-8-openclaw-first-reaction.html" class="thought-date">April 8th, 2026</a>
+                <div class="thought-title">OpenClaw first reaction</div>
                 <p>Today I wanted to see what all the hype was about with OpenClaw. I have not connected a bunch of stuff to it, and I don't really want to given all the security flaws, so the &quot;wow&quot; factor isn't there, and the user experience is way behind claude code and codex, but talking to agents over discord is kind of nice. I'll try expanding the surface area a little bit next to see what it can do.</p>
 
             </article>
         
             <article class="thought">
                 <a href="/thought/2026-4-7-cloudflare-mcp.html" class="thought-date">April 7th, 2026</a>
+                <div class="thought-title">Cloudflare MCP</div>
                 <p>Used CODEX alongside Cloudflare's MCP server to go through all my domains and their subdomains highlighting which ones return an HTTP response (200, 404, etc.). Cleaned up old subdomains pointing to dead stuff. Then I created a staging site for chad.cm just to test things and codex automatically wired up a new github branch to Cloudflare pages and added a dns entry to make it all work. One step closer to the dream of never thinking about infra.</p>
 
             </article>

@@ -492,6 +492,11 @@ p#date {
     text-decoration: underline;
 }
 
+.thought-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
 .thought p {
     margin: 0.4em 0;
 }
