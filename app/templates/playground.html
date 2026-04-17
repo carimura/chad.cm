@@ -13,13 +13,15 @@
     <main class="container" id="page">
         {{ content }}
 
-        <h2>Today I Learned</h2>
-        <p>Inspired by <a href="https://til.simonwillison.net/">Simon Willison's TIL</a>.</p>
-        <ul>
-        {% for til in tils %}
-            <li><a href="{{ til.url }}">{{ til.date }}: {{ til.title }}</a></li>
+        <h2>Thoughts</h2>
+        <div class="thought-feed">
+        {% for thought in thoughts %}
+            <article class="thought">
+                <a href="{{ thought.url }}" class="thought-date">{{ thought.formatted_date }}</a>
+                {{ thought.rendered_content }}
+            </article>
         {% endfor %}
-        </ul>
+        </div>
     </main>
 
     <footer>

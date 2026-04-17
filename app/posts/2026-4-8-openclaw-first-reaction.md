@@ -1,7 +1,7 @@
 ---
 title: "OpenClaw first reaction"
 date: 2026-04-08
-type: til
+type: thought
 template: post.html
 description: First impressions of OpenClaw
 active_nav: playground

@@ -1,7 +1,7 @@
 ---
 title: "Cloudflare MCP"
 date: 2026-04-07
-type: til
+type: thought
 template: post.html
 description: Using Codex and Cloudflare MCP to clean up domains and create staging
 active_nav: playground

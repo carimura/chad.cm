@@ -457,6 +457,38 @@ p#date {
 }
 
 
+/*--- THOUGHTS FEED ---*/
+
+.thought-feed {
+    margin-top: 10px;
+}
+
+.thought {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.thought:last-child {
+    border-bottom: none;
+}
+
+.thought-date {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85em;
+    margin-bottom: 4px;
+    text-decoration: none;
+}
+
+.thought-date:hover {
+    text-decoration: underline;
+}
+
+.thought p {
+    margin: 0.4em 0;
+}
+
+
 /*--- VIDEO THUMBNAILS ---*/
 
 .video-thumbnails {
