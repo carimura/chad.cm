@@ -482,7 +482,7 @@ p#date {
 }
 
 .thought-date {
-    display: block;
+    display: inline-block;
     font-size: 0.85em;
     margin-bottom: 4px;
     text-decoration: none;
