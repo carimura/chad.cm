@@ -474,7 +474,7 @@ p#date {
 }
 
 :root.dark .thought {
-    border-bottom-color: #333;
+    border-bottom-color: #555;
 }
 
 .thought:last-child {
