@@ -24,6 +24,17 @@
             </article>
         {% endfor %}
         </div>
+
+        <h2>Latest X Posts</h2>
+        <div class="thought-feed">
+        {% for post in x_posts %}
+            <article class="thought">
+                <a href="{{ post.url }}" class="thought-date" target="_blank" rel="noopener noreferrer">{{ post.date }}</a>
+                <p class="xpost-text">{{ post.text }}</p>
+                {% if post.image %}<img src="{{ post.image }}" class="xpost-image" alt="" loading="lazy" />{% endif %}
+            </article>
+        {% endfor %}
+        </div>
     </main>
 
     <footer>
