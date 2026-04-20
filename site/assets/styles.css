@@ -502,6 +502,18 @@ p#date {
     margin: 0.4em 0;
 }
 
+.xpost-text {
+    white-space: pre-wrap;
+}
+
+.xpost-image {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
 
 /*--- VIDEO THUMBNAILS ---*/
 
