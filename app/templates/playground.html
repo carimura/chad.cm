@@ -26,12 +26,20 @@
         </div>
 
         <h2>Latest X Posts</h2>
-        <div class="thought-feed">
+        <div class="xpost-feed">
         {% for post in x_posts %}
-            <article class="thought">
-                <a href="{{ post.url }}" class="thought-date" target="_blank" rel="noopener noreferrer">{{ post.date }}</a>
-                <p class="xpost-text">{{ post.text }}</p>
-                {% if post.image %}<img src="{{ post.image }}" class="xpost-image" alt="" loading="lazy" />{% endif %}
+            <article class="xpost">
+                <img class="xpost-avatar" src="/assets/chad.jpg" alt="" />
+                <div class="xpost-body">
+                    <div class="xpost-header">
+                        <span class="xpost-name">Chad Arimura</span>
+                        <span class="xpost-handle">@chadarimura</span>
+                        <span class="xpost-sep">·</span>
+                        <a class="xpost-date" href="{{ post.url }}" target="_blank" rel="noopener noreferrer">{{ post.date }}</a>
+                    </div>
+                    <p class="xpost-text">{{ post.text }}</p>
+                    {% if post.image %}<img src="{{ post.image }}" class="xpost-image" alt="" loading="lazy" />{% endif %}
+                </div>
             </article>
         {% endfor %}
         </div>

@@ -502,16 +502,67 @@ p#date {
     margin: 0.4em 0;
 }
 
+.xpost-feed {
+    margin-top: 10px;
+}
+
+.xpost {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.xpost:last-child {
+    border-bottom: none;
+}
+
+.xpost-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.xpost-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: baseline;
+    margin-bottom: 4px;
+    font-size: 0.95em;
+}
+
+.xpost-name {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.xpost-handle,
+.xpost-sep,
+.xpost-date,
+.xpost-date:visited {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.xpost-date:hover {
+    text-decoration: underline;
+}
+
 .xpost-text {
+    margin: 0;
     white-space: pre-wrap;
 }
 
 .xpost-image {
     display: block;
     max-width: 100%;
-    max-height: 400px;
-    margin-top: 10px;
-    border-radius: 8px;
+    max-height: 500px;
+    margin-top: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
 }
 
 
