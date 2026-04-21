@@ -1,5 +1,21 @@
 [
   {
+    "id": "2046613012296212903",
+    "text": "@wdavidturner Ya agreed and sounds awesome but it's hard to picture a non-deterministic LLM that has both a) full YOLO DNS  and database access, and b) no footguns... 🙈",
+    "created_at": "2026-04-21T15:32:21.000Z",
+    "date": "2026-04-21",
+    "url": "https://x.com/chadarimura/status/2046613012296212903",
+    "image": null
+  },
+  {
+    "id": "2046608812438917312",
+    "text": "It takes five minutes to give Claude Code/Cowork access to: your code, your servers, your logs, your environment, and your DNS. This is magic when prototyping, but I can't imagine (yet) going to prod and continuing with the same level of YOLO....",
+    "created_at": "2026-04-21T15:15:39.000Z",
+    "date": "2026-04-21",
+    "url": "https://x.com/chadarimura/status/2046608812438917312",
+    "image": null
+  },
+  {
     "id": "2045156614668505396",
     "text": "GitHub is \"experiencing an issue that impacts approximately 10% of traffic\". Except... my gh auth works 0% of the time. Ah. The art of status page updates.",
     "created_at": "2026-04-17T15:05:08.000Z",
@@ -22,21 +38,5 @@
     "date": "2026-04-17",
     "url": "https://x.com/chadarimura/status/2045155588099993841",
     "image": null
-  },
-  {
-    "id": "2044429225151889726",
-    "text": "Every time I get a 500 error from Claude, but the status page is all green, I think back to all the Iron.io days when users would email us the second their workers were queuing but we hadn't updated our status page.",
-    "created_at": "2026-04-15T14:54:45.000Z",
-    "date": "2026-04-15",
-    "url": "https://x.com/chadarimura/status/2044429225151889726",
-    "image": null
-  },
-  {
-    "id": "2042632127607640538",
-    "text": "I guess I'm getting somewhere..... pic.x.com/aNF5kCF8RZ",
-    "created_at": "2026-04-10T15:53:44.000Z",
-    "date": "2026-04-10",
-    "url": "https://x.com/chadarimura/status/2042632127607640538",
-    "image": "https://pbs.twimg.com/media/HFjjEeeaAAEhBbI.png"
   }
 ]
