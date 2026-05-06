@@ -1,5 +1,21 @@
 [
   {
+    "id": "2052022535139836015",
+    "text": "That said I am, like everyone else, excited for the other side of the sword -- the speed in which new ideas come to reality.",
+    "created_at": "2026-05-06T13:47:51.000Z",
+    "date": "2026-05-06",
+    "url": "https://x.com/chadarimura/status/2052022535139836015",
+    "image": null
+  },
+  {
+    "id": "2052020403128901766",
+    "text": "Last night after the kids went to bed, I sat just thinking in silence for a few mins, and realized two things: 1. agentic coding has dramatically reduced the time I spend thinking (coding used to be in large part thinking), and 2. I am sad for the disappearance of the \"craft\".",
+    "created_at": "2026-05-06T13:39:23.000Z",
+    "date": "2026-05-06",
+    "url": "https://x.com/chadarimura/status/2052020403128901766",
+    "image": null
+  },
+  {
     "id": "2051876652553310616",
     "text": "@chooserich Praying for you Nick.",
     "created_at": "2026-05-06T04:08:10.000Z",
@@ -21,22 +37,6 @@
     "created_at": "2026-04-29T19:13:17.000Z",
     "date": "2026-04-29",
     "url": "https://x.com/chadarimura/status/2049567717347545417",
-    "image": null
-  },
-  {
-    "id": "2046613012296212903",
-    "text": "@wdavidturner Ya agreed and sounds awesome but it's hard to picture a non-deterministic LLM that has both a) full YOLO DNS  and database access, and b) no footguns... 🙈",
-    "created_at": "2026-04-21T15:32:21.000Z",
-    "date": "2026-04-21",
-    "url": "https://x.com/chadarimura/status/2046613012296212903",
-    "image": null
-  },
-  {
-    "id": "2046608812438917312",
-    "text": "It takes five minutes to give Claude Code/Cowork access to: your code, your servers, your logs, your environment, and your DNS. This is magic when prototyping, but I can't imagine (yet) going to prod and continuing with the same level of YOLO....",
-    "created_at": "2026-04-21T15:15:39.000Z",
-    "date": "2026-04-21",
-    "url": "https://x.com/chadarimura/status/2046608812438917312",
     "image": null
   }
 ]
