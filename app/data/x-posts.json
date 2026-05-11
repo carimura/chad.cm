@@ -1,5 +1,13 @@
 [
   {
+    "id": "2053879990782140462",
+    "text": "Coding before: sit down, open project, look at code, think for a bit, write some code, feel satisfied after some moderately-predictable number of hours, go get lunch.\n\nCoding now: sit down, open project in claude code, decide you need a dashboard for claude code, build one, but",
+    "created_at": "2026-05-11T16:48:43.000Z",
+    "date": "2026-05-11",
+    "url": "https://x.com/chadarimura/status/2053879990782140462",
+    "image": null
+  },
+  {
     "id": "2052022535139836015",
     "text": "That said I am, like everyone else, excited for the other side of the sword -- the speed in which new ideas come to reality.",
     "created_at": "2026-05-06T13:47:51.000Z",
@@ -29,14 +37,6 @@
     "created_at": "2026-04-29T19:13:17.000Z",
     "date": "2026-04-29",
     "url": "https://x.com/chadarimura/status/2049567717347545417",
-    "image": null
-  },
-  {
-    "id": "2046608812438917312",
-    "text": "It takes five minutes to give Claude Code/Cowork access to: your code, your servers, your logs, your environment, and your DNS. This is magic when prototyping, but I can't imagine (yet) going to prod and continuing with the same level of YOLO....",
-    "created_at": "2026-04-21T15:15:39.000Z",
-    "date": "2026-04-21",
-    "url": "https://x.com/chadarimura/status/2046608812438917312",
     "image": null
   }
 ]
