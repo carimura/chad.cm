@@ -1,13 +1,5 @@
 [
   {
-    "id": "2052026449209786806",
-    "text": "@briancheong Ya. There's a lot packed in that word \"typing\". Coding was always such a joy. But so is shipping!",
-    "created_at": "2026-05-06T14:03:24.000Z",
-    "date": "2026-05-06",
-    "url": "https://x.com/chadarimura/status/2052026449209786806",
-    "image": null
-  },
-  {
     "id": "2052022535139836015",
     "text": "That said I am, like everyone else, excited for the other side of the sword -- the speed in which new ideas come to reality.",
     "created_at": "2026-05-06T13:47:51.000Z",
@@ -24,19 +16,27 @@
     "image": null
   },
   {
-    "id": "2051876652553310616",
-    "text": "@chooserich Praying for you Nick.",
-    "created_at": "2026-05-06T04:08:10.000Z",
-    "date": "2026-05-06",
-    "url": "https://x.com/chadarimura/status/2051876652553310616",
-    "image": null
-  },
-  {
     "id": "2051687207824748911",
     "text": "The process of software reminds me of a Bob Ross painting. You can’t “just paint the tree” too early. I haven’t been able to jump from a claude code terminal to say, lots of hermes agents reading tickets. There’s too many paint splotches to get on the canvas first. I’m guessing",
     "created_at": "2026-05-05T15:35:23.000Z",
     "date": "2026-05-05",
     "url": "https://x.com/chadarimura/status/2051687207824748911",
+    "image": null
+  },
+  {
+    "id": "2049567717347545417",
+    "text": "All the systems downstream from agents pushing code are hurting. GitHub is down every day. Railway's \"deploy queues\" were so far behind they shut down deploys for low-cost accounts. Wild times.",
+    "created_at": "2026-04-29T19:13:17.000Z",
+    "date": "2026-04-29",
+    "url": "https://x.com/chadarimura/status/2049567717347545417",
+    "image": null
+  },
+  {
+    "id": "2046608812438917312",
+    "text": "It takes five minutes to give Claude Code/Cowork access to: your code, your servers, your logs, your environment, and your DNS. This is magic when prototyping, but I can't imagine (yet) going to prod and continuing with the same level of YOLO....",
+    "created_at": "2026-04-21T15:15:39.000Z",
+    "date": "2026-04-21",
+    "url": "https://x.com/chadarimura/status/2046608812438917312",
     "image": null
   }
 ]
