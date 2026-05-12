@@ -1,5 +1,13 @@
 [
   {
+    "id": "2053947209209810964",
+    "text": "9am - Chad builds a dashboard to manage code sessions. github.com/carimura/claud…\n\n2pm - Anthropic announces agent view.  x.com/claudeai/statu…\n\nThis is not the first time this has happened. What a machine they’ve got going over there!",
+    "created_at": "2026-05-11T21:15:49.000Z",
+    "date": "2026-05-11",
+    "url": "https://x.com/chadarimura/status/2053947209209810964",
+    "image": null
+  },
+  {
     "id": "2053879990782140462",
     "text": "Coding before: sit down, open project, look at code, think for a bit, write some code, feel satisfied after some moderately-predictable number of hours, go get lunch.\n\nCoding now: sit down, open project in claude code, decide you need a dashboard for claude code, build one, but",
     "created_at": "2026-05-11T16:48:43.000Z",
@@ -29,14 +37,6 @@
     "created_at": "2026-05-05T15:35:23.000Z",
     "date": "2026-05-05",
     "url": "https://x.com/chadarimura/status/2051687207824748911",
-    "image": null
-  },
-  {
-    "id": "2049567717347545417",
-    "text": "All the systems downstream from agents pushing code are hurting. GitHub is down every day. Railway's \"deploy queues\" were so far behind they shut down deploys for low-cost accounts. Wild times.",
-    "created_at": "2026-04-29T19:13:17.000Z",
-    "date": "2026-04-29",
-    "url": "https://x.com/chadarimura/status/2049567717347545417",
     "image": null
   }
 ]
