@@ -41,6 +41,17 @@
         </div>
         {% endfor %}
         <p><a href="/writing.html">See more writing →</a></p>
+
+        <hr />
+
+        <h2>Thoughts</h2>
+        {% for thought in thoughts limit 5 %}
+        <div class="home-post">
+            <span class="home-post-date">{{ thought.formatted_date }}</span>
+            <a href="{{ thought.url }}">{{ thought.title }}</a>
+        </div>
+        {% endfor %}
+        <p><a href="/thoughts.html">See more thoughts →</a></p>
     </main>
 
     <footer>

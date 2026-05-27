@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            {% include "header.html" %}
+        </div>
+    </header>
+
+    <main class="container" id="writing">
+        {{ content }}
+
+        {% for thought in thoughts %}
+        <article class="post">
+            <div id="post-header">
+                <p id="date">{{ thought.formatted_date }}</p>
+                <h1 class="post-title"><a href="{{ thought.url }}">{{ thought.title }}</a></h1>
+            </div>
+            <div id="post-content">
+                {{ thought.rendered_content }}
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <div class="container">
+            {% include "footer.html" %}
+        </div>
+    </footer>
+</body>
+</html>

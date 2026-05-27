@@ -1,7 +1,7 @@
 ---
 title: Playground
 type: page
-template: playground.html
+template: page.html
 description: random stuff
 active_nav: playground
 ---
