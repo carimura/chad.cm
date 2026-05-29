@@ -5,7 +5,7 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 17:47:58 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 19:08:27 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
@@ -14,7 +14,8 @@
       <description>An agent that talks to me on Slack, persists between restarts, and runs every shell command it issues in a completely separate sandbox from itself.</description>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://chad.cm/posts/2026-5-28-hermes-flare.html</guid>
-      <content:encoded><![CDATA[<p>Inspired by the <a href="https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/">Moltworker</a> stuff, I wanted to get <a href="https://hermes-agent.nousresearch.com">Hermes</a> working on Cloudflare as a serverless agent with the ability to execute commands and code in separate sandboxes.</p>
+      <content:encoded><![CDATA[<img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 100%;">
+<p>Inspired by the <a href="https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/">Moltworker</a> stuff, I wanted to get <a href="https://hermes-agent.nousresearch.com">Hermes</a> working on Cloudflare as a serverless agent with the ability to execute commands and code in separate sandboxes.</p>
 <p>Introducing hermes-flare: <a href="https://github.com/carimura/hermes-flare">https://github.com/carimura/hermes-flare</a>.</p>
 <p>Some of the features:</p>
 <h2>Serverless</h2>

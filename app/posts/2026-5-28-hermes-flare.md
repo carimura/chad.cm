@@ -7,6 +7,8 @@ active_nav: writing
 excerpt: An agent that talks to me on Slack, persists between restarts, and runs every shell command it issues in a completely separate sandbox from itself.
 ---
 
+<img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 100%;">
+
 Inspired by the [Moltworker](https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/) stuff, I wanted to get [Hermes](https://hermes-agent.nousresearch.com) working on Cloudflare as a serverless agent with the ability to execute commands and code in separate sandboxes.
 
 Introducing hermes-flare: [https://github.com/carimura/hermes-flare](https://github.com/carimura/hermes-flare).
