@@ -7,25 +7,25 @@ active_nav: writing
 excerpt: An agent that talks to me on Slack, persists between restarts, and runs every shell command it issues in a completely separate sandbox from itself.
 ---
 
-<img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 100%;">
+<img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 80%;">
 
-Inspired by the [Moltworker](https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/) stuff, I wanted to get [Hermes](https://hermes-agent.nousresearch.com) working on Cloudflare as a serverless agent with the ability to execute commands and code in separate sandboxes.
+Inspired by the [Moltworker](https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/) stuff, I wanted to get [Hermes](https://hermes-agent.nousresearch.com) working on Cloudflare as a serverless agent with long-term memory and the ability to execute commands and code in separate sandboxes
 
-Introducing hermes-flare: [https://github.com/carimura/hermes-flare](https://github.com/carimura/hermes-flare).
+Here's that work so far: [https://github.com/carimura/hermes-flare](https://github.com/carimura/hermes-flare). It's very rough, but it works.
 
-Some of the features:
+Some features:
 
 ## Serverless
 
-Kind of amusing to talk about serverless again given my [last company](https://chad.cm/posts/2017-05-22-thanks-and-onward.html), but here we are in 2026! Hermes basically runs serverless completely on Cloudflare.
+The main feature is this is a self-hosted Hermes agent running basically serverless on Cloudflare. It's amusing to talk about serverless again given my [last company](https://chad.cm/posts/2017-05-22-thanks-and-onward.html), but here we are in 2026! 
 
-- **Workers**: the entry point. Routes `/api/*`, checks a token, fires the snapshot job off on a cron.
-- **Containers (Sandbox SDK)**: the Agent and Exec containers, both running as Firecracker microVMs.
-- **Durable Objects**: what the Sandbox SDK sits on underneath. I never touch DO code directly.
-- **R2**: where the snapshots land. About 46 MB each after lz4 right now, parked next to the Workers.
+- **Workers**: the entry point. Routes `/api/*`
+- **Containers (Sandbox SDK)**: the Agent and Exec containers, both running as Firecracker VMs.
+- **Durable Objects**: what the Sandbox SDK sits on underneath. 
+- **R2**: where the snapshots land. ~50MB out of the box. Will grow over time but does not include the Hermes agent code which is 1.6GB (!).
 - **Cron Triggers**: fires every 5 minutes, partly to keep the Agent warm and partly so Hermes' own scheduled jobs get a chance to run.
 
-A little wiring and there's not much to worry about.
+All that plus a little wiring and there's not much to worry about.
 
 
 ## Isolating Code Exec with Sandboxes
@@ -57,6 +57,7 @@ Restore did its job, Yodel was still in there. But Hermes also went back and re-
 - AI Gateway for proxying the LLM through Cloudflare. Hermes talks directly using the bring-your-own-key.
 - Zero Trust in front of `/api/*`. Right now it's just a shared token, and I want to wire up Cloudflare Access so my identity carries through on its own.
 - Per-command Exec sandboxes. They all share one at the moment.
+- Multiple bots at once (possible in theory but haven't tested)
 - An "operator bot", basically a second Slack interface that can poke at the Agent container itself. Makes more sense now that there's a real boundary between the agent and where its code runs.
 
 And some issues [here](https://github.com/carimura/hermes-flare/issues).

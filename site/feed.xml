@@ -5,7 +5,7 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 19:08:27 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 19:21:30 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
@@ -14,20 +14,20 @@
       <description>An agent that talks to me on Slack, persists between restarts, and runs every shell command it issues in a completely separate sandbox from itself.</description>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://chad.cm/posts/2026-5-28-hermes-flare.html</guid>
-      <content:encoded><![CDATA[<img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 100%;">
-<p>Inspired by the <a href="https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/">Moltworker</a> stuff, I wanted to get <a href="https://hermes-agent.nousresearch.com">Hermes</a> working on Cloudflare as a serverless agent with the ability to execute commands and code in separate sandboxes.</p>
-<p>Introducing hermes-flare: <a href="https://github.com/carimura/hermes-flare">https://github.com/carimura/hermes-flare</a>.</p>
-<p>Some of the features:</p>
+      <content:encoded><![CDATA[<img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 80%;">
+<p>Inspired by the <a href="https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/">Moltworker</a> stuff, I wanted to get <a href="https://hermes-agent.nousresearch.com">Hermes</a> working on Cloudflare as a serverless agent with long-term memory and the ability to execute commands and code in separate sandboxes</p>
+<p>Here's that work so far: <a href="https://github.com/carimura/hermes-flare">https://github.com/carimura/hermes-flare</a>. It's very rough, but it works.</p>
+<p>Some features:</p>
 <h2>Serverless</h2>
-<p>Kind of amusing to talk about serverless again given my <a href="https://chad.cm/posts/2017-05-22-thanks-and-onward.html">last company</a>, but here we are in 2026! Hermes basically runs serverless completely on Cloudflare.</p>
+<p>The main feature is this is a self-hosted Hermes agent running basically serverless on Cloudflare. It's amusing to talk about serverless again given my <a href="https://chad.cm/posts/2017-05-22-thanks-and-onward.html">last company</a>, but here we are in 2026!</p>
 <ul>
-<li><strong>Workers</strong>: the entry point. Routes <code>/api/*</code>, checks a token, fires the snapshot job off on a cron.</li>
-<li><strong>Containers (Sandbox SDK)</strong>: the Agent and Exec containers, both running as Firecracker microVMs.</li>
-<li><strong>Durable Objects</strong>: what the Sandbox SDK sits on underneath. I never touch DO code directly.</li>
-<li><strong>R2</strong>: where the snapshots land. About 46 MB each after lz4 right now, parked next to the Workers.</li>
+<li><strong>Workers</strong>: the entry point. Routes <code>/api/*</code></li>
+<li><strong>Containers (Sandbox SDK)</strong>: the Agent and Exec containers, both running as Firecracker VMs.</li>
+<li><strong>Durable Objects</strong>: what the Sandbox SDK sits on underneath.</li>
+<li><strong>R2</strong>: where the snapshots land. ~50MB out of the box. Will grow over time but does not include the Hermes agent code which is 1.6GB (!).</li>
 <li><strong>Cron Triggers</strong>: fires every 5 minutes, partly to keep the Agent warm and partly so Hermes' own scheduled jobs get a chance to run.</li>
 </ul>
-<p>A little wiring and there's not much to worry about.</p>
+<p>All that plus a little wiring and there's not much to worry about.</p>
 <h2>Isolating Code Exec with Sandboxes</h2>
 <p>There are two different containers:</p>
 <ul>
@@ -47,6 +47,7 @@
 <li>AI Gateway for proxying the LLM through Cloudflare. Hermes talks directly using the bring-your-own-key.</li>
 <li>Zero Trust in front of <code>/api/*</code>. Right now it's just a shared token, and I want to wire up Cloudflare Access so my identity carries through on its own.</li>
 <li>Per-command Exec sandboxes. They all share one at the moment.</li>
+<li>Multiple bots at once (possible in theory but haven't tested)</li>
 <li>An &quot;operator bot&quot;, basically a second Slack interface that can poke at the Agent container itself. Makes more sense now that there's a real boundary between the agent and where its code runs.</li>
 </ul>
 <p>And some issues <a href="https://github.com/carimura/hermes-flare/issues">here</a>.</p>
