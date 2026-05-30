@@ -10,6 +10,7 @@ active_nav: playground
 
 A few tinkering projects. The rest are at [github](https://github.com/carimura).
 
+- **[Hermes-flare](https://github.com/carimura/hermes-flare)** — self-hosted Hermes agent running serverless on Cloudflare, with long-term memory and isolated code-exec sandboxes. ([post](/posts/2026-5-28-hermes-flare.html))
 - **[Claude Dash](https://github.com/carimura/claude-dash)** — tiny Mac menu bar dashboard for Claude Code sessions — lists recent projects, marks running ones, and resumes them in Ghostty with one click.
 - **[Theme Switcher](https://github.com/carimura/theme-switcher)** — macOS menu bar button that toggles between light and dark mode via AppleScript.
 - **[SpeedCam](https://github.com/carimura/speedcam)** — automated speed detection in Java, exploring OpenCV JNI bindings and the FFM API.
