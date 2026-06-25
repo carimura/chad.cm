@@ -359,44 +359,6 @@ p#date {
     text-decoration: none;
 }
 
-.pq1-toggle {
-    position: absolute;
-    top: 20px;
-    right: 126px;
-    width: 46px;
-    height: 40px;
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--toggle-bg);
-    border: 1px dashed var(--toggle-border);
-    border-radius: 4px;
-    color: var(--text);
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-}
-
-.pq1-toggle::before {
-    content: "";
-    position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 6px;
-    height: 3px;
-    background: #1f54ff;
-    opacity: 0.9;
-}
-
-.pq1-toggle:hover {
-    border: 1px dashed coral;
-    text-decoration: none;
-}
-
-
 /*--- IMAGE MODAL ---*/
 
 .image-modal {
@@ -1269,12 +1231,54 @@ body.pq1-page {
 }
 
 .pq1-game {
+    position: relative;
     width: min(1120px, 100%);
     border: 8px solid #000;
     background: #000;
     box-shadow:
         0 0 0 2px #777,
         0 20px 55px rgba(0, 0, 0, 0.65);
+}
+
+.pq1-www-link {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 20;
+    width: 54px;
+    height: 42px;
+    display: grid;
+    place-items: end center;
+    box-sizing: border-box;
+    padding: 22px 0 4px;
+    border: 3px solid #1a1a1a;
+    background: #d8d0a4;
+    color: #101010;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow:
+        inset 0 0 0 2px #f2ecc7,
+        4px 4px 0 rgba(0,0,0,0.25);
+}
+
+.pq1-www-link::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    right: 8px;
+    height: 14px;
+    border: 2px solid #1a1a1a;
+    background: #75b8ef;
+}
+
+.pq1-www-link:hover {
+    background: #fff06a;
+    color: #101010;
+    text-decoration: none;
 }
 
 .pq1-viewport {
@@ -1506,11 +1510,11 @@ body.pq1-page {
 
 .pq1-poster-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    bottom: 18%;
+    bottom: 12%;
 }
 
 .pq1-poster-row a {
-    min-height: 132px;
+    min-height: 70px;
     display: grid;
     place-items: center;
     text-align: center;
@@ -1518,10 +1522,10 @@ body.pq1-page {
 }
 
 .pq1-garage-door {
-    left: 20%;
-    right: 20%;
+    left: 16%;
+    right: 16%;
     bottom: 0;
-    height: 55%;
+    height: 58%;
     padding: 18px;
     box-sizing: border-box;
     background:
@@ -1573,17 +1577,17 @@ body.pq1-page {
     top: 0;
     width: 13px;
     height: 5px;
-    background: #0b1c56;
-    border-top: 2px solid #5277cf;
+    background: #4a2416;
+    border-top: 2px solid #7b4328;
 }
 
 .pq1-officer .hat-brim {
-    left: 9px;
+    left: 10px;
     top: 5px;
-    width: 19px;
+    width: 16px;
     height: 5px;
-    background: #081540;
-    box-shadow: 16px 1px 0 -2px #081540;
+    background: #32150e;
+    box-shadow: 12px 1px 0 -2px #32150e;
 }
 
 .pq1-officer .head {
@@ -1627,8 +1631,8 @@ body.pq1-page {
     top: 25px;
     width: 18px;
     height: 18px;
-    background: #122a74;
-    border: 2px solid #081540;
+    background: #2c8f65;
+    border: 2px solid #114b36;
 }
 
 .pq1-officer .shirt {
@@ -1636,18 +1640,13 @@ body.pq1-page {
     top: 27px;
     width: 5px;
     height: 15px;
-    background: #d8d7c9;
-    border-left: 1px solid #081540;
-    border-right: 1px solid #081540;
+    background: #b8ead4;
+    border-left: 1px solid #114b36;
+    border-right: 1px solid #114b36;
 }
 
 .pq1-officer .badge {
-    left: 22px;
-    top: 30px;
-    width: 4px;
-    height: 5px;
-    background: #e5c34a;
-    box-shadow: 0 0 0 1px #775d18;
+    display: none;
 }
 
 .pq1-officer .belt {
@@ -1662,8 +1661,8 @@ body.pq1-page {
     top: 27px;
     width: 5px;
     height: 21px;
-    background: #0c1f59;
-    border: 1px solid #061238;
+    background: #257b58;
+    border: 1px solid #114b36;
     transform-origin: 50% 2px;
 }
 
@@ -1697,8 +1696,8 @@ body.pq1-page {
     top: 44px;
     width: 6px;
     height: 17px;
-    background: #0b1d57;
-    border: 1px solid #061238;
+    background: #243b8f;
+    border: 1px solid #0f1b4a;
     transform-origin: 50% 1px;
 }
 

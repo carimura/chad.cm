@@ -134,10 +134,12 @@ async function copyBbsPages() {
     }
 }
 
-async function copyPq1Page() {
-    await mkdir(path.join(siteDir, 'pq1'), { recursive: true });
-    await copyFile(path.join(siteDir, 'pq1.html'), path.join(siteDir, 'pq1', 'index.html'));
+async function copyGamePage() {
+    await rm(path.join(siteDir, 'pq1'), { recursive: true, force: true });
     await rm(path.join(siteDir, 'pq1.html'), { force: true });
+    await mkdir(path.join(siteDir, 'game'), { recursive: true });
+    await copyFile(path.join(siteDir, 'game.html'), path.join(siteDir, 'game', 'index.html'));
+    await rm(path.join(siteDir, 'game.html'), { force: true });
 }
 
 const headerHtml = await readBbsHeader();
@@ -162,6 +164,6 @@ await generateDirectory({
 });
 
 await copyBbsPages();
-await copyPq1Page();
+await copyGamePage();
 
-console.log('Generated BBS route files, PQ1 route file, post detail pages, and thought detail pages.');
+console.log('Generated BBS route files, game route file, post detail pages, and thought detail pages.');
