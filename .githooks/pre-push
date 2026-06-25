@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+set -eu
+
+remote_name="${1:-}"
+remote_url="${2:-}"
+
+while read -r local_ref local_sha remote_ref remote_sha
+do
+    if [ "$remote_ref" = "refs/heads/main" ] && [ "${APPROVE_REMOTE_MAIN_PUSH:-}" != "1" ]; then
+        cat >&2 <<EOF
+Blocked push to remote main.
+
+Remote: ${remote_name} (${remote_url})
+Local ref: ${local_ref}
+
+This repository requires explicit approval before pushing to remote main.
+Re-run only after approval with:
+
+  APPROVE_REMOTE_MAIN_PUSH=1 git push ${remote_name} main
+
+EOF
+        exit 1
+    fi
+done
+
+exit 0
