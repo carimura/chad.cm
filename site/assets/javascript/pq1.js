@@ -14,7 +14,7 @@
     const rooms = [
         { label: 'CHAD.CM', command: 'home', path: '/' },
         { label: 'WRITING', command: 'writing', path: '/writing.html' },
-        { label: 'DISPATCH', command: 'thoughts', path: '/thoughts.html' },
+        { label: 'THOUGHTS', command: 'thoughts', path: '/thoughts.html' },
         { label: 'SPEAKING', command: 'speaking', path: '/speaking.html' },
         { label: 'PLAYGROUND', command: 'playground', path: '/playground.html' }
     ];
@@ -63,7 +63,7 @@
     parser?.addEventListener('submit', (event) => {
         event.preventDefault();
         const value = command.value.trim().toLowerCase();
-        const target = rooms.find((room) => room.command === value || room.label.toLowerCase() === value);
+        const targetIndex = rooms.findIndex((room) => room.command === value || room.label.toLowerCase() === value);
 
         if (value === 'look') {
             command.value = `You are outside ${rooms[position].label}.`;
@@ -74,8 +74,12 @@
             window.location.href = '/';
             return;
         }
-        if (target) {
-            window.location.href = target.path;
+        if (targetIndex >= 0) {
+            const direction = targetIndex < position ? 'left' : targetIndex > position ? 'right' : 'idle';
+            setPosition(targetIndex, direction);
+            window.clearTimeout(walk.idleTimer);
+            walk.idleTimer = window.setTimeout(() => setPosition(position), 420);
+            command.value = '';
             return;
         }
 

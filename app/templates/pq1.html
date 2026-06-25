@@ -7,7 +7,7 @@
 <body class="pq1-page">
     <main class="pq1-shell" id="pq1">
         <section class="pq1-game" aria-label="CHAD.CM Sierra style game site">
-            <a href="/" class="pq1-www-link" aria-label="Return to normal website" title="Back to normal website">www</a>
+            <a href="/" class="pq1-www-link pq1-www-link-mobile" aria-label="Return to normal website" title="Back to normal website">www</a>
             <div class="pq1-viewport" id="pq1-viewport">
                 <div class="pq1-skyline"></div>
                 <div class="pq1-world" id="pq1-world">
@@ -39,7 +39,7 @@
 
                     <section class="pq1-room pq1-room-thoughts" aria-label="Thoughts feed">
                         <div class="pq1-building pq1-dispatch">
-                            <a class="pq1-shop-sign" href="/thoughts.html">DISPATCH</a>
+                            <a class="pq1-shop-sign" href="/thoughts.html">THOUGHTS</a>
                             <div class="pq1-message-grid">
                                 {% for thought in thoughts limit 6 %}
                                 <a href="{{ thought.url }}">
@@ -121,5 +121,6 @@
             </form>
         </section>
     </main>
+    <a href="/" class="pq1-www-link" aria-label="Return to normal website" title="Back to normal website">www</a>
 </body>
 </html>

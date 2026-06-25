@@ -1220,6 +1220,7 @@ body.pq1-page {
 }
 
 .pq1-shell {
+    position: relative;
     min-height: 100vh;
     display: grid;
     place-items: center;
@@ -1241,10 +1242,10 @@ body.pq1-page {
 }
 
 .pq1-www-link {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    z-index: 20;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
     width: 54px;
     height: 42px;
     display: grid;
@@ -1275,6 +1276,10 @@ body.pq1-page {
     background: #75b8ef;
 }
 
+.pq1-www-link-mobile {
+    display: none;
+}
+
 .pq1-www-link:hover {
     background: #fff06a;
     color: #101010;
@@ -1292,12 +1297,7 @@ body.pq1-page {
 }
 
 .pq1-skyline {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg, transparent 0 10%, rgba(255,255,255,0.5) 10% 11%, transparent 11% 100%),
-        linear-gradient(#5ba0db 0 50%, transparent 50% 100%);
-    opacity: 0.45;
+    display: none;
 }
 
 .pq1-world {
@@ -1522,20 +1522,24 @@ body.pq1-page {
 }
 
 .pq1-garage-door {
-    left: 16%;
-    right: 16%;
-    bottom: 0;
-    height: 58%;
-    padding: 18px;
+    left: 10%;
+    right: 10%;
+    bottom: 8%;
+    height: auto;
+    padding: 14px;
     box-sizing: border-box;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
     background:
         repeating-linear-gradient(0deg, #596775 0 22px, #485560 22px 26px);
     border: 5px solid #1a1a1a;
-    border-bottom: 0;
 }
 
 .pq1-garage-door a {
-    min-height: 0;
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+    text-align: center;
     background: #d6d0a5;
 }
 
@@ -1831,6 +1835,17 @@ body.pq1-page {
 }
 
 @media (max-width: 780px) {
+    body.pq1-page > .pq1-www-link {
+        display: none;
+    }
+
+    .pq1-www-link {
+        display: grid;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+    }
+
     .pq1-shell {
         padding: 0;
     }
