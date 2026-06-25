@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Chad Arimura - Getting jpackage to Work with CrowdStrike | BBS">
+    <title>Chad Arimura | Getting jpackage to Work with CrowdStrike | BBS</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="alternate" type="application/rss+xml" title="The Site of Chad Arimura" href="/feed.xml">
+    <script src="/assets/javascript/theme.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+    <script src="/assets/javascript/bbs.js" defer></script>
+</head>
+<body class="bbs-page">
+    <main class="bbs-shell bbs-section-shell" id="bbs">
+        <section class="bbs-terminal" aria-label="Chad dot CM BBS">
+            <div class="bbs-home-hero">
+    <p class="bbs-tagline">The Renegade Bulletin Board System</p>
+    <a href="/" class="bbs-www-link" aria-label="Return to normal website" title="Back to normal website">www</a>
+    <pre class="bbs-logo" aria-label="chad.cm">
+ ██████╗██╗  ██╗ █████╗ ██████╗      ██████╗███╗   ███╗
+██╔════╝██║  ██║██╔══██╗██╔══██╗    ██╔════╝████╗ ████║
+██║     ███████║███████║██║  ██║    ██║     ██╔████╔██║
+██║     ██╔══██║██╔══██║██║  ██║    ██║     ██║╚██╔╝██║
+╚██████╗██║  ██║██║  ██║██████╔╝██╗ ╚██████╗██║ ╚═╝ ██║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═════╝╚═╝     ╚═╝
+    </pre>
+    <nav class="bbs-home-nav" aria-label="Site navigation">
+        <a href="/bbs/">Home</a>
+        <a href="/bbs/writing.html">Writing</a>
+        <a href="/bbs/thoughts.html">Thoughts</a>
+        <a href="/bbs/speaking.html">Speaking</a>
+        <a href="/bbs/playground.html">Playground</a>
+    </nav>
+</div>
+
+            <section class="bbs-article-screen">
+                <div class="bbs-section-title">
+                    <span>File Base</span>
+                    <strong>Getting jpackage to Work with CrowdStrike</strong>
+                    <span>October 10th, 2025</span>
+                </div>
+
+                <article class="bbs-article">
+                    <div class="bbs-article-content">
+                        <p>I wrote a <a href="https://github.com/carimura/gus">small terminal agent called Gus</a> in Java named after one of my dogs (the big one) to play around with building agents and using tools and stuff. I might rename it to arc but that's my <a href="https://chad.cm/posts/2025-05-28-building-arc">static site generator</a>. I think the name arc is cooler, whereas Gus is more for loafing around with the chickens and looking homeless. I digress.</p>
+<p>I discovered the hard way that because CrowdStrike is installed on my machine, I couldn't run apps built with <code>jpackage</code>, which is Java's packaging tool to bundle a runtime with your app and produce a native package. I use this for command-line stuff in Java. Like Arc. And Gus. Everything was fine on my home machine. Until they met my work machine. CrowdStrike would kill my app and quarantine the executable file. I'm guessing our IT group will provide an exception for me, but I felt like learning more so I dove in.</p>
+<p>[Update: As suspected, this was a CrowdStrike false positive because running jpackage locally on your own app shouldn't be a threat. Distributing it might be, of course, and thus it should be signed.]</p>
+<h2>The Problem</h2>
+<p>The problem is because running a jpackage-built app results in the process being killed immediately:</p>
+<pre><code class="language-bash">./output/Hello.app/Contents/MacOS/Hello
+[1]    30464 killed     ./output/Hello.app/Contents/MacOS/Hello
+</code></pre>
+<p>CrowdStrike Falcon quarantines the executable because of a file called <code>libjli.dylib</code>, which is a core part of the JVM launcher, but also is unsigned (or ad-hoc signed or something). Apparently this isn't very trustworthy. Like Gus himself. The real Gus has been licking his lips around the baby chickens. The protector becomes the aggressor.</p>
+<h2>The Solution</h2>
+<h3>1. Get an Apple Developer Certificate</h3>
+<p>Once enrolled in the Apple Developer Program, you need to create a <strong>Developer ID Application</strong> certificate (not &quot;Apple Development&quot; or &quot;Mac App Distribution&quot;). This is specifically for signing apps distributed outside the Mac App Store.</p>
+<h3>2. Create a Certificate Signing Request</h3>
+<pre><code class="language-bash">openssl req -new -newkey rsa:2048 -nodes \
+  -keyout DeveloperID.key \
+  -out CertificateSigningRequest.certSigningRequest \
+  -subj &quot;/emailAddress=you@example.com/CN=Your Name/C=US&quot;
+</code></pre>
+<p>Upload the <code>.certSigningRequest</code> file to Apple Developer portal, select G2 Sub-CA, and download the resulting <code>.cer</code> file.</p>
+<h3>3. Import the Certificate</h3>
+<pre><code class="language-bash"># Import the certificate
+security import developerID_application.cer -k ~/Library/Keychains/login.keychain-db
+
+# Import the private key
+security import DeveloperID.key -k ~/Library/Keychains/login.keychain-db
+
+# Download and import Apple's intermediate certificate
+curl -O https://www.apple.com/certificateauthority/DeveloperIDG2CA.cer
+security import DeveloperIDG2CA.cer -k ~/Library/Keychains/login.keychain-db
+
+# Verify it's available
+security find-identity -v -p codesigning
+</code></pre>
+<p>You should see your Developer ID Application identity listed.</p>
+<h3>4. Create an Entitlements File</h3>
+<p>The JVM requires specific entitlements to run with hardened runtime:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;com.apple.security.cs.allow-jit&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;com.apple.security.cs.allow-unsigned-executable-memory&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;com.apple.security.cs.disable-library-validation&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+<p>Save this as <code>entitlements.plist</code>.</p>
+<h3>5. Build and Sign with jpackage</h3>
+<pre><code class="language-bash">jpackage \
+  --name Hello \
+  --type app-image \
+  --input /path/to/input \
+  --main-jar Hello.jar \
+  --dest /path/to/output \
+  --runtime-image /path/to/runtime \
+  --mac-sign \
+  --mac-signing-key-user-name &quot;Developer ID Application: Your Name (TEAMID)&quot; \
+  --verbose
+</code></pre>
+<p>If jpackage doesn't apply entitlements correctly, you'll need to manually re-sign (update: this is a bug that has been fixed and should ship in JDK 26 making this step unnecessary):</p>
+<pre><code class="language-bash">codesign --force --sign &quot;Developer ID Application: Your Name (TEAMID)&quot; \
+  --entitlements entitlements.plist \
+  --deep --options runtime \
+  output/Hello.app
+</code></pre>
+<h3>6. Verify the Signature</h3>
+<pre><code class="language-bash">codesign -dv output/Hello.app/Contents/MacOS/Hello
+codesign -d --entitlements - --xml output/Hello.app/Contents/MacOS/Hello
+</code></pre>
+<p>You should see your Developer ID signature and the entitlements listed.</p>
+<h2>Boom</h2>
+<pre><code class="language-bash">❯ ./output/Hello.app/Contents/MacOS/Hello
+Hello, Chad
+</code></pre>
+<p>Boom.</p>
+<hr />
+<h2>Update: Maven settings to make this all happen as an optional profile step</h2>
+<p>I'm taking this code out of my demos now since I can run this all unsigned on my work laptop. But if anyone wants to distribute a jpackaged app to folks on machines running greedy AI security bots, the code below is for you.</p>
+<pre><code class="language-xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.panteleyev&lt;/groupId&gt;
+            &lt;artifactId&gt;jpackage-maven-plugin&lt;/artifactId&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;create-installer&lt;/id&gt;
+                    &lt;phase&gt;package&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;jpackage&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;name&gt;YourApp&lt;/name&gt;
+                        &lt;type&gt;APP_IMAGE&lt;/type&gt;
+                        &lt;!-- ... other config ... --&gt;
+                        &lt;!-- NO macSign, macSigningKeyUserName, or macEntitlements here --&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+
+&lt;profiles&gt;
+    &lt;profile&gt;
+        &lt;id&gt;signed&lt;/id&gt;
+        &lt;build&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.panteleyev&lt;/groupId&gt;
+                    &lt;artifactId&gt;jpackage-maven-plugin&lt;/artifactId&gt;
+                    &lt;executions&gt;
+                        &lt;execution&gt;
+                            &lt;id&gt;create-installer&lt;/id&gt;
+                            &lt;configuration&gt;
+                                &lt;macSign&gt;true&lt;/macSign&gt;
+                                &lt;macSigningKeyUserName&gt;${env.MAC_SIGNING_KEY_NAME}&lt;/macSigningKeyUserName&gt;
+                                &lt;macEntitlements&gt;${env.MAC_ENTITLEMENTS}&lt;/macEntitlements&gt;
+                            &lt;/configuration&gt;
+                        &lt;/execution&gt;
+                    &lt;/executions&gt;
+                &lt;/plugin&gt;
+
+                &lt;!-- temp fix until JDK 26 I hope --&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+                    &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;3.1.0&lt;/version&gt;
+                    &lt;executions&gt;
+                        &lt;execution&gt;
+                            &lt;id&gt;resign-with-entitlements&lt;/id&gt;
+                            &lt;phase&gt;package&lt;/phase&gt;
+                            &lt;goals&gt;
+                                &lt;goal&gt;exec&lt;/goal&gt;
+                            &lt;/goals&gt;
+                            &lt;configuration&gt;
+                                &lt;executable&gt;codesign&lt;/executable&gt;
+                                &lt;arguments&gt;
+                                    &lt;argument&gt;--force&lt;/argument&gt;
+                                    &lt;argument&gt;--sign&lt;/argument&gt;
+                                    &lt;argument&gt;${env.MAC_SIGNING_KEY_NAME}&lt;/argument&gt;
+                                    &lt;argument&gt;--entitlements&lt;/argument&gt;
+                                    &lt;argument&gt;${env.MAC_ENTITLEMENTS}&lt;/argument&gt;
+                                    &lt;argument&gt;--options&lt;/argument&gt;
+                                    &lt;argument&gt;runtime&lt;/argument&gt;
+                                    &lt;argument&gt;--deep&lt;/argument&gt;
+                                    &lt;argument&gt;${project.build.directory}/jpackage/YourApp.app&lt;/argument&gt;
+                                &lt;/arguments&gt;
+                            &lt;/configuration&gt;
+                        &lt;/execution&gt;
+                    &lt;/executions&gt;
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/build&gt;
+    &lt;/profile&gt;
+&lt;/profiles&gt;
+</code></pre>
+<p>Set the environment variables before running the signed build:</p>
+<pre><code class="language-bash">export MAC_SIGNING_KEY_NAME=&quot;Developer ID Application: Your Name (TEAMID)&quot;
+export MAC_ENTITLEMENTS=&quot;/path/to/entitlements.plist&quot;
+mvn package -Psigned
+</code></pre>
+<p>This keeps your local development builds fast and only runs the signing steps when you actually need them for distribution.</p>
+                    </div>
+                </article>
+
+                <p class="bbs-back-link"><a href="/bbs/writing.html">[Esc] Back to Writing</a></p>
+            </section>
+
+            <form class="bbs-command" id="bbs-command">
+                <label for="bbs-input">[Node 1] Command:</label>
+                <input id="bbs-input" name="command" autocomplete="off" spellcheck="false" placeholder="type home, writing, thoughts, speaking, playground, exit" />
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

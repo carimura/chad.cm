@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+    <script src="/assets/javascript/bbs.js" defer></script>
+</head>
+<body class="bbs-page">
+    <main class="bbs-shell" id="bbs">
+        <section class="bbs-terminal" aria-label="Chad dot CM Renegade BBS">
+            {% include "bbs-header.html" %}
+
+            <div class="bbs-screen" aria-label="Renegade status screen">
+                <h1 class="bbs-system-title">The Renegade Bulletin Board System</h1>
+
+                <section class="bbs-panel bbs-stats" aria-label="Today stats">
+                    <h2>Today's Stats</h2>
+                    <dl>
+                        <div><dt>Calls</dt><dd>1</dd></div>
+                        <div><dt>Posts</dt><dd>22</dd></div>
+                        <div><dt>Email</dt><dd>1</dd></div>
+                        <div><dt>Newusers</dt><dd>0</dd></div>
+                        <div><dt>Feedback</dt><dd>0</dd></div>
+                        <div><dt># UL</dt><dd>0</dd></div>
+                        <div><dt># DL</dt><dd>0</dd></div>
+                        <div><dt>Minutes</dt><dd>38</dd></div>
+                        <div><dt>Overlays</dt><dd>XMS</dd></div>
+                        <div><dt>Megs Free</dt><dd>454</dd></div>
+                    </dl>
+                </section>
+
+                <section class="bbs-panel bbs-stats" aria-label="System averages">
+                    <h2>System Averages</h2>
+                    <dl>
+                        <div><dt>Calls</dt><dd>57.92</dd></div>
+                        <div><dt>Posts</dt><dd>33.99</dd></div>
+                        <div><dt># UL</dt><dd>4.39</dd></div>
+                        <div><dt># DL</dt><dd>52.79</dd></div>
+                        <div><dt>Activity</dt><dd>38.1%</dd></div>
+                    </dl>
+                    <div class="bbs-modem">ATV1S0=0M0E0H0</div>
+                </section>
+
+                <section class="bbs-panel bbs-stats" aria-label="System totals">
+                    <h2>System Totals</h2>
+                    <dl>
+                        <div><dt>Calls</dt><dd>179321</dd></div>
+                        <div><dt>Posts</dt><dd>39941</dd></div>
+                        <div><dt># UL</dt><dd>5156</dd></div>
+                        <div><dt># DL</dt><dd>62032</dd></div>
+                        <div><dt>Days</dt><dd>1175</dd></div>
+                    </dl>
+                </section>
+
+                <section class="bbs-panel bbs-stats" aria-label="Other info">
+                    <h2>Other Info</h2>
+                    <dl>
+                        <div><dt>Node</dt><dd>1</dd></div>
+                        <div><dt>Under</dt><dd>DOS</dd></div>
+                        <div><dt>Errors</dt><dd>0</dd></div>
+                        <div><dt>Mail</dt><dd>Open</dd></div>
+                        <div><dt>User</dt><dd>Guest</dd></div>
+                    </dl>
+                </section>
+
+                <section class="bbs-panel bbs-modem-panel">
+                    <h2>Modem</h2>
+                    <div class="bbs-log" id="bbs-log" aria-live="polite">
+                        <p><span class="bbs-cyan">Initializing modem</span> ... CONNECT 14400</p>
+                        <p>Welcome to <span class="bbs-yellow">chad.cm</span>. Guest access granted.</p>
+                        <p>Use hot keys or type a command below.</p>
+                    </div>
+                </section>
+
+                <section class="bbs-panel bbs-board-deck">
+                    <section class="bbs-board active" data-board-panel="home">
+                        <div class="bbs-board-header">
+                            <h1>Chad.CM Renegade</h1>
+                            <p>Node: 1</p>
+                        </div>
+                        <p class="bbs-copy">Personal website running as a Renegade-style board. Same writing, thoughts, talks, and experiments, presented like a public access node from the DOS era.</p>
+
+                        <div class="bbs-grid">
+                            <a href="/bbs/writing.html">
+                                <span>[F]</span>
+                                <strong>Writing archive</strong>
+                                <small>Long-form posts and build notes</small>
+                            </a>
+                            <a href="/bbs/thoughts.html">
+                                <span>[B]</span>
+                                <strong>Thought feed</strong>
+                                <small>Short updates and observations</small>
+                            </a>
+                            <a href="/bbs/speaking.html">
+                                <span>[C]</span>
+                                <strong>Speaking room</strong>
+                                <small>Talks, keynotes, and interviews</small>
+                            </a>
+                            <a href="/bbs/playground.html">
+                                <span>[O]</span>
+                                <strong>Door games</strong>
+                                <small>Experiments, tools, and toys</small>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="bbs-board" data-board-panel="writing">
+                        <div class="bbs-board-header">
+                            <h2>Recent Writing</h2>
+                            <p>File Base</p>
+                        </div>
+                        <ol class="bbs-list">
+                            {% for post in posts limit 8 %}
+                            <li>
+                                <span>{{ post.formatted_date }}</span>
+                                <a href="/bbs{{ post.url }}">{{ post.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </section>
+
+                    <section class="bbs-board" data-board-panel="thoughts">
+                        <div class="bbs-board-header">
+                            <h2>Thought Packets</h2>
+                            <p>Msg Base</p>
+                        </div>
+                        <ol class="bbs-list">
+                            {% for thought in thoughts limit 8 %}
+                            <li>
+                                <span>{{ thought.formatted_date }}</span>
+                                <a href="/bbs{{ thought.url }}">{{ thought.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </section>
+
+                    <section class="bbs-board" data-board-panel="speaking">
+                        <div class="bbs-board-header">
+                            <h2>Speaking</h2>
+                            <p>Caller Log</p>
+                        </div>
+                        <div class="bbs-grid compact">
+                            <a href="https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858">
+                                <span>[1]</span>
+                                <strong>JavaOne 2026 Keynote</strong>
+                                <small>Opening keynote segment</small>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=mk_2MIWxLI0">
+                                <span>[2]</span>
+                                <strong>JavaOne 2025 Keynote</strong>
+                                <small>Java and developer ecosystem</small>
+                            </a>
+                            <a href="https://vimeo.com/747697437">
+                                <span>[3]</span>
+                                <strong>OpenJDK at JavaZone</strong>
+                                <small>Where the magic happens</small>
+                            </a>
+                            <a href="/speaking.html">
+                                <span>[A]</span>
+                                <strong>Full speaking archive</strong>
+                                <small>Browse the rest</small>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="bbs-board" data-board-panel="doors">
+                        <div class="bbs-board-header">
+                            <h2>Doors</h2>
+                            <p>Online Games</p>
+                        </div>
+                        <div class="bbs-doors">
+                            <a href="/playground.html">[1] Playground</a>
+                            <a href="/feed.xml">[2] RSS uplink</a>
+                            <a href="https://github.com/carimura">[3] GitHub file area</a>
+                            <a href="https://x.com/chadarimura">[4] X message base</a>
+                            <a href="https://linkedin.com/in/chadarimura">[5] LinkedIn node</a>
+                            <a href="/">[0] Exit to web</a>
+                        </div>
+                    </section>
+                </section>
+
+                <nav class="bbs-menu" aria-label="BBS sections">
+                    <button class="active" data-board="home"><span>[S]</span>ystem Config</button>
+                    <button data-board="writing"><span>[F]</span>ile Base</button>
+                    <button data-board="speaking"><span>[C]</span>allers</button>
+                    <button data-board="home"><span>[I]</span>nit Modem</button>
+                    <button data-board="home"><span>[!]</span>Validate</button>
+                    <button data-board="home"><span>[U]</span>ser Editor</button>
+                    <button data-board="thoughts"><span>[B]</span>Msg Base</button>
+                    <button data-board="doors"><span>[P]</span>ack Msgs</button>
+                    <button data-board="home"><span>[O]</span>ffhook Modem</button>
+                    <button data-board="doors"><span>[L]</span>ogs</button>
+                    <button data-board="thoughts"><span>[#]</span>Menu Editor</button>
+                    <button data-board="thoughts"><span>[X]</span>Xfer Prots</button>
+                    <button data-board="home"><span>[M]</span>ail Read</button>
+                    <button data-board="speaking"><span>[A]</span>nswer Modem</button>
+                    <button data-board="writing"><span>[Z]</span>History</button>
+                    <button data-board="home"><span>[E]</span>vent Editor</button>
+                    <button data-board="writing"><span>[W]</span>rite Mail</button>
+                    <button data-board="thoughts"><span>[R]</span>Read Mail</button>
+                    <button data-board="home"><span>[H]</span>angup Modem</button>
+                    <button data-board="doors"><span>[D]</span>rop to DOS</button>
+                    <button data-board="home"><span>[V]</span>oting Editor</button>
+                    <button data-board="doors"><span>[$]</span>Conferences</button>
+                    <button data-board="home"><span>[ ]</span>Log On</button>
+                    <button data-board="doors"><span>[N]</span>ode Listing</button>
+                    <button data-board="home"><span>[Q]</span>uit to DOS</button>
+                </nav>
+            </div>
+
+            <form class="bbs-command" id="bbs-command">
+                <label for="bbs-input">[Node 1] Command:</label>
+                <input id="bbs-input" name="command" autocomplete="off" spellcheck="false" placeholder="type home, writing, thoughts, speaking, playground, exit" />
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

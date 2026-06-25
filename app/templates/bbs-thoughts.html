@@ -1,0 +1,18 @@
+{% include "bbs-page-start.html" %}
+            <section class="bbs-section-screen">
+                <div class="bbs-section-title">
+                    <span>Message Base</span>
+                    <strong>Thoughts</strong>
+                    <span>9 msgs</span>
+                </div>
+
+                <ol class="bbs-file-list">
+                    {% for thought in thoughts %}
+                    <li>
+                        <span class="bbs-file-date">{{ thought.formatted_date }}</span>
+                        <a href="/bbs{{ thought.url }}">{{ thought.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </section>
+{% include "bbs-page-end.html" %}

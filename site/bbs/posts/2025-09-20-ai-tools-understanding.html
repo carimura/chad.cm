@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Chad Arimura - Losing Touch with the Inner Workings | BBS">
+    <title>Chad Arimura | Losing Touch with the Inner Workings | BBS</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="alternate" type="application/rss+xml" title="The Site of Chad Arimura" href="/feed.xml">
+    <script src="/assets/javascript/theme.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+    <script src="/assets/javascript/bbs.js" defer></script>
+</head>
+<body class="bbs-page">
+    <main class="bbs-shell bbs-section-shell" id="bbs">
+        <section class="bbs-terminal" aria-label="Chad dot CM BBS">
+            <div class="bbs-home-hero">
+    <p class="bbs-tagline">The Renegade Bulletin Board System</p>
+    <a href="/" class="bbs-www-link" aria-label="Return to normal website" title="Back to normal website">www</a>
+    <pre class="bbs-logo" aria-label="chad.cm">
+ ██████╗██╗  ██╗ █████╗ ██████╗      ██████╗███╗   ███╗
+██╔════╝██║  ██║██╔══██╗██╔══██╗    ██╔════╝████╗ ████║
+██║     ███████║███████║██║  ██║    ██║     ██╔████╔██║
+██║     ██╔══██║██╔══██║██║  ██║    ██║     ██║╚██╔╝██║
+╚██████╗██║  ██║██║  ██║██████╔╝██╗ ╚██████╗██║ ╚═╝ ██║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═════╝╚═╝     ╚═╝
+    </pre>
+    <nav class="bbs-home-nav" aria-label="Site navigation">
+        <a href="/bbs/">Home</a>
+        <a href="/bbs/writing.html">Writing</a>
+        <a href="/bbs/thoughts.html">Thoughts</a>
+        <a href="/bbs/speaking.html">Speaking</a>
+        <a href="/bbs/playground.html">Playground</a>
+    </nav>
+</div>
+
+            <section class="bbs-article-screen">
+                <div class="bbs-section-title">
+                    <span>File Base</span>
+                    <strong>Losing Touch with the Inner Workings</strong>
+                    <span>September 20th, 2025</span>
+                </div>
+
+                <article class="bbs-article">
+                    <div class="bbs-article-content">
+                        <p>As I use AI tools to solve time-consuming things, I find myself becoming less and less aware of how those things work under the hood. A simple example would be for maintaining our Inside.java site. I am an infrequent editor, so when I make changes, I forget the project details: required markdown fields, folder structure, special static site tags, etc. Now I never need to relearn, our AI tools can add posts faster than I can type <code>bundle exec jekyll serve</code> [1].</p>
+<img src="/assets/chatgpt-ai-tools.png" alt="ChatGPT conversation about AI tools" style="float: right; margin: 10px 0 20px 20px; max-width: 350px;">
+<p>I suppose this is a good thing as I then can spend more time on higher leverage things, but it does raise a yellow flag given most of my career in tech has been in understanding the inner workings of things. But, I guess I haven't look at the kernal code, or my keyboard drivers, or the OS code, or Excel's code (nor do I have that), or anything else that has added layers of abstraction over the years.</p>
+<p>Even this post itself, although 100% written by me [2] (I just can't use AI tools to write for me, the style bothers me beyond belief), I asked an agent to go and find my blog in my projects tree and add the post. It's even using the static site generator I created myself. What a world.</p>
+<p>What's next?</p>
+<p>[1] Yes, we used Ruby to launch the site quickly back in 2020, but we have since created two new Java static site generators and ported the site over to one of them, to be deployed soon alongside some new other new stuff we're building.</p>
+<p>[2] Ok I used AI to create the image, obviously</p>
+                    </div>
+                </article>
+
+                <p class="bbs-back-link"><a href="/bbs/writing.html">[Esc] Back to Writing</a></p>
+            </section>
+
+            <form class="bbs-command" id="bbs-command">
+                <label for="bbs-input">[Node 1] Command:</label>
+                <input id="bbs-input" name="command" autocomplete="off" spellcheck="false" placeholder="type home, writing, thoughts, speaking, playground, exit" />
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

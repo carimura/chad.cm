@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Chad Arimura - Hermes-flare: Self-hosted Hermes Agent running on Cloudflare | BBS">
+    <title>Chad Arimura | Hermes-flare: Self-hosted Hermes Agent running on Cloudflare | BBS</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="alternate" type="application/rss+xml" title="The Site of Chad Arimura" href="/feed.xml">
+    <script src="/assets/javascript/theme.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+    <script src="/assets/javascript/bbs.js" defer></script>
+</head>
+<body class="bbs-page">
+    <main class="bbs-shell bbs-section-shell" id="bbs">
+        <section class="bbs-terminal" aria-label="Chad dot CM BBS">
+            <div class="bbs-home-hero">
+    <p class="bbs-tagline">The Renegade Bulletin Board System</p>
+    <a href="/" class="bbs-www-link" aria-label="Return to normal website" title="Back to normal website">www</a>
+    <pre class="bbs-logo" aria-label="chad.cm">
+ ██████╗██╗  ██╗ █████╗ ██████╗      ██████╗███╗   ███╗
+██╔════╝██║  ██║██╔══██╗██╔══██╗    ██╔════╝████╗ ████║
+██║     ███████║███████║██║  ██║    ██║     ██╔████╔██║
+██║     ██╔══██║██╔══██║██║  ██║    ██║     ██║╚██╔╝██║
+╚██████╗██║  ██║██║  ██║██████╔╝██╗ ╚██████╗██║ ╚═╝ ██║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═════╝╚═╝     ╚═╝
+    </pre>
+    <nav class="bbs-home-nav" aria-label="Site navigation">
+        <a href="/bbs/">Home</a>
+        <a href="/bbs/writing.html">Writing</a>
+        <a href="/bbs/thoughts.html">Thoughts</a>
+        <a href="/bbs/speaking.html">Speaking</a>
+        <a href="/bbs/playground.html">Playground</a>
+    </nav>
+</div>
+
+            <section class="bbs-article-screen">
+                <div class="bbs-section-title">
+                    <span>File Base</span>
+                    <strong>Hermes-flare: Self-hosted Hermes Agent running on Cloudflare</strong>
+                    <span>May 28th, 2026</span>
+                </div>
+
+                <article class="bbs-article">
+                    <div class="bbs-article-content">
+                        <img src="/assets/posts/hermes-flare-logo.png" alt="HERMES-FLARE" style="max-width: 80%;">
+<p>Inspired by the <a href="https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/">Moltworker</a> stuff, I wanted to get <a href="https://hermes-agent.nousresearch.com">Hermes</a> working on Cloudflare as a serverless agent with long-term memory and the ability to execute commands and code in separate sandboxes</p>
+<p>Here's that work so far: <a href="https://github.com/carimura/hermes-flare">https://github.com/carimura/hermes-flare</a>. It's very rough, but it works.</p>
+<p>Some features:</p>
+<h2>Serverless</h2>
+<p>The main feature is this is a self-hosted Hermes agent running basically serverless on Cloudflare. It's amusing to talk about serverless again given my <a href="https://chad.cm/posts/2017-05-22-thanks-and-onward.html">last company</a>, but here we are in 2026!</p>
+<ul>
+<li><strong>Workers</strong>: the entry point. Routes <code>/api/*</code></li>
+<li><strong>Containers (Sandbox SDK)</strong>: the Agent and Exec containers, both running as Firecracker VMs.</li>
+<li><strong>Durable Objects</strong>: what the Sandbox SDK sits on underneath.</li>
+<li><strong>R2</strong>: where the snapshots land. ~50MB out of the box. Will grow over time but does not include the Hermes agent code which is 1.6GB (!).</li>
+<li><strong>Cron Triggers</strong>: fires every 5 minutes, partly to keep the Agent warm and partly so Hermes' own scheduled jobs get a chance to run.</li>
+</ul>
+<p>All that plus a little wiring and there's not much to worry about.</p>
+<h2>Isolating Code Exec with Sandboxes</h2>
+<p>There are two different containers:</p>
+<ul>
+<li><strong>Agent</strong>: the long-lived container. Hermes runs here, talks to Slack over Socket Mode, holds onto its memory.</li>
+<li><strong>Exec</strong>: A specific code execution sandbox where the agent can run Python, shell commands, etc.</li>
+</ul>
+<p>Hermes is actually installed at <code>/opt/hermes-install</code> but you'll notice that <code>ls /opt/hermes-install</code> can't find it. That's because the sandbox is separate.</p>
+<img src="/assets/posts/hermes-flare-exec.png" alt="Hermes running whoami and ls in the Exec sandbox" style="max-width: 100%;">
+<h2>Snapshots and restore</h2>
+<p>Hermes keeps its state (config, sessions, memories, cron jobs) under <code>~/.hermes</code> in the Agent container. Hermes-flare can snapshot that whole directory up to R2 as a compressed squashfs blob, and whenever the container cold-boots it pulls down the latest snapshot and restores before the gateway even starts.</p>
+<p>One fun exercise was trying to mount R2 because that's what I thought moltworker did, but I discovered they abandoned that strategy due to latency issues, only after I ran into... latency issues. Snapshots are simple though, and because Hermes is installed in a different directory, each snapshot is only like 50 megs.</p>
+<p>To see in action, I took a snapshot, told Hermes about my other dog Gus, and then killed the container and brought a new one up.</p>
+<p>Restore did its job, Yodel was still in there. But Hermes also went back and re-read the Slack thread, saw me mention Gus, and offered to save him again. It recovered partly from the snapshot and partly by just scrolling back through the conversation. You wily little agent you!</p>
+<img src="/assets/posts/hermes-flare-gus.png" alt="Hermes recovering memory after restore and re-noticing Gus from the prior Slack thread" style="max-width: 100%;">
+<h2>What I haven't done yet....</h2>
+<ul>
+<li>AI Gateway for proxying the LLM through Cloudflare. Hermes talks directly using the bring-your-own-key.</li>
+<li>Zero Trust in front of <code>/api/*</code>. Right now it's just a shared token, and I want to wire up Cloudflare Access so my identity carries through on its own.</li>
+<li>Per-command Exec sandboxes. They all share one at the moment.</li>
+<li>Multiple bots at once (possible in theory but haven't tested)</li>
+<li>An &quot;operator bot&quot;, basically a second Slack interface that can poke at the Agent container itself. Makes more sense now that there's a real boundary between the agent and where its code runs.</li>
+</ul>
+<p>And some issues <a href="https://github.com/carimura/hermes-flare/issues">here</a>.</p>
+<h2>Repo</h2>
+<p><a href="https://github.com/carimura/hermes-flare">github.com/carimura/hermes-flare</a></p>
+                    </div>
+                </article>
+
+                <p class="bbs-back-link"><a href="/bbs/writing.html">[Esc] Back to Writing</a></p>
+            </section>
+
+            <form class="bbs-command" id="bbs-command">
+                <label for="bbs-input">[Node 1] Command:</label>
+                <input id="bbs-input" name="command" autocomplete="off" spellcheck="false" placeholder="type home, writing, thoughts, speaking, playground, exit" />
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

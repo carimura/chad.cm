@@ -1,0 +1,18 @@
+{% include "bbs-page-start.html" %}
+            <section class="bbs-section-screen">
+                <div class="bbs-section-title">
+                    <span>File Base</span>
+                    <strong>Writing</strong>
+                    <span>22 files</span>
+                </div>
+
+                <ol class="bbs-file-list">
+                    {% for post in posts %}
+                    <li>
+                        <span class="bbs-file-date">{{ post.formatted_date }}</span>
+                        <a href="/bbs{{ post.url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </section>
+{% include "bbs-page-end.html" %}
