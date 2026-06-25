@@ -302,19 +302,58 @@ p#date {
 }
 
 
-/*--- DARK MODE ---*/
+/*--- THEME PICKER ---*/
 
-/* Dark mode toggle button */
-.theme-toggle {
+.site-controls {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-theme-picker {
+    height: 40px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.site-theme-picker select {
+    max-width: 132px;
+    height: 40px;
+    box-sizing: border-box;
+    color: var(--text);
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    border-radius: 3px;
+    font: inherit;
+    font-weight: 500;
+    padding: 4px 22px 4px 6px;
+    cursor: pointer;
+}
+
+.site-theme-picker select:hover {
+    border-color: coral;
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    display: inline-grid;
+    place-items: center;
     background: var(--toggle-bg);
     border: 1px dashed var(--toggle-border);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    color: var(--text);
     font-size: 20px;
+    line-height: 1;
     cursor: pointer;
 }
 
@@ -322,41 +361,16 @@ p#date {
     border: 1px dashed coral;
 }
 
-.bbs-toggle {
-    position: absolute;
-    top: 20px;
-    right: 72px;
-    width: 46px;
-    height: 40px;
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--toggle-bg);
-    border: 1px dashed var(--toggle-border);
-    border-radius: 4px;
-    color: var(--text);
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-}
+@media (max-width: 600px) {
+    .site-controls {
+        position: static;
+        width: fit-content;
+        margin: 14px auto 0;
+    }
 
-.bbs-toggle::before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 8px;
-    right: 8px;
-    height: 3px;
-    background: currentColor;
-    opacity: 0.8;
-}
-
-.bbs-toggle:hover {
-    border: 1px dashed coral;
-    text-decoration: none;
+    .site-theme-picker select {
+        max-width: 128px;
+    }
 }
 
 /*--- IMAGE MODAL ---*/
@@ -980,6 +994,39 @@ body.bbs-page {
     text-decoration: none;
 }
 
+.bbs-version-controls {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bbs-version-controls .site-theme-picker {
+    height: 34px;
+    font-family: var(--bbs-font);
+    font-size: 0.78rem;
+}
+
+.bbs-version-controls .site-theme-picker select {
+    height: 34px;
+    max-width: 148px;
+    border: 2px solid #9d9d9d;
+    border-radius: 3px;
+    background: #050505;
+    color: #d8d8d8;
+    box-shadow: inset 0 -5px 0 #0000a6;
+}
+
+.bbs-version-controls .bbs-www-link {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex: none;
+}
+
 .bbs-section-shell {
     max-width: 1060px;
 }
@@ -1286,6 +1333,41 @@ body.pq1-page {
     text-decoration: none;
 }
 
+.pq1-version-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.pq1-version-controls .site-theme-picker {
+    height: 42px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.82rem;
+}
+
+.pq1-version-controls .site-theme-picker select {
+    height: 42px;
+    max-width: 148px;
+    border: 3px solid #1a1a1a;
+    border-radius: 0;
+    background: #d8d0a4;
+    color: #101010;
+    box-shadow:
+        inset 0 0 0 2px #f2ecc7,
+        4px 4px 0 rgba(0,0,0,0.25);
+}
+
+.pq1-version-controls .pq1-www-link {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex: none;
+}
+
 .pq1-viewport {
     position: relative;
     height: min(68vh, 640px);
@@ -1549,7 +1631,7 @@ body.pq1-page {
     bottom: 98px;
     z-index: 8;
     width: 24px;
-    height: 42px;
+    height: 48px;
     transform: translateX(-50%) scale(2.2);
     transform-origin: bottom center;
     image-rendering: pixelated;
@@ -1572,33 +1654,40 @@ body.pq1-page {
     transform: scaleX(-1);
 }
 
+.pq1-officer[data-direction="left"] .eye-right,
+.pq1-officer[data-direction="right"] .eye-right,
+.pq1-officer[data-direction="left"] .mouth,
+.pq1-officer[data-direction="right"] .mouth {
+    display: none;
+}
+
 .pq1-officer-part {
     image-rendering: pixelated;
 }
 
 .pq1-officer .hat-top {
-    left: 8px;
-    top: 1px;
-    width: 10px;
-    height: 5px;
+    left: 10px;
+    top: 4px;
+    width: 6px;
+    height: 2px;
     background: #070707;
-    border-top: 1px solid #4a2416;
+    border-top: 0;
 }
 
 .pq1-officer .hat-brim {
-    left: 7px;
-    top: 5px;
-    width: 12px;
-    height: 4px;
+    left: 9px;
+    top: 6px;
+    width: 7px;
+    height: 2px;
     background: #070707;
-    box-shadow: 8px 2px 0 -2px #070707;
+    box-shadow: none;
 }
 
 .pq1-officer .head {
     left: 9px;
     top: 8px;
-    width: 9px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: #ffb06f;
     border: 1px solid #070707;
     border-top: 0;
@@ -1607,43 +1696,53 @@ body.pq1-page {
 .pq1-officer .hair {
     left: 8px;
     top: 8px;
-    width: 4px;
-    height: 10px;
+    width: 1px;
+    height: 5px;
     background: #070707;
 }
 
 .pq1-officer .eye {
-    left: 16px;
-    top: 12px;
-    width: 2px;
+    left: 11px;
+    top: 10px;
+    width: 1px;
     height: 2px;
     background: #070707;
 }
 
+.pq1-officer .eye-right {
+    left: 14px;
+    top: 10px;
+    width: 1px;
+    height: 2px;
+    background: #070707;
+}
+
+.pq1-officer .mouth {
+    left: 13px;
+    top: 13px;
+    width: 2px;
+    height: 1px;
+    background: #070707;
+}
+
 .pq1-officer .neck {
-    left: 11px;
-    top: 18px;
-    width: 5px;
-    height: 3px;
-    background: #ffb06f;
-    border-left: 1px solid #070707;
-    border-right: 1px solid #070707;
+    display: none;
 }
 
 .pq1-officer .torso {
     left: 7px;
-    top: 21px;
+    top: 16px;
     width: 13px;
-    height: 11px;
+    height: 13px;
     background: #d82020;
     border: 1px solid #070707;
 }
 
 .pq1-officer .shirt {
     left: 12px;
-    top: 21px;
+    top: 16px;
     width: 3px;
-    height: 10px;
+    height: 12px;
     background: #ffffff;
     border-left: 1px solid #070707;
     border-right: 1px solid #070707;
@@ -1655,14 +1754,14 @@ body.pq1-page {
 
 .pq1-officer .belt {
     left: 7px;
-    top: 31px;
+    top: 28px;
     width: 13px;
     height: 2px;
     background: #070707;
 }
 
 .pq1-officer .arm {
-    top: 22px;
+    top: 17px;
     width: 3px;
     height: 13px;
     background: #d82020;
@@ -1672,16 +1771,16 @@ body.pq1-page {
 
 .pq1-officer .arm-back {
     left: 5px;
-    transform: rotate(8deg);
+    transform: none;
 }
 
 .pq1-officer .arm-front {
     right: 3px;
-    transform: rotate(-8deg);
+    transform: none;
 }
 
 .pq1-officer .hand {
-    top: 34px;
+    top: 30px;
     width: 3px;
     height: 3px;
     background: #ffb06f;
@@ -1697,9 +1796,9 @@ body.pq1-page {
 }
 
 .pq1-officer .leg {
-    top: 33px;
+    top: 30px;
     width: 4px;
-    height: 8px;
+    height: 16px;
     background: #f1f1f1;
     border: 1px solid #070707;
     transform-origin: 50% 1px;
@@ -1714,7 +1813,7 @@ body.pq1-page {
 }
 
 .pq1-officer .shoe {
-    top: 40px;
+    top: 46px;
     width: 6px;
     height: 2px;
     background: #070707;
@@ -1729,11 +1828,11 @@ body.pq1-page {
 }
 
 .pq1-officer[data-step="1"] .arm-back {
-    transform: rotate(-14deg);
+    transform: none;
 }
 
 .pq1-officer[data-step="1"] .arm-front {
-    transform: rotate(14deg);
+    transform: none;
 }
 
 .pq1-officer[data-step="1"] .leg-back {
@@ -1750,6 +1849,36 @@ body.pq1-page {
 
 .pq1-officer[data-step="1"] .shoe-front {
     left: 13px;
+}
+
+.pq1-officer[data-direction="left"] .hat-top,
+.pq1-officer[data-direction="right"] .hat-top {
+    left: 10px;
+    width: 6px;
+}
+
+.pq1-officer[data-direction="left"] .hat-brim,
+.pq1-officer[data-direction="right"] .hat-brim {
+    left: 9px;
+    width: 7px;
+    box-shadow: none;
+}
+
+.pq1-officer[data-direction="left"] .head,
+.pq1-officer[data-direction="right"] .head {
+    left: 9px;
+    width: 9px;
+}
+
+.pq1-officer[data-direction="left"] .hair,
+.pq1-officer[data-direction="right"] .hair {
+    left: 8px;
+    width: 2px;
+}
+
+.pq1-officer[data-direction="left"] .eye,
+.pq1-officer[data-direction="right"] .eye {
+    left: 16px;
 }
 
 .pq1-foreground {
@@ -1844,6 +1973,33 @@ body.pq1-page {
         position: absolute;
         top: 8px;
         right: 8px;
+    }
+
+    .pq1-www-link-mobile {
+        display: none;
+    }
+
+    .pq1-version-controls {
+        top: 8px;
+        right: 8px;
+        gap: 0;
+    }
+
+    .pq1-version-controls .site-theme-picker select {
+        max-width: 120px;
+        height: 34px;
+        font-size: 0.7rem;
+        padding-right: 18px;
+    }
+
+    .pq1-version-controls .pq1-www-link {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 48px;
+        height: 34px;
+        padding-top: 18px;
+        font-size: 0.72rem;
     }
 
     .pq1-shell {

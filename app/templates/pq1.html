@@ -5,9 +5,11 @@
     <script src="/assets/javascript/pq1.js" defer></script>
 </head>
 <body class="pq1-page">
+    <div class="pq1-version-controls">
+        {% include "version-select.html" %}
+    </div>
     <main class="pq1-shell" id="pq1">
         <section class="pq1-game" aria-label="CHAD.CM Sierra style game site">
-            <a href="/" class="pq1-www-link pq1-www-link-mobile" aria-label="Return to normal website" title="Back to normal website">www</a>
             <div class="pq1-viewport" id="pq1-viewport">
                 <div class="pq1-skyline"></div>
                 <div class="pq1-world" id="pq1-world">
@@ -87,6 +89,8 @@
                         <span class="pq1-officer-part head"></span>
                         <span class="pq1-officer-part hair"></span>
                         <span class="pq1-officer-part eye"></span>
+                        <span class="pq1-officer-part eye-right"></span>
+                        <span class="pq1-officer-part mouth"></span>
                         <span class="pq1-officer-part neck"></span>
                         <span class="pq1-officer-part torso"></span>
                         <span class="pq1-officer-part shirt"></span>
@@ -121,6 +125,5 @@
             </form>
         </section>
     </main>
-    <a href="/" class="pq1-www-link" aria-label="Return to normal website" title="Back to normal website">www</a>
 </body>
 </html>

@@ -8,7 +8,29 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
+        const siteTheme = document.getElementById('site-theme');
         const themeToggle = document.getElementById('theme-toggle');
+
+        if (siteTheme) {
+            const path = window.location.pathname;
+            if (path === '/bbs/' || path.startsWith('/bbs/')) {
+                siteTheme.value = '/bbs/';
+            } else if (path === '/game/' || path.startsWith('/game/')) {
+                siteTheme.value = '/game/';
+            } else {
+                siteTheme.value = 'normal';
+            }
+
+            siteTheme.addEventListener('change', function() {
+                if (siteTheme.value === 'normal') {
+                    window.location.href = '/';
+                    return;
+                }
+
+                window.location.href = siteTheme.value;
+            });
+        }
+
         if (!themeToggle) return;
 
         updateToggleButton(defaultTheme);
