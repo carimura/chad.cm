@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+    <script src="/assets/javascript/pq1.js" defer></script>
+</head>
+<body class="pq1-page">
+    <main class="pq1-shell" id="pq1">
+        <section class="pq1-game" aria-label="CHAD.CM Police Quest style site">
+            <div class="pq1-viewport" id="pq1-viewport">
+                <div class="pq1-skyline"></div>
+                <div class="pq1-world" id="pq1-world">
+                    <section class="pq1-room pq1-room-home" aria-label="CHAD.CM station">
+                        <div class="pq1-building pq1-station">
+                            <div class="pq1-sign">CHAD.CM</div>
+                            <div class="pq1-window row-1 col-1"></div>
+                            <div class="pq1-window row-1 col-2"></div>
+                            <div class="pq1-window row-2 col-1"></div>
+                            <div class="pq1-window row-2 col-2"></div>
+                            <a class="pq1-door" href="/" aria-label="Normal website">WWW</a>
+                            <div class="pq1-steps"></div>
+                        </div>
+                        <div class="pq1-car" aria-hidden="true">
+                            <div class="pq1-car-light"></div>
+                            <div class="pq1-car-cabin"></div>
+                            <div class="pq1-car-body"></div>
+                            <div class="pq1-car-wheel left"></div>
+                            <div class="pq1-car-wheel right"></div>
+                        </div>
+                    </section>
+
+                    <section class="pq1-room pq1-room-writing" aria-label="Writing archive">
+                        <div class="pq1-building pq1-brick">
+                            <a class="pq1-shop-sign" href="/writing.html">WRITING</a>
+                            <div class="pq1-notice-board">
+                                {% for post in posts limit 6 %}
+                                <a href="{{ post.url }}">
+                                    <span>{{ post.formatted_date }}</span>
+                                    {{ post.title }}
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="pq1-room pq1-room-thoughts" aria-label="Thoughts feed">
+                        <div class="pq1-building pq1-dispatch">
+                            <a class="pq1-shop-sign" href="/thoughts.html">DISPATCH</a>
+                            <div class="pq1-message-grid">
+                                {% for thought in thoughts limit 6 %}
+                                <a href="{{ thought.url }}">
+                                    <span>{{ thought.formatted_date }}</span>
+                                    {{ thought.title }}
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="pq1-room pq1-room-speaking" aria-label="Speaking">
+                        <div class="pq1-building pq1-courthouse">
+                            <a class="pq1-shop-sign" href="/speaking.html">SPEAKING</a>
+                            <div class="pq1-poster-row">
+                                <a href="/speaking.html">JavaOne Keynotes</a>
+                                <a href="/speaking.html">OpenJDK Talks</a>
+                                <a href="/speaking.html">Conferences</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="pq1-room pq1-room-playground" aria-label="Playground">
+                        <div class="pq1-building pq1-garage">
+                            <a class="pq1-shop-sign" href="/playground.html">PLAYGROUND</a>
+                            <div class="pq1-garage-door">
+                                <a href="/playground.html">Experiments</a>
+                                <a href="/bbs/">Renegade BBS</a>
+                                <a href="/pq1/">PQ1 Mode</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <pre class="pq1-officer" id="pq1-officer" aria-label="Police officer ASCII character">  O
+ /|\
+ / \</pre>
+
+                <div class="pq1-foreground" aria-hidden="true"></div>
+            </div>
+
+            <div class="pq1-controls" aria-label="Movement controls">
+                <button type="button" id="pq1-left">&lt; WALK</button>
+                <div class="pq1-status">
+                    <span id="pq1-location">CHAD.CM</span>
+                    <span>Arrow keys move. Click signs.</span>
+                </div>
+                <button type="button" id="pq1-right">WALK &gt;</button>
+            </div>
+
+            <form class="pq1-parser" id="pq1-parser">
+                <label for="pq1-command">What do you want to do?</label>
+                <input id="pq1-command" name="command" autocomplete="off" spellcheck="false" placeholder="type look, home, writing, thoughts, speaking, playground, exit" />
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -134,6 +134,12 @@ async function copyBbsPages() {
     }
 }
 
+async function copyPq1Page() {
+    await mkdir(path.join(siteDir, 'pq1'), { recursive: true });
+    await copyFile(path.join(siteDir, 'pq1.html'), path.join(siteDir, 'pq1', 'index.html'));
+    await rm(path.join(siteDir, 'pq1.html'), { force: true });
+}
+
 const headerHtml = await readBbsHeader();
 if (!headerHtml) {
     throw new Error('Could not read generated BBS header from site/bbs-writing.html');
@@ -156,5 +162,6 @@ await generateDirectory({
 });
 
 await copyBbsPages();
+await copyPq1Page();
 
-console.log('Generated BBS route files, post detail pages, and thought detail pages.');
+console.log('Generated BBS route files, PQ1 route file, post detail pages, and thought detail pages.');
