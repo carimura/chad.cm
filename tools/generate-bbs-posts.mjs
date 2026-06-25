@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const siteDir = path.resolve('site');
@@ -130,6 +130,7 @@ async function copyBbsPages() {
 
     for (const [source, destination] of copies) {
         await copyFile(path.join(siteDir, source), path.join(siteDir, destination));
+        await rm(path.join(siteDir, source), { force: true });
     }
 }
 

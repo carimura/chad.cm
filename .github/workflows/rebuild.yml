@@ -19,7 +19,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '25'
-      - run: java -jar tools/arc.jar
+      - run: |
+          java -jar tools/arc.jar
+          node tools/generate-bbs-posts.mjs
       - name: Commit rebuilt site
         run: |
           git config user.name "github-actions[bot]"
