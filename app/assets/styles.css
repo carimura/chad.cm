@@ -1433,68 +1433,6 @@ body.pq1-page {
         linear-gradient(#777 0 35%, #555 35% 65%, #3f3f3f 65% 100%);
 }
 
-.pq1-car {
-    position: absolute;
-    left: 9%;
-    bottom: 118px;
-    width: 210px;
-    height: 78px;
-    z-index: 4;
-}
-
-.pq1-car-body {
-    position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 12px;
-    height: 38px;
-    background: #f0f0e0;
-    border: 4px solid #171717;
-}
-
-.pq1-car-body::after {
-    content: "POLICE";
-    position: absolute;
-    left: 54px;
-    top: 9px;
-    color: #172f9a;
-    font-weight: 700;
-}
-
-.pq1-car-cabin {
-    position: absolute;
-    left: 58px;
-    top: 8px;
-    width: 86px;
-    height: 36px;
-    background: #cfecff;
-    border: 4px solid #171717;
-    clip-path: polygon(15% 100%, 28% 0, 75% 0, 100% 100%);
-}
-
-.pq1-car-light {
-    position: absolute;
-    left: 96px;
-    top: 0;
-    width: 26px;
-    height: 10px;
-    background: linear-gradient(90deg, #c00 0 50%, #1448e8 50% 100%);
-    border: 3px solid #171717;
-}
-
-.pq1-car-wheel {
-    position: absolute;
-    bottom: 0;
-    width: 30px;
-    height: 30px;
-    background: #111;
-    border: 4px solid #333;
-    border-radius: 50%;
-}
-
-.pq1-car-wheel.left { left: 34px; }
-.pq1-car-wheel.right { right: 34px; }
-
 .pq1-brick,
 .pq1-dispatch,
 .pq1-courthouse,
@@ -1600,38 +1538,215 @@ body.pq1-page {
 .pq1-officer {
     position: absolute;
     left: 50%;
-    bottom: 92px;
+    bottom: 98px;
     z-index: 8;
-    transform: translateX(-50%) scale(2.45);
+    width: 34px;
+    height: 58px;
+    transform: translateX(-50%) scale(2.55);
     transform-origin: bottom center;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    color: #061750;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 0.78;
-    text-shadow:
-        1px 0 0 #fff,
-        -1px 0 0 #fff,
-        0 1px 0 #fff;
+    image-rendering: pixelated;
     user-select: none;
 }
 
-.pq1-officer::before {
-    content: "";
+.pq1-officer-sprite,
+.pq1-officer-part {
     position: absolute;
-    left: 12px;
-    top: -8px;
-    width: 18px;
-    height: 7px;
-    background: #061750;
-    border-top: 3px solid #d9d9d9;
+    display: block;
+    box-sizing: border-box;
+}
+
+.pq1-officer-sprite {
+    inset: 0;
+    transform-origin: 50% 100%;
+}
+
+.pq1-officer[data-direction="left"] .pq1-officer-sprite {
+    transform: scaleX(-1);
+}
+
+.pq1-officer-part {
+    image-rendering: pixelated;
+}
+
+.pq1-officer .hat-top {
+    left: 10px;
+    top: 0;
+    width: 15px;
+    height: 5px;
+    background: #0b1c56;
+    border-top: 2px solid #5277cf;
+}
+
+.pq1-officer .hat-brim {
+    left: 8px;
+    top: 5px;
+    width: 22px;
+    height: 5px;
+    background: #081540;
+    box-shadow: 16px 1px 0 -2px #081540;
+}
+
+.pq1-officer .head {
+    left: 11px;
+    top: 9px;
+    width: 14px;
+    height: 14px;
+    background: #d59b6c;
+    border: 2px solid #2c160e;
+    border-top: 0;
+}
+
+.pq1-officer .hair {
+    left: 10px;
+    top: 9px;
+    width: 5px;
+    height: 13px;
+    background: #30140d;
+}
+
+.pq1-officer .eye {
+    left: 22px;
+    top: 14px;
+    width: 3px;
+    height: 3px;
+    background: #101010;
+}
+
+.pq1-officer .neck {
+    left: 15px;
+    top: 22px;
+    width: 8px;
+    height: 5px;
+    background: #c4865e;
+    border-left: 2px solid #2c160e;
+    border-right: 2px solid #2c160e;
+}
+
+.pq1-officer .torso {
+    left: 8px;
+    top: 26px;
+    width: 22px;
+    height: 18px;
+    background: #122a74;
+    border: 2px solid #081540;
+}
+
+.pq1-officer .shirt {
+    left: 16px;
+    top: 28px;
+    width: 6px;
+    height: 15px;
+    background: #d8d7c9;
+    border-left: 1px solid #081540;
+    border-right: 1px solid #081540;
+}
+
+.pq1-officer .badge {
+    left: 23px;
+    top: 31px;
+    width: 4px;
+    height: 5px;
+    background: #e5c34a;
+    box-shadow: 0 0 0 1px #775d18;
+}
+
+.pq1-officer .belt {
+    left: 8px;
+    top: 42px;
+    width: 22px;
+    height: 4px;
+    background: #141414;
+}
+
+.pq1-officer .arm {
+    top: 28px;
+    width: 5px;
+    height: 21px;
+    background: #0c1f59;
+    border: 1px solid #061238;
+    transform-origin: 50% 2px;
+}
+
+.pq1-officer .arm-back {
+    left: 5px;
+    transform: rotate(14deg);
+}
+
+.pq1-officer .arm-front {
+    right: 3px;
+    transform: rotate(-15deg);
+}
+
+.pq1-officer .hand {
+    top: 47px;
+    width: 5px;
+    height: 5px;
+    background: #d59b6c;
+    border: 1px solid #2c160e;
+}
+
+.pq1-officer .hand-back {
+    left: 4px;
+}
+
+.pq1-officer .hand-front {
+    right: 1px;
+}
+
+.pq1-officer .leg {
+    top: 45px;
+    width: 7px;
+    height: 13px;
+    background: #0b1d57;
+    border: 1px solid #061238;
+    transform-origin: 50% 1px;
+}
+
+.pq1-officer .leg-back {
+    left: 10px;
+}
+
+.pq1-officer .leg-front {
+    left: 21px;
+}
+
+.pq1-officer .shoe {
+    top: 55px;
+    width: 10px;
+    height: 4px;
+    background: #101010;
+}
+
+.pq1-officer .shoe-back {
+    left: 8px;
+}
+
+.pq1-officer .shoe-front {
+    left: 20px;
+}
+
+.pq1-officer[data-step="1"] .arm-back {
+    transform: rotate(-18deg);
+}
+
+.pq1-officer[data-step="1"] .arm-front {
+    transform: rotate(18deg);
+}
+
+.pq1-officer[data-step="1"] .leg-back {
+    transform: rotate(13deg);
+}
+
+.pq1-officer[data-step="1"] .leg-front {
+    transform: rotate(-12deg);
+}
+
+.pq1-officer[data-step="1"] .shoe-back {
+    left: 9px;
+}
+
+.pq1-officer[data-step="1"] .shoe-front {
+    left: 18px;
 }
 
 .pq1-foreground {
@@ -1770,10 +1885,6 @@ body.pq1-page {
 @media (max-width: 520px) {
     .pq1-viewport {
         min-height: 390px;
-    }
-
-    .pq1-car {
-        display: none;
     }
 
     .pq1-notice-board a,

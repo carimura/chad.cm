@@ -18,11 +18,6 @@
         { label: 'SPEAKING', command: 'speaking', path: '/speaking.html' },
         { label: 'PLAYGROUND', command: 'playground', path: '/playground.html' }
     ];
-    const frames = {
-        idle: '  O\n /|\\\n / \\',
-        right: ['  O\n /|\\\n / >', '  O\n /|\\\n < \\'],
-        left: ['  O\n /|\\\n < \\', '  O\n /|\\\n / >']
-    };
     let position = 0;
     let frame = 0;
 
@@ -34,10 +29,10 @@
         }
         officer.dataset.direction = direction;
         if (direction === 'idle') {
-            officer.textContent = frames.idle;
+            officer.dataset.step = '0';
         } else {
             frame += 1;
-            officer.textContent = frames[direction][frame % frames[direction].length];
+            officer.dataset.step = String(frame % 2);
         }
     }
 
