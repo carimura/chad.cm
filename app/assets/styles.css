@@ -1541,7 +1541,7 @@ body.pq1-page {
     bottom: 98px;
     z-index: 8;
     width: 34px;
-    height: 58px;
+    height: 62px;
     transform: translateX(-50%) scale(2.55);
     transform-origin: bottom center;
     image-rendering: pixelated;
@@ -1569,43 +1569,43 @@ body.pq1-page {
 }
 
 .pq1-officer .hat-top {
-    left: 10px;
+    left: 11px;
     top: 0;
-    width: 15px;
+    width: 13px;
     height: 5px;
     background: #0b1c56;
     border-top: 2px solid #5277cf;
 }
 
 .pq1-officer .hat-brim {
-    left: 8px;
+    left: 9px;
     top: 5px;
-    width: 22px;
+    width: 19px;
     height: 5px;
     background: #081540;
     box-shadow: 16px 1px 0 -2px #081540;
 }
 
 .pq1-officer .head {
-    left: 11px;
+    left: 12px;
     top: 9px;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 13px;
     background: #d59b6c;
     border: 2px solid #2c160e;
     border-top: 0;
 }
 
 .pq1-officer .hair {
-    left: 10px;
+    left: 11px;
     top: 9px;
-    width: 5px;
-    height: 13px;
+    width: 4px;
+    height: 12px;
     background: #30140d;
 }
 
 .pq1-officer .eye {
-    left: 22px;
+    left: 21px;
     top: 14px;
     width: 3px;
     height: 3px;
@@ -1614,8 +1614,8 @@ body.pq1-page {
 
 .pq1-officer .neck {
     left: 15px;
-    top: 22px;
-    width: 8px;
+    top: 21px;
+    width: 7px;
     height: 5px;
     background: #c4865e;
     border-left: 2px solid #2c160e;
@@ -1623,9 +1623,9 @@ body.pq1-page {
 }
 
 .pq1-officer .torso {
-    left: 8px;
-    top: 26px;
-    width: 22px;
+    left: 10px;
+    top: 25px;
+    width: 18px;
     height: 18px;
     background: #122a74;
     border: 2px solid #081540;
@@ -1633,8 +1633,8 @@ body.pq1-page {
 
 .pq1-officer .shirt {
     left: 16px;
-    top: 28px;
-    width: 6px;
+    top: 27px;
+    width: 5px;
     height: 15px;
     background: #d8d7c9;
     border-left: 1px solid #081540;
@@ -1642,8 +1642,8 @@ body.pq1-page {
 }
 
 .pq1-officer .badge {
-    left: 23px;
-    top: 31px;
+    left: 22px;
+    top: 30px;
     width: 4px;
     height: 5px;
     background: #e5c34a;
@@ -1651,15 +1651,15 @@ body.pq1-page {
 }
 
 .pq1-officer .belt {
-    left: 8px;
-    top: 42px;
-    width: 22px;
+    left: 10px;
+    top: 41px;
+    width: 18px;
     height: 4px;
     background: #141414;
 }
 
 .pq1-officer .arm {
-    top: 28px;
+    top: 27px;
     width: 5px;
     height: 21px;
     background: #0c1f59;
@@ -1668,17 +1668,17 @@ body.pq1-page {
 }
 
 .pq1-officer .arm-back {
-    left: 5px;
+    left: 7px;
     transform: rotate(14deg);
 }
 
 .pq1-officer .arm-front {
-    right: 3px;
+    right: 5px;
     transform: rotate(-15deg);
 }
 
 .pq1-officer .hand {
-    top: 47px;
+    top: 46px;
     width: 5px;
     height: 5px;
     background: #d59b6c;
@@ -1686,43 +1686,43 @@ body.pq1-page {
 }
 
 .pq1-officer .hand-back {
-    left: 4px;
+    left: 6px;
 }
 
 .pq1-officer .hand-front {
-    right: 1px;
+    right: 3px;
 }
 
 .pq1-officer .leg {
-    top: 45px;
-    width: 7px;
-    height: 13px;
+    top: 44px;
+    width: 6px;
+    height: 17px;
     background: #0b1d57;
     border: 1px solid #061238;
     transform-origin: 50% 1px;
 }
 
 .pq1-officer .leg-back {
-    left: 10px;
+    left: 11px;
 }
 
 .pq1-officer .leg-front {
-    left: 21px;
+    left: 20px;
 }
 
 .pq1-officer .shoe {
-    top: 55px;
-    width: 10px;
+    top: 59px;
+    width: 9px;
     height: 4px;
     background: #101010;
 }
 
 .pq1-officer .shoe-back {
-    left: 8px;
+    left: 9px;
 }
 
 .pq1-officer .shoe-front {
-    left: 20px;
+    left: 19px;
 }
 
 .pq1-officer[data-step="1"] .arm-back {
@@ -1742,11 +1742,11 @@ body.pq1-page {
 }
 
 .pq1-officer[data-step="1"] .shoe-back {
-    left: 9px;
+    left: 10px;
 }
 
 .pq1-officer[data-step="1"] .shoe-front {
-    left: 18px;
+    left: 17px;
 }
 
 .pq1-foreground {
