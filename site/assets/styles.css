@@ -1646,7 +1646,7 @@ body.pq1-page {
     image-rendering: crisp-edges;
 }
 
-.pq1-officer[data-direction="left"] .pq1-officer-canvas {
+.pq1-officer[data-facing="left"] .pq1-officer-canvas {
     transform: scaleX(-1);
 }
 

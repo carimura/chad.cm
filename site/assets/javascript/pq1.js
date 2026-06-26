@@ -24,53 +24,88 @@
             o: "#101019", S: "#e8a86a", K: "#2b3552", N: "#33508a",
             n: "#24406e", G: "#f0c64e", B: "#101019", O: "#0c0c12"
         },
-        top: [
-            "................",
-            ".....KKKKK......",
-            ".....KKKKK......",
-            "....KKKKKKK.....",
-            ".....SSSSS......",
-            ".....SoSoS......",
-            ".....SSSSS......",
-            "...._..SS.._....",
-            "..__N.NNNN.N__..",
-            ".._NN.NNNN.NN_..",
-            ".._NN.NGNN.NN_..",
-            ".._NN.NNNN.NN_..",
-            ".._NN.NNNN.NN_..",
-            ".._SS.NNNN.SS_..",
-            "...__.BBBB.__...",
-            "...._NnnnnN_...."
-        ],
-        legsA: [
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__OO.....",
-            ".....OO.........",
-            "................",
-            "................"
-        ],
-        legsB: [
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            ".....OO__NN_....",
-            ".........OO.....",
-            "................",
-            "................"
-        ],
-        legsStand: [
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            "...._NN__NN_....",
-            ".....OO__OO.....",
-            "................",
-            "................"
+        // Side profile, drawn facing RIGHT (mirrored for left). Three-position
+        // bent-arm walk: forward reach -> arm down -> folded back-swing. Arm is
+        // the darker navy 'n' sleeve with a skin hand at the tip.
+        frames: [
+            [ // 0 — contact: arm reaching forward, legs in stride
+                "................",
+                "......KKK.......",
+                ".....KKKKK......",
+                ".....KKKKKK.....",
+                ".....SSSSS......",
+                ".....SSSoSS.....",
+                ".....SSSS.......",
+                ".......NN.......",
+                "......NNNN......",
+                "......NNnN......",
+                "......NNnN......",
+                "......NNnnnnS...",
+                "......NNNN......",
+                "......NNNN......",
+                "......BBBB......",
+                "......NNNN......",
+                ".....NN.NN......",
+                "....NN...NN.....",
+                "....NN...NN.....",
+                "...OOO..OOO.....",
+                "................",
+                "................",
+                "................",
+                "................"
+            ],
+            [ // 1 — passing: arm down the middle (bent), legs together
+                "................",
+                "......KKK.......",
+                ".....KKKKK......",
+                ".....KKKKKK.....",
+                ".....SSSSS......",
+                ".....SSSoSS.....",
+                ".....SSSS.......",
+                ".......NN.......",
+                "......NNNN......",
+                "......NNnN......",
+                "......NNnN......",
+                "......NNnN......",
+                "......NNNn......",
+                "......NNNNS....",
+                "......BBBB......",
+                "......NNNN......",
+                "......NNNN......",
+                "......NNNN......",
+                "......NNNN......",
+                ".....OO.OO......",
+                "................",
+                "................",
+                "................",
+                "................"
+            ],
+            [ // 2 — contact: arm swung back (elbow folded), legs in stride
+                "................",
+                "......KKK.......",
+                ".....KKKKK......",
+                ".....KKKKKK.....",
+                ".....SSSSS......",
+                ".....SSSoSS.....",
+                ".....SSSS.......",
+                ".......NN.......",
+                "......NNNN......",
+                "......NNnN......",
+                "......NnNN......",
+                "......nNNN......",
+                "......NnNN......",
+                "......NNSN......",
+                "......BBBB......",
+                "......NNNN......",
+                ".....NN.NN......",
+                "....NN...NN.....",
+                "....NN...NN.....",
+                "...OOO..OOO.....",
+                "................",
+                "................",
+                "................",
+                "................"
+            ]
         ]
     };
 
@@ -116,15 +151,16 @@
     const canvas = document.getElementById('pq1-officer-canvas');
     const ctx = canvas ? canvas.getContext('2d') : null;
     if (ctx) ctx.imageSmoothingEnabled = false;
-    const walkFrames = [buildFrame(COP.top, COP.legsA), buildFrame(COP.top, COP.legsB)];
-    const standFrame = buildFrame(COP.top, COP.legsStand);
+    const walkFrames = COP.frames.map((f) => buildFrame(f, []));
+    const standFrame = walkFrames[1];   // arm-down passing pose doubles as the idle stand
+    const walkSeq = [0, 1, 2, 1];       // ping-pong: forward -> mid -> back -> mid
 
     function renderOfficer() {
         if (!ctx) return;
         if (officer.dataset.direction === 'idle') {
             drawFrame(ctx, standFrame, COP.palette);
         } else {
-            drawFrame(ctx, walkFrames[Number(officer.dataset.step) || 0], COP.palette);
+            drawFrame(ctx, walkFrames[walkSeq[frame % walkSeq.length]], COP.palette);
         }
     }
 
@@ -145,11 +181,9 @@
             locationLabel.textContent = rooms[position].label;
         }
         officer.dataset.direction = direction;
-        if (direction === 'idle') {
-            officer.dataset.step = '0';
-        } else {
+        if (direction !== 'idle') {
+            officer.dataset.facing = direction;   // 'left' | 'right', persists while idle
             frame += 1;
-            officer.dataset.step = String(frame % 2);
         }
         renderOfficer();
     }
@@ -205,5 +239,6 @@
         command.select();
     });
 
+    officer.dataset.facing = 'right';
     setPosition(0);
 })();
