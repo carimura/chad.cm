@@ -151,8 +151,45 @@
     const canvas = document.getElementById('pq1-officer-canvas');
     const ctx = canvas ? canvas.getContext('2d') : null;
     if (ctx) ctx.imageSmoothingEnabled = false;
-    const walkFrames = COP.frames.map((f) => buildFrame(f, []));
-    const standFrame = walkFrames[1];   // arm-down passing pose doubles as the idle stand
+    // Front-facing officer — shown when standing still (the side profile only walks).
+    const FRONT_TOP = [
+        "................",
+        ".....KKKKK......",
+        ".....KKKKK......",
+        "....KKKKKKK.....",
+        ".....SSSSS......",
+        ".....SoSoS......",
+        ".....SSSSS......",
+        "...._..SS.._....",
+        "..__N.NNNN.N__..",
+        ".._NN.NNNN.NN_..",
+        ".._NN.NGNN.NN_..",
+        ".._NN.NNNN.NN_..",
+        ".._NN.NNNN.NN_..",
+        ".._SS.NNNN.SS_..",
+        "...__.BBBB.__...",
+        "...._NnnnnN_...."
+    ];
+    const FRONT_STAND_LEGS = [
+        "...._NN__NN_....",
+        "...._NN__NN_....",
+        "...._NN__NN_....",
+        "...._NN__NN_....",
+        "...._NN__NN_....",
+        ".....OO__OO.....",
+        "................",
+        "................"
+    ];
+
+    // The side frames sit ~2 rows higher than the front sprite; drop them so the
+    // feet line up at the same ground level whether walking or standing still.
+    function shiftDown(rows, n) {
+        const empty = ".".repeat(GW);
+        return Array(n).fill(empty).concat(rows).slice(0, GH);
+    }
+
+    const walkFrames = COP.frames.map((f) => shiftDown(buildFrame(f, []), 2));
+    const standFrame = buildFrame(FRONT_TOP, FRONT_STAND_LEGS);
     const walkSeq = [0, 1, 2, 1];       // ping-pong: forward -> mid -> back -> mid
 
     function renderOfficer() {
@@ -182,7 +219,6 @@
         }
         officer.dataset.direction = direction;
         if (direction !== 'idle') {
-            officer.dataset.facing = direction;   // 'left' | 'right', persists while idle
             frame += 1;
         }
         renderOfficer();
@@ -239,6 +275,5 @@
         command.select();
     });
 
-    officer.dataset.facing = 'right';
     setPosition(0);
 })();
