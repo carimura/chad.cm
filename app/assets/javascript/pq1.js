@@ -210,25 +210,40 @@
     ];
     let position = 0;
     let frame = 0;
+    let walkTimer = null;
+    let idleTimer = null;
 
-    function setPosition(next, direction = 'idle') {
+    const STEP_MS = 140;                    // one leg/arm step of the walk cycle
+    const WALK_STEPS = 8;                   // steps per room move (~2 full cycles)
+    const SLIDE_MS = STEP_MS * WALK_STEPS;  // must match the world-scroll CSS transition
+
+    function setRoom(next) {
         position = Math.max(0, Math.min(rooms.length - 1, next));
         world.style.setProperty('--pq1-position', String(position));
         if (locationLabel) {
             locationLabel.textContent = rooms[position].label;
         }
-        officer.dataset.direction = direction;
-        if (direction !== 'idle') {
-            frame += 1;
-        }
+    }
+
+    function stand() {                      // settle to the front-facing idle pose
+        if (walkTimer) { window.clearInterval(walkTimer); walkTimer = null; }
+        officer.dataset.direction = 'idle';
         renderOfficer();
     }
 
+    // Walk in profile, cycling legs/arm for the length of the room slide.
+    function startWalking(direction) {
+        officer.dataset.direction = direction;
+        window.clearTimeout(idleTimer);
+        if (walkTimer) window.clearInterval(walkTimer);
+        renderOfficer();
+        walkTimer = window.setInterval(() => { frame += 1; renderOfficer(); }, STEP_MS);
+        idleTimer = window.setTimeout(stand, SLIDE_MS + 80);
+    }
+
     function walk(delta) {
-        const direction = delta < 0 ? 'left' : 'right';
-        setPosition(position + delta, direction);
-        window.clearTimeout(walk.idleTimer);
-        walk.idleTimer = window.setTimeout(() => setPosition(position), 260);
+        setRoom(position + delta);
+        startWalking(delta < 0 ? 'left' : 'right');
     }
 
     leftButton?.addEventListener('click', () => walk(-1));
@@ -264,9 +279,12 @@
         }
         if (targetIndex >= 0) {
             const direction = targetIndex < position ? 'left' : targetIndex > position ? 'right' : 'idle';
-            setPosition(targetIndex, direction);
-            window.clearTimeout(walk.idleTimer);
-            walk.idleTimer = window.setTimeout(() => setPosition(position), 420);
+            setRoom(targetIndex);
+            if (direction === 'idle') {
+                stand();
+            } else {
+                startWalking(direction);
+            }
             command.value = '';
             return;
         }
@@ -275,5 +293,6 @@
         command.select();
     });
 
-    setPosition(0);
+    setRoom(0);
+    stand();
 })();

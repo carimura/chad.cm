@@ -1391,7 +1391,7 @@ body.pq1-page {
     height: 100%;
     display: flex;
     transform: translateX(calc(var(--pq1-position) * -20%));
-    transition: transform 420ms steps(8, end);
+    transition: transform 1120ms steps(8, end);
 }
 
 .pq1-room {
