@@ -5,19 +5,20 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2026 14:21:50 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 07:59:17 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
       <title>It&apos;s still about the people...</title>
-      <link>https://chad.cm/posts/2026-7-14-iron-event-history.html</link>
-      <description>I recently came across a list of events Iron.io was a part of in some way. In the before times, San Francisco felt small, and the vibe of the thing was of optimism and building the next gen developer stack.</description>
-      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://chad.cm/posts/2026-7-14-iron-event-history.html</guid>
-      <content:encoded><![CDATA[<p>I recently came across a list of events Iron.io was a part of in some way. In the before times, San Francisco felt small, and the vibe of the thing was of optimism and building the next gen developer stack. I remember when Docker was announced at our meetup (Hi Solomon!), meeting the Heroku guys at Aloha on Rails (Hey James, Blake, et al!), hacking with Twilio (Hi Carter!), SendGrid (Hi Tim!), PubNub (Hi Todd and Stephen!), Firebase (James!) all at Angel Hack, CoreOS (Alex!), and so many more great events, companies, and people. I stay in touch with a lot of them to this day.</p>
-<p>And I was just thinking about how the explosion of remote work and now AI seems to be isolating people even more with the need for less people to achieve the same result.</p>
-<p>I don't know where things go, but I sense there will be a hard push back to human-connecting activities like meetups, coffee shops, etc. Maybe it's happening and I'm just old with a bunch of kids now but when I head into the city from Marin I can sense a longing for the way things were.</p>
-<p>Anyways, here's that list for archival purposes!</p>
+      <link>https://chad.cm/posts/2026-7-16-iron-event-history.html</link>
+      <description>I recently came across a list of events Iron.io was a part of in some way. It got me thinking about the before times, when San Francisco felt small and we were optimistic that we were building the future of the developer stack.</description>
+      <pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2026-7-16-iron-event-history.html</guid>
+      <content:encoded><![CDATA[<p>I recently came across a list of events Iron.io was a part of in some way. It got me thinking about the before times. San Francisco felt so small, and there was this optimism that we were building the future of the whole developer stack. So much of it revolved around events. Docker was announced at a GoSF meetup (hi, Solomon!). Heroku was racing onto the scene at events like Aloha on Rails (hey, James, Blake, et al.!). Developers were discovering Twilio (hi, Carter!), SendGrid (hi, Tim!), PubNub (hi, Todd and Stephen!), Firebase (James!), and so many more great companies at AngelHack and events like it. More than anything, they were meeting great people. I stay in touch with many of them to this day.</p>
+<p>I'm older now, with a bunch of kids, so I'm not bouncing from meetup to meetup anymore. But when I do pop into the city, the vibe feels... different. There's still optimism, but also isolation and uncertainty because of how rapidly engineering is changing.</p>
+<p>What do you think?</p>
+<p>On the positive side, I'm also seeing a revival of things that connect us in person: meetups, coffee shops, Church attendance, run clubs, and more. I see that continuing as AI divides and isolates us.</p>
+<p>Anyway, I wanted to archive this list, so here it is!</p>
 <img src="/assets/posts/ironio-meetup.jpeg" alt="A packed, standing-room-only meetup in San Francisco" style="max-width: 100%;">
 <div class="iron-strip">
 <img src="/assets/posts/ironio/strip-exosphere-ice.jpg" alt="The Iron.io logo carved in ice at Exosphere 2014, Las Vegas" loading="lazy">
