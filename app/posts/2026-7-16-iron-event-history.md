@@ -17,6 +17,8 @@ On the positive side, I'm also seeing a revival of things that connect us in per
 
 Anyway, I wanted to archive this list, so here it is!
 
+(Special thanks to Ken for keeping both SF Rails and GoSF going for years!)
+
 <img src="/assets/posts/ironio-meetup.jpeg" alt="A packed, standing-room-only meetup in San Francisco" style="max-width: 100%;">
 
 <div class="iron-strip">
