@@ -5,8 +5,39 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2026 08:12:32 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 10:44:13 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
+
+    <item>
+      <title>Announcing The Daily FM</title>
+      <link>https://chad.cm/posts/2026-7-22-announcing-the-daily-fm.html</link>
+      <description>I built it because I wanted a daily summary of the latest AI news sent to my podcast app, and then realized it was useful in summarizing a lot of other stuff too. Releasing it to see if anyone else thinks it&apos;s interesting.</description>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2026-7-22-announcing-the-daily-fm.html</guid>
+      <content:encoded><![CDATA[<p>I've been building a bunch of stuff, but <a href="https://thedaily.fm">The Daily FM</a> has emerged as something I use a lot so I figured I'd release it to see if anyone else thought it was interesting. In short, I built it because I wanted a daily summary of the latest AI news sent to my podcast app and then realized it was useful in summarizing other stuff:</p>
+<ul>
+<li>Any blogs, websites, or X handles</li>
+<li>The top Hacker News stories with comments</li>
+<li>Long podcasts (think Lex Fridman)</li>
+<li>Changes in state/federal legislation</li>
+</ul>
+<p>Here are a couple of the latest episodes direct from the <a href="https://thedaily.fm/library">public library</a>:</p>
+<div class="dfm-embeds">
+<iframe src="https://thedaily.fm/embed/podcasts/0e98bf5a-e0f2-4070-80d0-4ff666e5d265/latest" width="100%" height="152" style="border:0;border-radius:12px" loading="lazy" title="AI Daily — The Daily FM player"></iframe>
+<iframe src="https://thedaily.fm/embed/podcasts/hn-recap/latest" width="100%" height="152" style="border:0;border-radius:12px" loading="lazy" title="Hacker News Daily — The Daily FM player"></iframe>
+<iframe src="https://thedaily.fm/embed/podcasts/f5a30ac3-9043-426e-8483-2ab82bc7e1cd/latest" width="100%" height="152" style="border:0;border-radius:12px" loading="lazy" title="Lex Fridman Podcast in 3 minutes — The Daily FM player"></iframe>
+<iframe src="https://thedaily.fm/embed/podcasts/45d36878-840e-4730-a30a-64c749a70ec0/latest" width="100%" height="152" style="border:0;border-radius:12px" loading="lazy" title="Washington Brief — The Daily FM player"></iframe>
+</div>
+<style>
+.dfm-embeds iframe{display:block;margin:16px 0}
+</style>
+<p>It pulls your sources, writes a script with a frontier-ish model of your choice, runs it through TTS (MAI-2 studio voices), and publishes a standard RSS feed. You can also combine several pods into one feed for one subscribe point.</p>
+<p>Under the hood it's using Cloudflare Workers, queues, browser rendering, and the AI Gateway, but the TTS models aren't very good on Cloudflare so I switched to the MAI-Voice-2 models with OpenRouter.</p>
+<p>I also created a <a href="https://thedaily.fm/library">public library</a> you can subscribe to without ever signing up, or if you sign up, you can combine a bunch into a single feed and use your own sources as well.</p>
+<p>Is this interesting to you? Lemme know what you think by contacting me through the app (Intercom).</p>
+<p>You can check out The Daily FM here: <a href="https://thedaily.fm">https://thedaily.fm</a></p>
+]]></content:encoded>
+    </item>
 
     <item>
       <title>It&apos;s still about the people...</title>
