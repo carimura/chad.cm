@@ -343,22 +343,21 @@ p#date {
 }
 
 .theme-toggle {
-    width: 40px;
-    height: 40px;
-    box-sizing: border-box;
     display: inline-grid;
     place-items: center;
-    background: var(--toggle-bg);
-    border: 1px dashed var(--toggle-border);
-    border-radius: 50%;
-    color: var(--text);
-    font-size: 20px;
-    line-height: 1;
+    background: none;
+    border: none;
+    padding: 4px;
+    color: var(--text-muted);
     cursor: pointer;
 }
 
 .theme-toggle:hover {
-    border: 1px dashed coral;
+    color: coral;
+}
+
+.theme-toggle svg {
+    padding: 0;
 }
 
 @media (max-width: 600px) {
