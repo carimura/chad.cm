@@ -1,5 +1,5 @@
 ---
-title: "Stream Deck in my Bots"
+title: "Stream Deckin my Bots"
 date: 2026-08-24
 type: thought
 template: post.html
@@ -15,4 +15,4 @@ For Claude Code, it'll pulse orange while a window is working, and then show gre
 
 In fact, I'm going to have grok bot write this post right now. I'll record that video.
 
-<iframe src="https://www.youtube.com/embed/7sTLOtvZymI" title="Stream Deck in my Bots" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:16px 0;"></iframe>
+<iframe src="https://www.youtube.com/embed/7sTLOtvZymI" title="Stream Deckin my Bots" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:16px 0;"></iframe>
