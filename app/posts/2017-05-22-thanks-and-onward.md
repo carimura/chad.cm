@@ -4,6 +4,7 @@ date: 2017-05-22
 type: post
 template: post.html
 active_nav: writing
+category: Announcements
 excerpt: "Iron.io was acquired by Xenon Ventures. Many of the team members are staying and will continue to grow the business. As for what's next, me, Travis, and some members of the Iron engineering team will be joining Oracle."
 ---
 

@@ -4,6 +4,7 @@ date: 2026-07-16
 type: post
 template: post.html
 active_nav: writing
+category: Life and Politics
 excerpt: I recently came across a list of events Iron.io was a part of in some way. It got me thinking about the before times, when San Francisco felt small and we were optimistic that we were building the future of the developer stack.
 ---
 

@@ -4,6 +4,7 @@ date: 2026-04-05
 type: post
 template: post.html
 active_nav: writing
+category: Announcements
 excerpt: "Almost 10 years after the acquisition, the same blog post title is announcing the close of my time at Oracle."
 ---
 

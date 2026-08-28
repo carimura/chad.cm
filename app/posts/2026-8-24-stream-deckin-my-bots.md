@@ -1,10 +1,11 @@
 ---
 title: "Stream Deckin my Bots"
 date: 2026-08-24
-type: thought
+type: post
 template: post.html
-description: I finally plugged in the Stream Deck and turned it into an agent control interface.
-active_nav: thoughts
+excerpt: I finally plugged in the Stream Deck and turned it into an agent control interface.
+active_nav: writing
+category: Tech
 ---
 
 I bought a Stream Deck over a year ago because I thought it would change my life and I don't think I ever plugged it in.... until now. I've turned it into my agent control interface, at least, for this demo. Welcome to the future.

@@ -4,6 +4,7 @@ date: 2025-05-26
 type: post
 template: post.html
 active_nav: writing
+category: Announcements
 excerpt: "I needed another blog post to show that Arc works, so here it is."
 ---
 

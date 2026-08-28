@@ -7,9 +7,36 @@
 /bbs/posts/2026-7-14-iron-event-history/ /bbs/posts/2026-7-16-iron-event-history 301
 /bbs/posts/2026-7-14-iron-event-history.html /bbs/posts/2026-7-16-iron-event-history 301
 
-/thought/2026-8-24-stream-deck-in-my-bots /thought/2026-8-24-stream-deckin-my-bots 301
-/thought/2026-8-24-stream-deck-in-my-bots/ /thought/2026-8-24-stream-deckin-my-bots 301
-/thought/2026-8-24-stream-deck-in-my-bots.html /thought/2026-8-24-stream-deckin-my-bots 301
-/bbs/thought/2026-8-24-stream-deck-in-my-bots /bbs/thought/2026-8-24-stream-deckin-my-bots 301
-/bbs/thought/2026-8-24-stream-deck-in-my-bots/ /bbs/thought/2026-8-24-stream-deckin-my-bots 301
-/bbs/thought/2026-8-24-stream-deck-in-my-bots.html /bbs/thought/2026-8-24-stream-deckin-my-bots 301
+# Thoughts section removed; these thoughts moved to Writing
+/thought/2026-5-30-a-generation-ago /posts/2026-5-30-a-generation-ago 301
+/thought/2026-5-30-a-generation-ago/ /posts/2026-5-30-a-generation-ago 301
+/thought/2026-5-30-a-generation-ago.html /posts/2026-5-30-a-generation-ago 301
+/bbs/thought/2026-5-30-a-generation-ago /bbs/posts/2026-5-30-a-generation-ago 301
+/bbs/thought/2026-5-30-a-generation-ago/ /bbs/posts/2026-5-30-a-generation-ago 301
+/bbs/thought/2026-5-30-a-generation-ago.html /bbs/posts/2026-5-30-a-generation-ago 301
+/thought/2026-6-25-creativity-and-taste /posts/2026-6-25-creativity-and-taste 301
+/thought/2026-6-25-creativity-and-taste/ /posts/2026-6-25-creativity-and-taste 301
+/thought/2026-6-25-creativity-and-taste.html /posts/2026-6-25-creativity-and-taste 301
+/bbs/thought/2026-6-25-creativity-and-taste /bbs/posts/2026-6-25-creativity-and-taste 301
+/bbs/thought/2026-6-25-creativity-and-taste/ /bbs/posts/2026-6-25-creativity-and-taste 301
+/bbs/thought/2026-6-25-creativity-and-taste.html /bbs/posts/2026-6-25-creativity-and-taste 301
+/thought/2026-8-24-stream-deckin-my-bots /posts/2026-8-24-stream-deckin-my-bots 301
+/thought/2026-8-24-stream-deckin-my-bots/ /posts/2026-8-24-stream-deckin-my-bots 301
+/thought/2026-8-24-stream-deckin-my-bots.html /posts/2026-8-24-stream-deckin-my-bots 301
+/bbs/thought/2026-8-24-stream-deckin-my-bots /bbs/posts/2026-8-24-stream-deckin-my-bots 301
+/bbs/thought/2026-8-24-stream-deckin-my-bots/ /bbs/posts/2026-8-24-stream-deckin-my-bots 301
+/bbs/thought/2026-8-24-stream-deckin-my-bots.html /bbs/posts/2026-8-24-stream-deckin-my-bots 301
+/thought/2026-8-24-stream-deck-in-my-bots /posts/2026-8-24-stream-deckin-my-bots 301
+/thought/2026-8-24-stream-deck-in-my-bots/ /posts/2026-8-24-stream-deckin-my-bots 301
+/thought/2026-8-24-stream-deck-in-my-bots.html /posts/2026-8-24-stream-deckin-my-bots 301
+/bbs/thought/2026-8-24-stream-deck-in-my-bots /bbs/posts/2026-8-24-stream-deckin-my-bots 301
+/bbs/thought/2026-8-24-stream-deck-in-my-bots/ /bbs/posts/2026-8-24-stream-deckin-my-bots 301
+/bbs/thought/2026-8-24-stream-deck-in-my-bots.html /bbs/posts/2026-8-24-stream-deckin-my-bots 301
+
+# Everything else that lived under Thoughts
+/thoughts /writing.html 301
+/thoughts.html /writing.html 301
+/bbs/thoughts /bbs/writing.html 301
+/bbs/thoughts.html /bbs/writing.html 301
+/thought/* /writing.html 301
+/bbs/thought/* /bbs/writing.html 301

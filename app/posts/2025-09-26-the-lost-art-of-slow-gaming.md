@@ -4,6 +4,7 @@ date: 2025-09-26
 type: post
 template: post.html
 active_nav: writing
+category: Gaming
 excerpt: "Finding games for kids that are slow, thoughtful, creative, and void of dark patterns in today's digital landscape."
 ---
 

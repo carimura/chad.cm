@@ -1,10 +1,11 @@
 ---
 title: "Creativity and taste are scarce resources now"
 date: 2026-06-25
-type: thought
+type: post
 template: post.html
-description: Now that code and design loops have been dramatically shortened, creativity and taste are scarcer resources.
-active_nav: thoughts
+excerpt: Now that code and design loops have been dramatically shortened, creativity and taste are scarcer resources.
+active_nav: writing
+category: Tech
 ---
 
 <img src="/assets/posts/chad-cm-theme-switcher.png" alt="chad.cm homepage with the theme switcher open at the top" style="max-width: 100%;">

@@ -4,6 +4,7 @@ date: 2025-09-20
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: "As I use AI tools to solve time-consuming things, I find myself becoming less and less aware of how those things work under the hood."
 ---
 

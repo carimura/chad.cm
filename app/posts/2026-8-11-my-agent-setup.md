@@ -4,6 +4,7 @@ date: 2026-08-11
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: I'm a month into building a staff of six agents. This is how they run, communicate, and help across a few products and a nonprofit.
 ---
 

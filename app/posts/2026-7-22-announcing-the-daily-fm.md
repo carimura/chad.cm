@@ -4,6 +4,7 @@ date: 2026-07-22
 type: post
 template: post.html
 active_nav: writing
+category: Announcements
 excerpt: I built it because I wanted a daily summary of the latest AI news sent to my podcast app, and then realized it was useful in summarizing a lot of other stuff too. Releasing it to see if anyone else thinks it's interesting.
 ---
 

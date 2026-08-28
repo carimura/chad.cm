@@ -4,6 +4,7 @@ date: 2025-05-28
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: I wanted to write a blog post about some OpenCV stuff I did in Java using the Foreign Function & Memory API, but then realized, I didn't have a blog. I couldn't bare using some Javascript engine, so I built my own in Cursor. It's called Arc. This post is both about Arc, and the experience of building it in a few hours.
 ---
 

@@ -78,7 +78,7 @@ function renderPage({ titleHtml, titleText, dateHtml, contentHtml, headerHtml, s
 
             <form class="bbs-command" id="bbs-command">
                 <label for="bbs-input">[Node 1] Command:</label>
-                <input id="bbs-input" name="command" autocomplete="off" spellcheck="false" placeholder="type home, writing, thoughts, speaking, playground, exit" />
+                <input id="bbs-input" name="command" autocomplete="off" spellcheck="false" placeholder="type home, writing, speaking, playground, exit" />
                 <button type="submit">Send</button>
             </form>
         </section>
@@ -121,7 +121,6 @@ async function copyBbsPages() {
     const copies = [
         ['bbs.html', 'bbs/index.html'],
         ['bbs-writing.html', 'bbs/writing.html'],
-        ['bbs-thoughts.html', 'bbs/thoughts.html'],
         ['bbs-speaking.html', 'bbs/speaking.html'],
         ['bbs-playground.html', 'bbs/playground.html']
     ];
@@ -155,15 +154,7 @@ await generateDirectory({
     backLabel: 'Back to Writing'
 });
 
-await generateDirectory({
-    sourceDir: path.join(siteDir, 'thought'),
-    outputDir: path.join(siteDir, 'bbs', 'thought'),
-    sectionLabel: 'Message Base',
-    backHref: '/bbs/thoughts.html',
-    backLabel: 'Back to Thoughts'
-});
-
 await copyBbsPages();
 await copyGamePage();
 
-console.log('Generated BBS route files, game route file, post detail pages, and thought detail pages.');
+console.log('Generated BBS route files, game route file, and post detail pages.');

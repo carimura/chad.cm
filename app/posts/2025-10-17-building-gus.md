@@ -4,6 +4,7 @@ date: 2025-10-17
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: "I built a terminal AI agent in Java 25 to explore LangChain4j and modern Java features like sealed classes, pattern matching, and text blocks. It's named after my dog who also needs better training."
 ---
 

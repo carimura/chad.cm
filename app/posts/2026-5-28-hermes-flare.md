@@ -4,6 +4,7 @@ date: 2026-05-28
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: An agent that talks to me on Slack, persists between restarts, and runs every shell command it issues in a completely separate sandbox from itself.
 ---
 

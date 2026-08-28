@@ -4,6 +4,7 @@ date: 2026-01-11
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: "I've been thinking about things Claude Code could do on a schedule, so I tried to solve this problem and it worked nicely. I now have a private podcast feed of YouTube videos I'd like to listen to on the go."
 ---
 

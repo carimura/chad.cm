@@ -204,7 +204,6 @@
     const rooms = [
         { label: 'CHAD.CM', command: 'home', path: '/' },
         { label: 'WRITING', command: 'writing', path: '/writing.html' },
-        { label: 'THOUGHTS', command: 'thoughts', path: '/thoughts.html' },
         { label: 'SPEAKING', command: 'speaking', path: '/speaking.html' },
         { label: 'PLAYGROUND', command: 'playground', path: '/playground.html' }
     ];

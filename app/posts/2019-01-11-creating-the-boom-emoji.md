@@ -4,6 +4,7 @@ date: 2019-01-11
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: "The story of how we created the original boom emoji in 2012 for HipChat that eventually became global across Slack and other platforms."
 ---
 

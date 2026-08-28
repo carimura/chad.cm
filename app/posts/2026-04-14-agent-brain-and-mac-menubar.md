@@ -4,6 +4,7 @@ date: 2026-04-14
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: "Experimenting with a hybrid Karpathy-style Obsidian vault for agent memory, and discovering how easy native Swift menubar apps are."
 ---
 

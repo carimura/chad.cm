@@ -13,10 +13,19 @@
     <main class="container" id="writing">
         {{ content }}
 
+        <nav class="category-filter" aria-label="Filter posts by category">
+            <button type="button" class="active" data-category="all">All</button>
+            <button type="button" data-category="Tech">Tech</button>
+            <button type="button" data-category="Gaming">Gaming</button>
+            <button type="button" data-category="Announcements">Announcements</button>
+            <button type="button" data-category="Christ">Christ</button>
+            <button type="button" data-category="Life and Politics">Life and Politics</button>
+        </nav>
+
         {% for post in posts %}
-        <article class="post">
+        <article class="post" data-category="{{ post.category }}">
             <div id="post-header">
-                <p id="date">{{ post.formatted_date }}</p>
+                <p id="date">{{ post.formatted_date }} <span class="post-category">{{ post.category }}</span></p>
                 <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
             </div>
             <div id="post-content">
@@ -27,6 +36,8 @@
             </div>
         </article>
         {% endfor %}
+
+        <p id="category-empty" hidden>Nothing here yet.</p>
     </main>
 
     <footer>

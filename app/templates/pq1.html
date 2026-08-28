@@ -39,20 +39,6 @@
                         </div>
                     </section>
 
-                    <section class="pq1-room pq1-room-thoughts" aria-label="Thoughts feed">
-                        <div class="pq1-building pq1-dispatch">
-                            <a class="pq1-shop-sign" href="/thoughts.html">THOUGHTS</a>
-                            <div class="pq1-message-grid">
-                                {% for thought in thoughts limit 6 %}
-                                <a href="{{ thought.url }}">
-                                    <span>{{ thought.formatted_date }}</span>
-                                    {{ thought.title }}
-                                </a>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </section>
-
                     <section class="pq1-room pq1-room-speaking" aria-label="Speaking">
                         <div class="pq1-building pq1-courthouse">
                             <a class="pq1-shop-sign" href="/speaking.html">SPEAKING</a>
@@ -100,7 +86,7 @@
 
             <form class="pq1-parser" id="pq1-parser">
                 <label for="pq1-command">What do you want to do?</label>
-                <input id="pq1-command" name="command" autocomplete="off" spellcheck="false" placeholder="type look, home, writing, thoughts, speaking, playground, exit" />
+                <input id="pq1-command" name="command" autocomplete="off" spellcheck="false" placeholder="type look, home, writing, speaking, playground, exit" />
             </form>
         </section>
     </main>

@@ -4,6 +4,7 @@ date: 2026-07-27
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: Block's new Nostr-based Slack alternative, a Droplet full of agents, and an Obsidian vault they all share. Open protocols might finally be useful in the age of agents.
 ---
 

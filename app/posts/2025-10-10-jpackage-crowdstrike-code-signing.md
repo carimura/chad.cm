@@ -4,6 +4,7 @@ date: 2025-10-10
 type: post
 template: post.html
 active_nav: writing
+category: Tech
 excerpt: "How to properly code sign jpackage applications to avoid CrowdStrike quarantine on macOS."
 ---
 

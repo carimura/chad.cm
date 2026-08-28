@@ -23,13 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         writing: 'writing',
         writring: 'writing',
         posts: 'writing',
-        m: 'thoughts',
-        b: 'thoughts',
-        r: 'thoughts',
-        msg: 'thoughts',
-        messages: 'thoughts',
-        t: 'thoughts',
-        thoughts: 'thoughts',
         c: 'speaking',
         a: 'speaking',
         callers: 'speaking',
@@ -48,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const boardAliases = {
         home: 'home',
         writing: 'writing',
-        thoughts: 'thoughts',
         speaking: 'speaking',
         playground: 'doors'
     };
@@ -56,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const routes = {
         home: '/bbs/',
         writing: '/bbs/writing.html',
-        thoughts: '/bbs/thoughts.html',
         speaking: '/bbs/speaking.html',
         playground: '/bbs/playground.html'
     };
@@ -64,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const labels = {
         home: 'SYSTEM INFO',
         writing: 'WRITE AREA',
-        thoughts: 'MSG BASE',
         speaking: 'CALLERS',
         doors: 'DOOR GAMES',
         playground: 'DOOR GAMES'
@@ -160,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (command === 'help' || command === '?') {
-            writeLog('Commands: home, writing, thoughts, speaking, playground, exit', 'bbs-amber');
+            writeLog('Commands: home, writing, speaking, playground, exit', 'bbs-amber');
             return;
         }
 
