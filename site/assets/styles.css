@@ -2112,3 +2112,28 @@ body.pq1-page {
         gap: 15px;
     }
 }
+
+
+/*--- TPUSA ---*/
+
+.tpusa-hero {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--nav-active);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    color: white;
+    text-decoration: underline;
+}
