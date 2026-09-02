@@ -11,12 +11,12 @@ description: TPUSA Communities San Francisco Bay Area chapter
 
 Hello, my name is Chad Arimura and I am the chapter president for [TPUSA Communities](https://tpusa.com/communities/) San Francisco Bay Area. 
 
-Our mission is build stronger communities through social and civic engagement, volunteer opportunities, and family-friendly events, all united under the shared American values of patriotism, faith, family, and freedom.
+Our mission is to build stronger communities through social and civic engagement, volunteer opportunities, and events, all united under the shared American values of patriotism, faith, family, and freedom.
 
 Here are just a few of the activities we are planning over the next 18 months:
 
-- Family-friendly gatherings with food from local businesses and live music
-- "Worship in the park" concerts
+- Family-friendly gatherings with live music and food from local businesses
+- Worship-in-the-park concerts
 - Attending school board meetings to listen and build relationships
 - Setting up tables at various events to chat about TPUSA Communities
 - Partnering with local ministries on homeless outreach, ensuring children are adequately fed and have school supplies, etc.
