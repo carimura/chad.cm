@@ -2127,7 +2127,7 @@ body.pq1-page {
     display: inline-block;
     padding: 10px 22px;
     border-radius: 999px;
-    background: var(--nav-active);
+    background: #cc4a1a;
     color: white;
     font-weight: bold;
     text-decoration: none;
