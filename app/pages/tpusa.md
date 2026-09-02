@@ -32,7 +32,9 @@ Once you are added to the Bay Area chapter, you'll get updates from me with oppo
 
 <p><a class="cta-button" href="https://forms.tpusa.com/form/261146790625157" target="_blank" rel="noopener">Join TPUSA Communities Bay Area</a></p>
 
-I look forward to serving our community with you!
+<aside class="scripture"><p class="scripture-text">&ldquo;Even so, let your light shine before men, that they may see your good works and glorify your Father who is in heaven.&rdquo;</p><p class="scripture-ref">Matthew 5:16</p></aside>
+
+I look forward to letting our light shine together in our community!
 
 Best,
 Chad Arimura

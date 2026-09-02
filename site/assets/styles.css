@@ -2141,3 +2141,26 @@ body.pq1-page {
     color: white;
     text-decoration: underline;
 }
+
+.scripture {
+    margin: 20px 0 28px 0;
+    padding: 14px 18px;
+    background: var(--surface-alt);
+    border-left: 3px solid #cc4a1a;
+    border-radius: 6px;
+}
+
+.scripture-text {
+    margin: 0 0 6px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.scripture-ref {
+    margin: 0;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+}
