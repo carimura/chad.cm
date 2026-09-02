@@ -13,7 +13,7 @@ Hello, my name is Chad Arimura and I am the chapter president for [TPUSA Communi
 
 Here are just a few of the activities and events we are planning for the remainder of 2026 and 2027:
 
-- Family-friendly gatherings with food sponsored by local businesses and live music
+- Family-friendly gatherings with food from local businesses and live music
 - "Worship in the park" concerts
 - Attending school board meetings to listen and build relationships
 - Setting up tables at various events to chat about TPUSA Communities
@@ -22,9 +22,15 @@ Here are just a few of the activities and events we are planning for the remaind
 
 Ultimately my goal is to serve and minister to the Bay Area, creating local and lasting positive change, while working towards larger events that big notable speakers will want to attend!
 
-Someone probably sent you here to learn more and to potentially get involved. It's very simple. You can email me [hello@chad.cm](mailto:hello@chad.cm), send me a message on Telegram [@carimura](https://t.me/carimura), or fill out the form using the button below.
+Getting involved is super easy and you can do so using any of the methods below:
+
+- Email me: [hello@chad.cm](mailto:hello@chad.cm)
+- Send me a chat on Telegram [@carimura](https://t.me/carimura)
+- Fill out the form using the button below
 
 Once you are added to the Bay Area chapter, you'll get updates from me with opportunities to get involved!
+
+I'm also looking for local businesses to partner with on events, food, and more! Please reach out.
 
 <p><a class="cta-button" href="https://forms.tpusa.com/form/261146790625157" target="_blank" rel="noopener">Join TPUSA Communities SF Bay Area</a></p>
 
