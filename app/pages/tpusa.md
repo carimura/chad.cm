@@ -11,6 +11,8 @@ description: TPUSA Communities San Francisco Bay Area chapter
 
 Hello, my name is Chad Arimura and I am the chapter president for [TPUSA Communities](https://tpusa.com/communities/) San Francisco Bay Area. Our mission is to build stronger communities through social and civic engagement, volunteer opportunities, and hosted events, all united under the shared American values of patriotism, faith, family, and freedom.
 
+Ultimately my goal is to serve and minister to the Bay Area, creating local and lasting positive change, while working towards larger events that big notable speakers will want to attend!
+
 Here are just a few of the activities and events we are planning for the remainder of 2026 and 2027:
 
 - Family-friendly gatherings with food from local businesses and live music
@@ -20,21 +22,19 @@ Here are just a few of the activities and events we are planning for the remaind
 - Partnering with local ministries on homeless outreach, ensuring children are adequately fed and have school supplies, etc.
 - Holiday toy drives
 
-Ultimately my goal is to serve and minister to the Bay Area, creating local and lasting positive change, while working towards larger events that big notable speakers will want to attend!
-
-Getting involved is super easy and you can do so using any of the methods below:
+**Getting involved is super easy: all I need is a name, email address, and a willingness to serve. Use any of the methods below to get started!**
 
 - Email me: [hello@chad.cm](mailto:hello@chad.cm)
 - Send me a chat on Telegram [@carimura](https://t.me/carimura)
 - Fill out the form using the button below
 
-Once you are added to the Bay Area chapter, you'll get updates from me with opportunities to get involved!
+Once you are added to the Bay Area chapter, you'll get updates from me with opportunities to get involved.
 
-I'm also looking for local businesses to partner with on events, food, and more! Please reach out.
+I'm also looking for local businesses to partner with on events, food, and more! Please reach out!
 
-<p><a class="cta-button" href="https://forms.tpusa.com/form/261146790625157" target="_blank" rel="noopener">Join TPUSA Communities SF Bay Area</a></p>
+<p><a class="cta-button" href="https://forms.tpusa.com/form/261146790625157" target="_blank" rel="noopener">Join TPUSA Communities Bay Area</a></p>
 
 I look forward to serving our community with you!
 
-Best,<br>
+Best,
 Chad Arimura
