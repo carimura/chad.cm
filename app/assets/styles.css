@@ -2133,6 +2133,10 @@ body.pq1-page {
     text-decoration: none;
 }
 
+.cta-button:visited {
+    color: white;
+}
+
 .cta-button:hover {
     color: white;
     text-decoration: underline;

@@ -22,11 +22,13 @@ Here are just a few of the activities and events we are planning for the remaind
 
 Ultimately my goal is to serve and minister to the Bay Area, creating local and lasting positive change, while working towards larger events that big notable speakers will want to attend!
 
-Someone probably sent you here to learn more and to potentially get involved. It's very simple. You can contact me with questions at [hello@chad.cm](mailto:hello@chad.cm), [@carimura](https://t.me/carimura) on Telegram, or fill out the form using the link below. After that, you'll get an onboarding email from me and then get occasional updates with what our chapter is doing.
+Someone probably sent you here to learn more and to potentially get involved. It's very simple. You can email me [hello@chad.cm](mailto:hello@chad.cm), send me a message on Telegram [@carimura](https://t.me/carimura), or fill out the form using the button below.
+
+Once you are added to the Bay Area chapter, you'll get updates from me and opportunities to get involved!
 
 <p><a class="cta-button" href="https://forms.tpusa.com/form/261146790625157" target="_blank" rel="noopener">Join TPUSA Communities SF Bay Area</a></p>
 
-I look forward to volunteering with you!
+I look forward to serving our community with you!
 
 Best,<br>
 Chad Arimura
