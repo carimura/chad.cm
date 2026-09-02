@@ -6,9 +6,10 @@ description: TPUSA Communities San Francisco Bay Area chapter
 ---
 
 <img class="tpusa-hero" src="/assets/tpusa/quad.webp" alt="TPUSA Communities: RISE, Families, Heroes, and Young Professionals">
-<br />
 
 # TPUSA Communities San Francisco Bay Area
+
+<img class="tpusa-photo" src="/assets/posts/nick-shirley-act/family-at-the-capitol-thumb.jpg" alt="Chad and his wife in front of the California State Capitol">
 
 Hello, my name is Chad Arimura and I am the chapter president for [TPUSA Communities](https://tpusa.com/communities/) San Francisco Bay Area. 
 

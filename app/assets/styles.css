@@ -2120,7 +2120,23 @@ body.pq1-page {
     display: block;
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
+}
+
+.tpusa-photo {
+    float: right;
+    width: 250px;
+    height: auto;
+    margin: 0 0 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow);
+}
+
+@media (max-width: 600px) {
+    .tpusa-photo {
+        width: 120px;
+        margin: 0 0 8px 12px;
+    }
 }
 
 .cta-button {
