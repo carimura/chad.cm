@@ -24,7 +24,7 @@ Ultimately my goal is to serve and minister to the Bay Area, creating local and 
 
 Someone probably sent you here to learn more and to potentially get involved. It's very simple. You can email me [hello@chad.cm](mailto:hello@chad.cm), send me a message on Telegram [@carimura](https://t.me/carimura), or fill out the form using the button below.
 
-Once you are added to the Bay Area chapter, you'll get updates from me and opportunities to get involved!
+Once you are added to the Bay Area chapter, you'll get updates from me with opportunities to get involved!
 
 <p><a class="cta-button" href="https://forms.tpusa.com/form/261146790625157" target="_blank" rel="noopener">Join TPUSA Communities SF Bay Area</a></p>
 
