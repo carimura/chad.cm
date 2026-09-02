@@ -22,7 +22,7 @@ Here are just a few of the activities we are planning over the next 18 months:
 - Partnering with local ministries on homeless outreach, ensuring children are adequately fed and have school supplies, etc.
 - Holiday toy drives
 
-**Getting involved is super easy: all I need is a name, email address, and a willingness to serve. Use any of the methods below to get started!**
+**Getting involved is super easy: all I need is a name, email address, and a willingness to show up to at least an event every few months. Use any of the methods below to get started!**
 
 - Email me: [hello@chad.cm](mailto:hello@chad.cm)
 - Send me a chat on Telegram [@carimura](https://t.me/carimura)
