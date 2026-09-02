@@ -13,7 +13,7 @@ Hello, my name is Chad Arimura and I am the chapter president for [TPUSA Communi
 
 Our mission is build stronger communities through social and civic engagement, volunteer opportunities, and family-friendly events, all united under the shared American values of patriotism, faith, family, and freedom.
 
-Here are just a few of the activities and events we are planning for the remainder of 2026 and 2027:
+Here are just a few of the activities we are planning over the next 18 months:
 
 - Family-friendly gatherings with food from local businesses and live music
 - "Worship in the park" concerts
