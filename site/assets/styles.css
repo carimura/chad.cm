@@ -2143,7 +2143,7 @@ body.pq1-page {
 }
 
 .scripture {
-    margin: 20px 0 28px 0;
+    margin: 50px 0 28px 0;
     padding: 14px 18px;
     background: var(--surface-alt);
     border-left: 3px solid #cc4a1a;
@@ -2154,7 +2154,7 @@ body.pq1-page {
     margin: 0 0 6px 0;
     font-family: Georgia, "Times New Roman", serif;
     font-style: italic;
-    font-size: 0.95em;
+    font-size: 1.2em;
     line-height: 1.5;
 }
 
