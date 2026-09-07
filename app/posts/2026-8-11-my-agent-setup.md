@@ -8,6 +8,8 @@ category: Tech
 excerpt: I'm a month into building a staff of six agents. This is how they run, communicate, and help across a few products and a nonprofit.
 ---
 
+**September 7th Update:** It's funny how these things work, the day this post went viral, Grok Bot was announced and a few days later folks from Hermes and a few other vendors came out with their versions of the "integrated AI bot stack". I call it the "OS X moment for AI" but there's probably a better analogy. Anyways, I've switched to Grok Bot because this whole stack is too much to manage. I would love something as nice as Grok Bot where I can configure the model choices, but then it becomes tinkering again....
+
 (this was written by a [human](https://chad.cm). I had my gtm-agent review and make some changes, but I then mostly reversed all of those taking me 10x more time than had I just shipped it with missing commas, run-on sentences, and 6 instead of six. Refer to "Has it been worth it?" at the end.)
 
 A few people have asked about my agent setup, but first let me talk about the goal. I'm working on a few products as well as a nonprofit. The only product I've mentioned so far is [The Daily FM](https://thedaily.fm/), which is just something I wanted so I built it.
