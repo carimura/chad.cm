@@ -5,7 +5,7 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2026 14:31:22 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 15:04:45 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
 
     <item>
@@ -114,7 +114,8 @@
       <description>I&apos;m a month into building a staff of six agents. This is how they run, communicate, and help across a few products and a nonprofit.</description>
       <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://chad.cm/posts/2026-8-11-my-agent-setup.html</guid>
-      <content:encoded><![CDATA[<p><strong>September 7th Update:</strong> It's funny how these things work, the day this post went viral, Grok Bot was announced and a few days later folks from Hermes and a few other vendors came out with their versions of the &quot;integrated AI bot stack&quot;. I call it the &quot;OS X moment for AI&quot; but there's probably a better analogy. Anyways, I've switched to Grok Bot because this whole stack is too much to manage. I would love something as nice as Grok Bot where I can configure the model choices, but then it becomes tinkering again....</p>
+      <content:encoded><![CDATA[<p><em><strong>September 7th Update:</strong> It's funny how these things work, the day this post went viral, Grok Bot was announced and a few days later folks from Hermes and a few other vendors came out with their versions of the &quot;integrated AI bot stack&quot;. I call it the &quot;OS X moment for AI&quot; but there's probably a better analogy. Anyways, I've switched to Grok Bot because this whole stack is too much to manage. I would love something as nice as Grok Bot where I can configure the model choices, but then it becomes tinkering again....</em></p>
+<hr />
 <p>(this was written by a <a href="https://chad.cm">human</a>. I had my gtm-agent review and make some changes, but I then mostly reversed all of those taking me 10x more time than had I just shipped it with missing commas, run-on sentences, and 6 instead of six. Refer to &quot;Has it been worth it?&quot; at the end.)</p>
 <p>A few people have asked about my agent setup, but first let me talk about the goal. I'm working on a few products as well as a nonprofit. The only product I've mentioned so far is <a href="https://thedaily.fm/">The Daily FM</a>, which is just something I wanted so I built it.</p>
 <p>The goal of all this agent experimentation is to scale multiple products and the nonprofit with fewer staff and volunteers than would otherwise be needed. In short, I'm creating a staff of agents. I'm about a month into this charade, so it's still early days.</p>
