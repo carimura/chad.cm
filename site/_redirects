@@ -40,3 +40,8 @@
 /bbs/thoughts.html /bbs/writing.html 301
 /thought/* /writing.html 301
 /bbs/thought/* /bbs/writing.html 301
+
+# TPUSA page moved to its own domain
+/tpusa https://tpusasfbay.com 301
+/tpusa/ https://tpusasfbay.com 301
+/tpusa.html https://tpusasfbay.com 301
