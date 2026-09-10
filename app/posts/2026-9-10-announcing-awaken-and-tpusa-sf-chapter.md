@@ -10,13 +10,13 @@ excerpt: I'm launching Awaken, a non-profit gathering Christians in tech to buil
 
 <img src="/assets/posts/awaken-tpusa-announcement.jpg" alt="A lit cross on a stadium stage as confetti falls over the crowd" style="max-width: 100%;">
 
-**I’d like to announce two projects I’m working on.**
+### I’d like to announce two projects I’m working on.
 
 First, I am launching a non-profit with the aim of gathering Christians in tech to help build “software for the kingdom”. There isn’t much on the site yet, but to stay in the loop, drop your email --> [https://awakenusa.com](https://awakenusa.com).
 
 Second, I have taken on the role as president for a new TPUSA Communities San Francisco Bay Area chapter. I’ll be focused on building stronger local communities through social and civic engagement, volunteer opportunities, and events, all united behind the shared values of faith, family, and freedom. More on this --> [https://tpusasfbay.com](https://tpusasfbay.com).
 
-**What led me here?**
+### What led me here?
 
 Today marks one year since Charlie Kirk was assassinated. His death had a profound impact on me. I know many disagree with his views, but having listened to him for years on campuses, on air, and in churches, there’s no denying his unwavering commitment to dialogue, truth, and freedom.
 
@@ -26,7 +26,7 @@ I’ve been in tech for almost 30 years, much of that running my own businesses.
 
 What world will my three kids grow up in? Can technology be used for good or are we just building for profit? Will technology unite us or divide us? Will it be used to increase agency or control us?
 
-**This is where faith and tech must find a deeper union.**
+### This is where faith and tech must find a deeper union.
 
 And this is what led me to create Awaken and team up with TPUSA.
 
@@ -34,4 +34,4 @@ As the sun rises on 9/10, and tomorrow on 9/11, and soon 10/7, so many people re
 
 Ultimately let’s “be not overcome of evil, but overcome evil with good”, and to “Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.”
 
-Buckle up, here we go.
+Here I am, Lord. Send me.
