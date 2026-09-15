@@ -45,3 +45,7 @@
 /tpusa https://tpusasfbay.com 301
 /tpusa/ https://tpusasfbay.com 301
 /tpusa.html https://tpusasfbay.com 301
+
+# Christian Builders Discord invite (302 so the invite URL can be swapped later)
+/discord https://discord.gg/6ndCHgw4U4 302
+/discord/ https://discord.gg/6ndCHgw4U4 302
