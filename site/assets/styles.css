@@ -327,6 +327,7 @@ p#date {
 }
 
 .post-category {
+    display: inline-block;
     font-size: 0.65em;
     padding: 0 8px;
     margin-left: 8px;

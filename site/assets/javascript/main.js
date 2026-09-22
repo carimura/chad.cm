@@ -71,6 +71,18 @@ function initCategoryFilter() {
     const empty = document.getElementById('category-empty');
     const slug = category => category.toLowerCase().replace(/\s+/g, '-');
 
+    posts.forEach(post => {
+        const label = post.querySelector('.post-category');
+        const categories = post.dataset.category.split(',').map(category => category.trim());
+        if (!label || categories.length < 2) return;
+        label.replaceWith(...categories.map(category => {
+            const badge = document.createElement('span');
+            badge.className = 'post-category';
+            badge.textContent = category;
+            return badge;
+        }));
+    });
+
     function apply(category) {
         let shown = 0;
         buttons.forEach(button => button.classList.toggle('active', button.dataset.category === category));
