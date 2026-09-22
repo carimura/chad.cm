@@ -14,6 +14,17 @@
 
         {{ content }}
 
+        <h2>Writing</h2>
+        {% for post in posts limit 5 %}
+        <div class="home-post">
+            <span class="home-post-date">{{ post.formatted_date }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+        {% endfor %}
+        <p><a href="/writing.html">See more writing →</a></p>
+
+        <hr />
+
         <h2>Speaking</h2>
         <div class="video-thumbnails">
             <a href="https://www.youtube.com/live/3fLCOqpIfI0?si=aGPEbYBZFwRfiYRJ&t=1858" target="_blank" class="video-thumb">
@@ -31,16 +42,6 @@
         </div>
         <p><a href="/speaking.html">See more speaking →</a></p>
 
-        <hr />
-
-        <h2>Writing</h2>
-        {% for post in posts limit 5 %}
-        <div class="home-post">
-            <span class="home-post-date">{{ post.formatted_date }}</span>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </div>
-        {% endfor %}
-        <p><a href="/writing.html">See more writing →</a></p>
     </main>
 
     <footer>

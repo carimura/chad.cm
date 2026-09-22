@@ -75,7 +75,7 @@ function initCategoryFilter() {
         let shown = 0;
         buttons.forEach(button => button.classList.toggle('active', button.dataset.category === category));
         posts.forEach(post => {
-            const match = category === 'all' || post.dataset.category === category;
+            const match = category === 'all' || post.dataset.category.split(',').map(label => label.trim()).includes(category);
             post.hidden = !match;
             if (match) shown++;
         });

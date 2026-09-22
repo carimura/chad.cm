@@ -4,7 +4,7 @@ date: 2026-09-10
 type: post
 template: post.html
 active_nav: writing
-category: Announcements
+category: Announcements, Christ, Life and Politics
 excerpt: I'm launching Awaken, a non-profit gathering Christians in tech to build software for the kingdom, and taking on the role of president for a new TPUSA Communities San Francisco Bay Area chapter. Here's what led me here.
 ---
 

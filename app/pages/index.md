@@ -6,22 +6,19 @@ active_nav: home
 ---
 
 <div id="headshot">
-    <img id="profile-img" 
-            src="/assets/chad_cartoon.png" 
-            data-cartoon="/assets/chad_cartoon.png" 
-            data-real="/assets/chad.jpg" 
-            alt="Chad Arimura" />
+    <img src="/assets/posts/i-have-decided.jpg"
+            alt="Our family in the backyard, my wife and I wearing matching I have decided shirts" />
 </div>
-
-<script src="/assets/javascript/about.js"></script>
 
 Hi, my name is Chad Arimura.
 
 I am a husband, father of 3, follower of Christ, boss of a few dogs, and commander-in-chief to 15-20 chickens. I am also a 3x entrepreneur, most recently co-founder and CEO of [Iron.io](https://www.crunchbase.com/organization/iron-io) where we grew a multi-million dollar business pioneering serverless computing. We sold the company in 2017 and joined Oracle.
 
-And now, as mentioned in my "[thanks and onward](/posts/2026-04-05-thanks-and-onward-2026.html)" post, for the first time in 20 years, I'm a free agent without a destination! We live in a wild, exciting, and somewhat scary time with the rapid pace of change. I'll be building, exploring, and talking to folks at companies of all stages thinking about what's next.
+As seen in my "[Announcing Awaken and TPUSA Chapter](/posts/2026-9-10-announcing-awaken-and-tpusa-sf-chapter.html)" post, I'm currently exploring the intersection of faith and tech with [Awaken](https://awakenusa.com), while launching a [San Francisco Bay Area chapter for Turning Point USA](https://tpusasfbay.com).
 
-You can contact me on [LinkedIn](https://linkedin.com/in/chadarimura), [hello@chad.cm](mailto:hello@chad.cm), or the new [Christian Builders](/discord) Discord channel.
+If you are a Christian in tech, join me in the new [Christian Builders Discord channel](https://chad.cm/discord).
+
+You can contact me on [LinkedIn](https://linkedin.com/in/chadarimura), [hello@chad.cm](mailto:hello@chad.cm), [Telegram](https://t.me/carimura), or [Discord](https://chad.cm/discord).
 
 
 <!--
