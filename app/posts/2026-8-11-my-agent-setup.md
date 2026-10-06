@@ -8,6 +8,8 @@ category: Tech
 excerpt: I'm a month into building a staff of six agents. This is how they run, communicate, and help across a few products and a nonprofit.
 ---
 
+_**October 6th Update:** Here's [a quick post](/posts/2026-10-6-from-hermes-to-grok-bot.html) on that switch to Grok Bot._
+
 _**September 7th Update:** It's funny how these things work, the day this post went viral, Grok Bot was announced and a few days later folks from Hermes and a few other vendors came out with their versions of the "integrated AI bot stack". I call it the "OS X moment for AI" but there's probably a better analogy. Anyways, I've switched to Grok Bot because this whole stack is too much to manage. I would love something as nice as Grok Bot where I can configure the model choices, but then it becomes tinkering again...._
 
 ---
