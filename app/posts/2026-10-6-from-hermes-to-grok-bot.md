@@ -22,6 +22,12 @@ All that stuff is solvable, but I felt like I was justifying my 30 years of engi
 
 Grok Bot took 5 minutes to install, and a few more minutes to set up all the core connections, some of which were in the marketplace, and some of which used its shared computer to connect and share access across bots. A few more minutes and it was on my phone, storing reminders, recurring reports, and doing research. Everything just... worked. No hassle, no fuss, very little tinkering. I was both joyful, and at the same time, that feeling of "getting replaced" kept popping up in my head ("but if normies can do this, what use am I?"). That's why over the next few months I'm going to spend a fair amount of energy and tokens expanding the usefulness of Grok Bot.
 
+## The Next UX
+
+Technology innovation always happens in this flock-of-birds mentality where everyone runs in one direction, then a bird starts darting a different direction, and the flock follows, eventually reforming back together. You can see that happen with the UX of AI right now from API, to chat, to IDE+chat, to CLI, to desktop app, back to CLI, to local agents, to cloud agents, to Grok Bot. Now we're seeing the wave of [Meta's Muse](https://ai.meta.com/muse/), [Instinct](https://instinct.com/), and I assume the [Earendil](https://earendil.com/) folks have something?
+
+In any case I'm excited to see where things go, and Grok Bot definitely feels at least directionally correct.
+
 <img src="/assets/posts/from-hermes-to-grok-bot/100-days-of-grok-bot.jpg" alt="A desk calendar filled with colorful Grok Bots." width="1536" height="1024" loading="lazy" style="display: block; width: 280px; max-width: 100%; height: auto; margin: 2rem 0 1rem;">
 
 ## 100 Days of Grok Bot
