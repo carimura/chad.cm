@@ -24,7 +24,7 @@ Grok Bot took 5 minutes to install, and a few more minutes to set up all the cor
 
 ## The Next UX
 
-Technology innovation always happens in this flock-of-birds mentality where everyone runs in one direction, then a bird starts darting a different direction, and the flock follows, eventually reforming back together. You can see that happen with the UX of AI right now from API, to chat, to IDE+chat, to CLI, to desktop app, back to CLI, to local agents, to cloud agents, to Grok Bot. Now we're seeing the wave of [Meta's Muse](https://ai.meta.com/muse/), [Instinct](https://instinct.com/), and I assume the [Earendil](https://earendil.com/) folks have something?
+Technology innovation always happens in this flock-of-birds mentality where everyone runs in one direction, then a bird starts darting a different direction, and the flock follows, eventually reforming back together. You can see that happen with the UX of AI right now from API, to chat, to IDE+chat, to CLI, to desktop app, back to CLI, to local agents, to cloud agents, to Grok Bot. Now we're seeing the wave of [Meta's Muse](https://ai.meta.com/muse/), [OpenAI Dots](https://openai.com/index/introducing-dots/), [Instinct](https://instinct.com/), and I assume the [Earendil](https://earendil.com/) folks have something?
 
 In any case I'm excited to see where things go, and Grok Bot definitely feels at least directionally correct.
 
