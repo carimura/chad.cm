@@ -22,6 +22,10 @@ All that stuff is solvable, but I felt like I was justifying my 30 years of engi
 
 Grok Bot took 5 minutes to install, and a few more minutes to set up all the core connections, some of which were in the marketplace, and some of which used its shared computer to connect and share access across bots. A few more minutes and it was on my phone, storing reminders, recurring reports, and doing research. Everything just... worked. No hassle, no fuss, very little tinkering. I was both joyful, and at the same time, that feeling of "getting replaced" kept popping up in my head ("but if normies can do this, what use am I?"). That's why over the next few months I'm going to spend a fair amount of energy and tokens expanding the usefulness of Grok Bot.
 
+## What it's not
+
+So far I'm not thrilled about Grok Bot's engineering capabilities. I find myself opening Codex and Claude Code for most of that still. Grok Bot certainly CAN engineer and it farms work out to Cursor Cloud Agents and you can even try and pin the model for those so I'll pin the frontier models, but I still find it makes more simple mistakes. That really shows how important the harness is. I'm even kicking around the idea of having Grok Bot farm work out to Codex running in the cloud.... but that requires managing the wiring and that's what I don't want to do.
+
 ## The Next UX
 
 Technology innovation always happens in this flock-of-birds mentality where everyone runs in one direction, then a bird starts darting a different direction, and the flock follows, eventually reforming back together. You can see that happen with the UX of AI right now from API, to chat, to IDE+chat, to CLI, to desktop app, back to CLI, to local agents, to cloud agents, to Grok Bot. Now we're seeing the wave of [Meta's Muse](https://ai.meta.com/muse/), [OpenAI Dots](https://openai.com/index/introducing-dots/), [Instinct](https://instinct.com/), and I assume the [Earendil](https://earendil.com/) folks have something?
