@@ -5,8 +5,39 @@
     <link>https://chad.cm</link>
     <description>My thoughts on programming, Java, building companies, devrel, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2026 17:13:09 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 08:29:43 -0700</lastBuildDate>
     <generator>Arc Static Site Generator</generator>
+
+    <item>
+      <title>From Hermes to Grok Bot</title>
+      <link>https://chad.cm/posts/2026-10-6-from-hermes-to-grok-bot.html</link>
+      <description>I spent a month building my Hermes and Buzz setup, then switched to Grok Bot in a few days. Now I&apos;m trying 100 days of actually using it.</description>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://chad.cm/posts/2026-10-6-from-hermes-to-grok-bot.html</guid>
+      <content:encoded><![CDATA[<img src="/assets/posts/from-hermes-to-grok-bot/grok-bots-animated.svg" alt="A purple Grok Bot and a blue Grok Bot blinking and glancing toward each other." width="1672" height="761" style="display: block; width: 90%; max-width: 100%; height: auto; margin: 0 auto 1rem;">
+<p>A few months ago, I wrote <a href="/posts/2026-8-11-my-agent-setup.html">a post</a> that sat at the top of Hacker News for a day, describing my Hermes agent with Block Buzz setup. I spent a month setting it up, fine-tuning it, and making it a tiny bit useful. The engineer in me felt so satisfied and <a href="https://news.ycombinator.com/item?id=49272484">others seemed to share that excitement</a>. Coincidentally, within a day of my post, xAI announced Grok Bot. At first I brushed it off as a wussy option for normies. Then I tried it and within a few days I deleted my entire agent setup and switched. Why?</p>
+<h2>The Pain of Hermes</h2>
+<p>In short, I spent 90% of the time tinkering and fine-tuning Hermes+Buzz and 10% getting actual use out of it. I was managing the Hermes agents, managing the VPS they run on, managing this new thing called Buzz to communicate with the agents, managing the MCP and connection statuses of agents, managing the cron jobs to ensure they fired properly, trying to figure out how to give my agents a proper browser, and on and on (trust me, the on and on really is on and on, but I said &quot;in short&quot; so I'm sticking to it.)</p>
+<p>All that stuff is solvable, but I felt like I was justifying my 30 years of engineering experience rather than focusing on what it could actually do for me. So I <a href="https://x.ai/bot">installed Grok Bot</a>, asked it to remind me in a week to delete my VPS, and the coup d'état had begun.</p>
+<h2>The Joy of Grok Bot</h2>
+<p>Grok Bot took 5 minutes to install, and a few more minutes to set up all the core connections, some of which were in the marketplace, and some of which used its shared computer to connect and share access across bots. A few more minutes and it was on my phone, storing reminders, recurring reports, and doing research. Everything just... worked. No hassle, no fuss, very little tinkering. I was both joyful, and at the same time, that feeling of &quot;getting replaced&quot; kept popping up in my head (&quot;but if normies can do this, what use am I?&quot;). That's why over the next few months I'm going to spend a fair amount of energy and tokens expanding the usefulness of Grok Bot.</p>
+<img src="/assets/posts/from-hermes-to-grok-bot/100-days-of-grok-bot.jpg" alt="A desk calendar filled with colorful Grok Bots." width="1536" height="1024" loading="lazy" style="display: block; width: 280px; max-width: 100%; height: auto; margin: 2rem 0 1rem;">
+<h2>100 Days of Grok Bot</h2>
+<p>Here's my idea: over the next 100 days, I plan on exploring and posting use cases for Grok Bot, one use case per day. Some will be small, and some large, and I definitely don't have 100 now so there's some faith that I'll find them. Feel free to post your own using hashtag <a href="https://x.com/hashtag/100DaysOfGrokBot">#100DaysOfGrokBot</a>. Let's see how it goes!</p>
+<p>Here's a snapshot of some of those use cases that I'll expand on a bit:</p>
+<ul>
+<li>Website modifications</li>
+<li>email list management</li>
+<li>off-computer backups</li>
+<li>daily social search</li>
+<li>daily events search</li>
+<li>video creation</li>
+<li>daily reminder system</li>
+<li>and 93 more... hopefully.</li>
+</ul>
+<p>You can follow <a href="https://x.com/chadarimura">my X account</a> for the 100 days of Grok Bot. I'll also create a new Blog post and edit it every day with the new use case.</p>
+]]></content:encoded>
+    </item>
 
     <item>
       <title>Announcing Awaken and TPUSA SF Chapter</title>
@@ -1126,118 +1157,6 @@ mvn package -Psigned
 <p><strong>ICE is software limited only by one's creativity vs one's skillsets.</strong> This I think is the main point. Engineering is not just about writing code or soldering wires, it's about making something come alive. As a kid I used HyperCard to build choose-your-own-adventure games, and Telegard and Wildcat BBS to build BBS sites. As I got older I created companies and used code to make those come alive. Software has become increasingly powerful but also increasingly complicated. Part of what I loved about &quot;serverless&quot; was the notion of abstracting out the infra layer, and AI tools seem to be trending towards a world in which you can abstract out a lot of the heavy lift of code also -- limited by creativity.</p>
 <p><strong>ICE is moving faster while still following the rules of a larger organization.</strong> In my Bingo example, technically, I'm supposed to put all new software through a security review before using it for work. But this could take months, so having it ready by my 9am meeting is obviously untenable. Enter ICE -- where I can build it, and no sensitive data were harmed in the process. Maybe this is the biggest point here, IDK.</p>
 <p>What do you think? Is this <span style="text-decoration: line-through;">stupid</span> your experience?</p>
-]]></content:encoded>
-    </item>
-
-    <item>
-      <title>Building Arc (in a few hours)</title>
-      <link>https://chad.cm/posts/2025-05-28-building-arc.html</link>
-      <description>I wanted to write a blog post about some OpenCV stuff I did in Java using the Foreign Function &amp; Memory API, but then realized, I didn&apos;t have a blog. I couldn&apos;t bare using some Javascript engine, so I built my own in Cursor. It&apos;s called Arc. This post is both about Arc, and the experience of building it in a few hours.</description>
-      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://chad.cm/posts/2025-05-28-building-arc.html</guid>
-      <content:encoded><![CDATA[<p>I wanted to write a blog post about some OpenCV stuff I did in Java using the <a href="https://dev.java/learn/ffm/">Foreign Function &amp; Memory API</a>, but then realized, I didn't have a blog.</p>
-<p>Since I work on the team that makes the Java Platform, I couldn't bare using some Javascript blog engine, so I built my own using Cursor and Claude-4-Opus. Enter, <a href="https://github.com/carimura/arc">Arc</a>.</p>
-<p>It's not great. The code is like someone stuffed Stackoverflow and Baeldung into a blender and then blew it up with dynamite, but it took me about 5 hours (half of which was learning the tools), and I'm really curious if I can refactor my way into something broadly useful for others. All that said, it's really super fast, at least.</p>
-<p>Arc is a static-site generator written in Java. It's basic function is to take Markdown files, mash them into some templates, and turn that all into plain-ole' HTML. I'm old school, and I have a core belief that HTML should be largely maintained as HTML, with some variables and control-flow built in, not littered throughout controller logic. Remember MVC? I liked that. Is it still a thing? Modern day JS frameworks hurt my brain.</p>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Converts Markdown files to HTML using CommonMark</li>
-<li>Supports YAML frontmatter for metadata</li>
-<li>Simple template system</li>
-<li>Variables: <code>{{ variable }}</code></li>
-<li>Loops: <code>{for post in posts}...{% endfor %}</code></li>
-<li>Conditionals: <code>{% if variable %}...{% endif %}</code></li>
-<li>Includes: <code>{% include &quot;header.html&quot; %}</code></li>
-<li>Has a built-in hot reload mode for development</li>
-<li>Uses <code>jpackage</code> to build a native executable</li>
-</ul>
-<p>Also it's pretty fast. Here it is building this site:</p>
-<pre><code>❯ time arc
--------- STARTING ARC GENERATE() --------
-Copied assets to: site/assets
-Found 2 markdown posts to process
-Found 4 markdown pages to process
-Generated: posts/2025-05-28-building-arc.html
-Generated: posts/2025-05-26-welcome-to-my-new-site.html
-Generated: speaking.html
-Generated: writing.html
-Generated: index.html
-Generated: about.html
--------- SITE GENERATION COMPLETE --------
-arc 0.21s user 0.03s system 149% cpu 0.160 total
-</code></pre>
-<h2>Using (if you already have the arc binary)</h2>
-<p>Using it to build your own site is super easy, you just run the <code>arc</code> command (or <code>arc --watch</code> for hot reloads) inside the directory where your app lives. That said, getting <code>arc</code> at this time requires building it.</p>
-<p><strong>The directory structure <code>arc</code> expects is as follows:</strong></p>
-<pre><code>app/
-├── posts/         # Blog posts in Markdown
-├── pages/         # Static pages in Markdown  
-├── templates/     # HTML templates
-└── assets/        # CSS, JS, images
-site/              # Generated output
-</code></pre>
-<p>You can find a sample template <a href="https://github.com/carimura/arc/tree/main/src/main/resources/examples/arc-site">here</a>.</p>
-<h2>Building the Arc Binary (and using it)</h2>
-<ol>
-<li><code>git clone https://github.com/carimura/arc</code></li>
-<li><code>mvn clean package</code> (this will compile and build the executable with jpackage)</li>
-<li>Create a script in your path that points to the executable like so</li>
-</ol>
-<pre><code>#!/bin/bash
-/path/to/arc/target/jpackage/arc.app/Contents/MacOS/arc &quot;$@&quot;
-</code></pre>
-<ol start="4">
-<li>
-<p>Go to your app directory (<a href="https://github.com/carimura/arc/tree/main/src/main/resources/examples/arc-site">sample here</a>) and just type <code>arc</code> or <code>arc --watch</code> for hot reloads.</p>
-</li>
-<li>
-<p><code>cd site</code></p>
-</li>
-<li>
-<p><code>jwebserver</code></p>
-</li>
-<li>
-<p>go to `http://localhost:8000' and gasp at the simplicity. or the horror.</p>
-</li>
-</ol>
-<p>That's it!</p>
-<p><strong>The jpackage command that is happening inside Maven</strong></p>
-<pre><code>jpackage
-  --name arc
-  --dest /path/to/arc/target/jpackage
-  --type app-image
-  --app-version 1.0
-  --input /path/to/arc/target
-  --main-class com.pinealpha.arc.Process
-  --main-jar arc-1.0-SNAPSHOT-jar-with-dependencies.jar
-  --java-options --enable-preview
-</code></pre>
-<h2>TODO</h2>
-<ul>
-<li>Maybe distribute native binaries for multiple platforms</li>
-<li>RSS feed</li>
-<li>template inheritance</li>
-<li>actually review the code in more detail, refactoring, cleanup</li>
-</ul>
-<h2>Conclusion</h2>
-<p>I dunno. AI wrote most of the code, so it pains me, but we refactored a little together so it pains me a little less. Then AI wrote this blog post, but the writing style made me cringe, so I completely rewrote it, feeling bad that my agent might find out and get hurt.</p>
-<p>Anyways, it was fun. I have lots of thoughts on AI but I'll save those for another post on this fresh new blog.</p>
-<p>To end, here's some ascii art from my AI friend about me and it (him?) coding together:</p>
-<pre><code>     👦                    🤖
-    /|\                   /|\
-    / \                   / \
-   -----                 -----
-  |     |               |     |
-  |  💻 |               |  💻 |
-  |_____|               |_____|
-  
-  &quot;Let's build         &quot;Affirmative.
-   something cool!&quot;     Initiating
-                        collaboration
-                        protocol.&quot;
-                        
-        ✨ Building Arc Together ✨
-</code></pre>
 ]]></content:encoded>
     </item>
   </channel>
