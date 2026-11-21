@@ -11,6 +11,7 @@ active_nav: playground
 A few tinkering projects. The rest are at [github](https://github.com/carimura).
 
 - **[Ripper Skipper](https://github.com/carimura/ripperskipper)**: A wakeboarding and surfing game ([ripperskipper.com](https://ripperskipper.com))
+- **[bookme](https://github.com/carimura/bookme)**: A small self-hosted booking page where people, or their agents, can request an open time on your calendar
 - **[PlanPal](https://github.com/carimura/planpal)**: A minimal Doodle-style scheduler for planning TPUSA chapter meetings and other events
 - **[AIBar](https://github.com/carimura/aibar)**: A macOS menu bar app that shows how much of your Codex and Claude subscription allowances you have left
 - **[Bartend](https://github.com/carimura/bartend)**: hides mac menu bar items behind an ellipsis (`•••`). works with macOS 27. super tiny.
